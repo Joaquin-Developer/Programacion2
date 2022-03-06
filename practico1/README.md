@@ -1,4 +1,4 @@
-## PRACTICO 1: Introducción a TADs
+## PRACTICO 1: Introducción a TADs y modularización
 
 ### Ejercicio 1
 A) Dada la siguiente representación de fecha:
