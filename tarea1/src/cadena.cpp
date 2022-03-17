@@ -64,15 +64,9 @@ void imprimirCadena(TCadena cad)
 {
     int cantidad = cantidadEnCadena(cad);
 
-    if (cantidad == 0)
-    {
-        printf("\n");
-    }
-    else
-    {
+    if (cantidad != 0)
         for (int i = 0; i < cantidad; i++)
-        {
-            /* code */
-        }
-    }
+            printf(infoATexto((*cad).lista[i]));
+
+    printf("\n");
 }
