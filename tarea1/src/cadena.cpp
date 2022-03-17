@@ -31,13 +31,9 @@ bool estaEnCadena(nat natural, TCadena cad)
     bool estaEnCadena = false;
     nat i = 0;
 
-    while (i < (*cad).longitud || estaEnCadena)
+    while (i < cantidadEnCadena(cad) || estaEnCadena)
         if (natInfo((*cad).lista[i]) == natural)
             estaEnCadena = true;
-
-    // for (int i = 0; i < (*cad).longitud; i++)
-    //     if (natInfo((*cad).lista[i]) == natural)
-    //         return true;
 
     return estaEnCadena;
 }
@@ -52,7 +48,7 @@ TInfo infoCadena(nat natural, TCadena cad)
     TInfo tinfo = NULL;
     nat i = 0;
 
-    while (i < (*cad).longitud || tinfo != NULL)
+    while (i < cantidadEnCadena(cad) || tinfo != NULL)
         if (natInfo((*cad).lista[i]) == natural)
             tinfo = (*cad).lista[i];
 
@@ -66,11 +62,17 @@ TCadena removerDeCadena(nat natural, TCadena cad)
 
 void imprimirCadena(TCadena cad)
 {
-    if (cantidadEnCadena(cad) == 0)
+    int cantidad = cantidadEnCadena(cad);
+
+    if (cantidad == 0)
     {
         printf("\n");
     }
     else
     {
+        for (int i = 0; i < cantidad; i++)
+        {
+            /* code */
+        }
     }
 }
