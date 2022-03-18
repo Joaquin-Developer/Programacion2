@@ -1,4 +1,4 @@
-1,27c1,2
+1,27d0
 < 1>#  implementar insertarAlInicio, imprimirCadena.
 < 2>
 < 3>Se insertó (5,5.00) al inicio de la cadena.
@@ -26,6 +26,3 @@
 < 25>6 está en la cadena.
 < 26>9 no está en la cadena.
 < 27>Fin.
----
-> timeout: la orden monitorizada ha volcado un 'core'
-> Segmentation fault
