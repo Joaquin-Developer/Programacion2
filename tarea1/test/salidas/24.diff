@@ -1,4 +1,4 @@
-1,33c1,2
+1,33d0
 < 1>#  implementar removerDeColCadenas.
 < 2>Se insertó (3,3.00) en la cadena 0.
 < 3>Se insertó (3,13.10) en la cadena 0.
@@ -32,6 +32,3 @@
 < 31>6 está en la cadena 5.
 < 32>La primera aparición de 6 en la cadena 5 es (6,16.10)
 < 33>Fin.
----
-> timeout: la orden monitorizada ha volcado un 'core'
-> Segmentation fault
