@@ -31,9 +31,12 @@ bool estaEnCadena(nat natural, TCadena cad)
     bool estaEnCadena = false;
     nat i = 0;
 
-    while (i < cantidadEnCadena(cad) || estaEnCadena)
+    while (i < cantidadEnCadena(cad) && !estaEnCadena)
+    {
         if (natInfo((*cad).lista[i]) == natural)
             estaEnCadena = true;
+        i++;
+    }
     return estaEnCadena;
 }
 
@@ -58,9 +61,12 @@ TInfo infoCadena(nat natural, TCadena cad)
     TInfo tinfo = NULL;
     nat i = 0;
 
-    while (i < cantidadEnCadena(cad) || tinfo != NULL)
+    while (i < cantidadEnCadena(cad) && tinfo == NULL)
+    {
         if (natInfo((*cad).lista[i]) == natural)
             tinfo = (*cad).lista[i];
+        i++;
+    }
 
     return tinfo;
 }
@@ -71,16 +77,12 @@ TCadena removerDeCadena(nat natural, TCadena cad)
     nat cantidad = cantidadEnCadena(cad);
 
     nat i = 0;
-    while (i < cantidad || indiceBorrar != -1)
+    while (i < cantidad && indiceBorrar != -1)
     {
         if (natInfo((*cad).lista[i]) == natural)
             indiceBorrar = i;
         i++;
     }
-
-    // 1 2 3 4 5 6
-    // i = 2
-    // 1 2 4 5 6
 
     if (indiceBorrar != -1)
     {
