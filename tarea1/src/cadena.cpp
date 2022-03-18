@@ -76,20 +76,18 @@ TCadena removerDeCadena(nat natural, TCadena cad)
     nat cantidad = cantidadEnCadena(cad);
 
     nat i = 0;
-    while (i < cantidad && indiceBorrar != -1)
+    while (i < cantidad && indiceBorrar == -1)
     {
         if (natInfo((*cad).lista[i]) == natural)
             indiceBorrar = i;
         i++;
     }
 
-    if (indiceBorrar != -1)
+    for (i = indiceBorrar; i < cantidad - 1; i++)
     {
-        for (i = indiceBorrar; i < cantidad - 1; i++)
-        {
-            (*cad).lista[i] = (*cad).lista[i + 1];
-        }
+        (*cad).lista[i] = (*cad).lista[i + 1];
     }
+
     (*cad).longitud--;
     return cad;
 }

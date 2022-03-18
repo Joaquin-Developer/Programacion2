@@ -17,7 +17,7 @@
 17>3 está en la cadena 0.
 18>La primera aparición de 6 en la cadena 5 es (6,6.00)
 19>Se removió la primera aparición de 6 de la cadena 5.
-20>6 está en la cadena 5.
+20>6 no está en la cadena 5.
 21>Se removió la primera aparición de 3 de la cadena 5.
 22>Se removió la primera aparición de 4 de la cadena 9.
 23>Se removió la primera aparición de 3 de la cadena 9.
