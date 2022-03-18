@@ -29,16 +29,6 @@ nat cantidadColCadenas(nat pos, TColCadenas col)
 
 bool estaEnColCadenas(nat natural, nat pos, TColCadenas col)
 {
-    // bool esta = false;
-    // int i = 0;
-
-    // while (i < CANT_CADS && !esta)
-    // {
-    //     esta = estaEnCadena(natural, (*col).lista[i]);
-    //     i++;
-    // }
-    // return esta;
-
     return estaEnCadena(natural, (*col).lista[pos]);
 }
 
