@@ -42,17 +42,16 @@ bool estaEnCadena(nat natural, TCadena cad)
 
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 {
-    if ((cantidadEnCadena(cad) < L))
-    {
-        (*cad).longitud++;
-        for (nat i = 0; i < cantidadEnCadena(cad); i++)
-        {
-            (*cad).lista[i + 1] = (*cad).lista[i];
-        }
-        // Tinfo a insertar:
-        TInfo info = crearInfo(natural, real);
-        (*cad).lista[0] = info;
-    }
+    // creo el Tinfo a insertar:
+    TInfo infoInsertar = crearInfo(natural, real);
+    // aumento tamaño:
+    (*cad).longitud++;
+
+    for (nat i = cantidadEnCadena(cad); i > 0; i--)
+        (*cad).lista[i] = (*cad).lista[i - 1];
+
+    (*cad).lista[0] = infoInsertar;
+
     return cad;
 }
 
