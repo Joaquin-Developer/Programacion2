@@ -1,20 +1,20 @@
-==33624== Invalid read of size 4
-==33624==    at 0x10A36E: infoATexto(_rep_info*) (info.cpp:49)
-==33624==    by 0x10A4EF: imprimirInfo(_rep_info*) (info.cpp:76)
-==33624==    by 0x109C93: main (principal.cpp:207)
-==33624==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==33624== 
-==33624== 
-==33624== Process terminating with default action of signal 11 (SIGSEGV)
-==33624==  Access not within mapped region at address 0x0
-==33624==    at 0x10A36E: infoATexto(_rep_info*) (info.cpp:49)
-==33624==    by 0x10A4EF: imprimirInfo(_rep_info*) (info.cpp:76)
-==33624==    by 0x109C93: main (principal.cpp:207)
-==33624==  If you believe this happened as a result of a stack
-==33624==  overflow in your program's main thread (unlikely but
-==33624==  possible), you can try to increase the size of the
-==33624==  main thread stack using the --main-stacksize= flag.
-==33624==  The main thread stack size used in this run was 8388608.
+==45412== Invalid read of size 4
+==45412==    at 0x10A558: infoATexto(_rep_info*) (info.cpp:49)
+==45412==    by 0x10A6D9: imprimirInfo(_rep_info*) (info.cpp:76)
+==45412==    by 0x109C93: main (principal.cpp:207)
+==45412==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==45412== 
+==45412== 
+==45412== Process terminating with default action of signal 11 (SIGSEGV)
+==45412==  Access not within mapped region at address 0x0
+==45412==    at 0x10A558: infoATexto(_rep_info*) (info.cpp:49)
+==45412==    by 0x10A6D9: imprimirInfo(_rep_info*) (info.cpp:76)
+==45412==    by 0x109C93: main (principal.cpp:207)
+==45412==  If you believe this happened as a result of a stack
+==45412==  overflow in your program's main thread (unlikely but
+==45412==  possible), you can try to increase the size of the
+==45412==  main thread stack using the --main-stacksize= flag.
+==45412==  The main thread stack size used in this run was 8388608.
 1>#  implementar infoEnColCadenas.
 2>Se insertó (3,3.00) en la cadena 0.
 3>Se insertó (3,13.10) en la cadena 0.

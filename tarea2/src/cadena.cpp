@@ -5,21 +5,19 @@
 struct Nodo
 {
     TInfo info;
-    _rep_cadena *siguiente;
+    Nodo *siguiente;
 };
+
+typedef struct Nodo *TNodo;
 
 struct _rep_cadena
 {
-    // TInfo info;
-    // _rep_cadena *siguiente;
     Nodo *primero;
     Nodo *ultimo;
 };
 
 TCadena crearCadena()
 {
-    // TCadena cadena = NULL;
-    // return cadena;
     TCadena cadena = new _rep_cadena;
     cadena->primero = NULL;
     cadena->ultimo = NULL;
@@ -28,29 +26,29 @@ TCadena crearCadena()
 
 void liberarCadena(TCadena cad)
 {
-    if (cad != NULL)
+    TNodo nodo;
+    while (cad->primero != NULL)
     {
-        TCadena aux;
-        do
-        {
-            aux = cad;
-            cad = cad->siguiente;
-            delete aux;
-        } while (cad->siguiente != cad);
+        nodo = cad->primero;
+        cad->primero = cad->primero->siguiente;
+        liberarInfo(nodo->info);
+        delete nodo;
     }
+    cad->primero = NULL; // esto es al pedo (?
+    cad->ultimo = NULL;
+    delete cad;
 }
 
 nat cantidadEnCadena(TCadena cad)
 {
-    TCadena aux = cad;
     nat cant = 0;
+    TNodo aux = cad->primero;
 
     do
     {
         cant++;
         aux = aux->siguiente;
-
-    } while (aux != cad);
+    } while (aux != cad->ultimo);
 
     return cant;
 }
@@ -58,11 +56,14 @@ nat cantidadEnCadena(TCadena cad)
 bool estaEnCadena(nat natural, TCadena cad)
 {
     bool estaEnCadena = false;
+    TNodo aux = cad->primero;
+
     do
     {
-        if (natInfo(cad->info) == natural)
+        if (natInfo(aux->info) == natural)
             estaEnCadena = true;
-    } while (cad->siguiente != cad && !estaEnCadena);
+        aux = aux->siguiente;
+    } while (aux != cad->ultimo && !estaEnCadena);
 
     return estaEnCadena;
 }
@@ -70,33 +71,85 @@ bool estaEnCadena(nat natural, TCadena cad)
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 {
     TInfo nuevo = crearInfo(natural, real);
-    TCadena nuevoCadena = crearCadena();
-    nuevoCadena->info = nuevo;
-    nuevoCadena->siguiente = cad;
+    TNodo nodo = new Nodo;
+    nodo->info = nuevo;
+    // nodo->siguiente = nodo;
+
+    if (cad->primero == NULL)
+    {
+        cad->primero = nodo;
+        cad->ultimo = nodo;
+        nodo->siguiente = nodo;
+    }
+    else
+    {
+        // TNodo aux = cad->primero;
+        nodo->siguiente = cad->primero;
+        cad->primero = nodo;
+        cad->ultimo->siguiente = nodo;
+    }
 
     return cad;
 }
 
 TInfo infoCadena(nat natural, TCadena cad)
 {
-    return NULL;
+    TInfo info = NULL;
+    TNodo aux = cad->primero;
+
+    do
+    {
+        if (natInfo(aux->info) == natural)
+            info = aux->info;
+        aux = aux->siguiente;
+    } while (aux != cad->ultimo && info == NULL);
+
+    return info;
 }
 
 TInfo primeroEnCadena(TCadena cad)
 {
-    return NULL;
+    return cad->primero->info;
 }
 
 TCadena cadenaSiguiente(TCadena cad)
 {
-    return NULL;
+    TNodo prim = cad->primero;
+
+    cad->primero = cad->primero->siguiente;
+    cad->ultimo = prim;
+
+    return cad;
 }
 
 TCadena removerDeCadena(nat natural, TCadena cad)
 {
-    return NULL;
+    TNodo aux = cad->primero;
+    TNodo remover;
+    bool remover = false;
+    do
+    {
+        if (natInfo(aux->info) == natural)
+        {
+            remover = aux;
+            remover = true;
+        }
+        aux = aux->siguiente;
+    } while (aux->siguiente != cad->primero);
+
+    return cad;
 }
 
 void imprimirCadena(TCadena cad)
 {
+    if (cantidadEnCadena(cad) > 0)
+    {
+        TNodo aux = cad->primero;
+        do
+        {
+            imprimirInfo(aux->info);
+            aux = aux->siguiente;
+        } while (aux != cad->primero);
+    }
+    printf("\n");
 }

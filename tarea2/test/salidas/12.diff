@@ -1,20 +1,22 @@
-0a1,15
-> ==33539== Invalid read of size 8
-> ==33539==    at 0x109E94: cantidadEnCadena(_rep_cadena*) (cadena.cpp:39)
-> ==33539==    by 0x109764: main (principal.cpp:131)
-> ==33539==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
-> ==33539== 
-> ==33539== 
-> ==33539== Process terminating with default action of signal 11 (SIGSEGV)
-> ==33539==  Access not within mapped region at address 0x8
-> ==33539==    at 0x109E94: cantidadEnCadena(_rep_cadena*) (cadena.cpp:39)
-> ==33539==    by 0x109764: main (principal.cpp:131)
-> ==33539==  If you believe this happened as a result of a stack
-> ==33539==  overflow in your program's main thread (unlikely but
-> ==33539==  possible), you can try to increase the size of the
-> ==33539==  main thread stack using the --main-stacksize= flag.
-> ==33539==  The main thread stack size used in this run was 8388608.
-2,27c17,19
+0a1,17
+> ==45272== Invalid read of size 8
+> ==45272==    at 0x109EF4: cantidadEnCadena(_rep_cadena*) (cadena.cpp:51)
+> ==45272==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
+> ==45272==    by 0x109A34: main (principal.cpp:171)
+> ==45272==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+> ==45272== 
+> ==45272== 
+> ==45272== Process terminating with default action of signal 11 (SIGSEGV)
+> ==45272==  Access not within mapped region at address 0x8
+> ==45272==    at 0x109EF4: cantidadEnCadena(_rep_cadena*) (cadena.cpp:51)
+> ==45272==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
+> ==45272==    by 0x109A34: main (principal.cpp:171)
+> ==45272==  If you believe this happened as a result of a stack
+> ==45272==  overflow in your program's main thread (unlikely but
+> ==45272==  possible), you can try to increase the size of the
+> ==45272==  main thread stack using the --main-stacksize= flag.
+> ==45272==  The main thread stack size used in this run was 8388608.
+2,27c19,20
 < 2>
 < 3>Se insertó (5,5.00) al inicio de la cadena.
 < 4>(5,5.00)
@@ -42,6 +44,5 @@
 < 26>9 no está en la cadena.
 < 27>Fin.
 ---
-> 2>3>Se insertó (5,5.00) al inicio de la cadena.
-> 4>5>timeout: la orden monitorizada ha volcado un 'core'
+> 2>timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault

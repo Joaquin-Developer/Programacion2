@@ -1,76 +1,129 @@
-0a1,15
-> ==33576== Invalid read of size 8
-> ==33576==    at 0x109EC8: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:51)
-> ==33576==    by 0x1097B8: main (principal.cpp:136)
-> ==33576==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==33576== 
-> ==33576== 
-> ==33576== Process terminating with default action of signal 11 (SIGSEGV)
-> ==33576==  Access not within mapped region at address 0x0
-> ==33576==    at 0x109EC8: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:51)
-> ==33576==    by 0x1097B8: main (principal.cpp:136)
-> ==33576==  If you believe this happened as a result of a stack
-> ==33576==  overflow in your program's main thread (unlikely but
-> ==33576==  possible), you can try to increase the size of the
-> ==33576==  main thread stack using the --main-stacksize= flag.
-> ==33576==  The main thread stack size used in this run was 8388608.
-3,4c18
-< 3>(5,5.00)
-< 4>Se removió la primera aparición de 5 de la cadena.
----
-> 3>4>Se removió la primera aparición de 5 de la cadena.
-6,56c20,21
+0a1,60
+> ==45345== Invalid read of size 8
+> ==45345==    at 0x109E6C: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Address 0x4dc3158 is 8 bytes inside a block of size 16 free'd
+> ==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Block was alloc'd at
+> ==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x109FB0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:75)
+> ==45345==    by 0x109846: main (principal.cpp:141)
+> ==45345== 
+> ==45345== Invalid read of size 8
+> ==45345==    at 0x109E7B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Address 0x4dc3150 is 0 bytes inside a block of size 16 free'd
+> ==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Block was alloc'd at
+> ==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x109FB0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:75)
+> ==45345==    by 0x109846: main (principal.cpp:141)
+> ==45345== 
+> ==45345== Invalid free() / delete / delete[] / realloc()
+> ==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x10A4B9: liberarInfo(_rep_info*) (info.cpp:37)
+> ==45345==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Address 0x4dc3100 is 0 bytes inside a block of size 16 free'd
+> ==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x10A4B9: liberarInfo(_rep_info*) (info.cpp:37)
+> ==45345==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Block was alloc'd at
+> ==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x10A438: crearInfo(unsigned int, double) (info.cpp:25)
+> ==45345==    by 0x109FA2: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:74)
+> ==45345==    by 0x109846: main (principal.cpp:141)
+> ==45345== 
+> ==45345== Invalid free() / delete / delete[] / realloc()
+> ==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Address 0x4dc3150 is 0 bytes inside a block of size 16 free'd
+> ==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
+> ==45345==    by 0x109DDC: main (principal.cpp:235)
+> ==45345==  Block was alloc'd at
+> ==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==45345==    by 0x109FB0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:75)
+> ==45345==    by 0x109846: main (principal.cpp:141)
+> ==45345== 
+> ==45345== 
+> ==45345== More than 10000000 total errors detected.  I'm not reporting any more.
+> ==45345== Final error counts will be inaccurate.  Go fix your program!
+> ==45345== Rerun with --error-limit=no to disable this cutoff.  Note
+> ==45345== that errors may occur in your program without prior warning from
+> ==45345== Valgrind, because errors are no longer being displayed.
+> ==45345== 
+6,8c66,68
 < 6>
 < 7>5 no está en la cadena.
 < 8>La cantidad es 0.
-< 9>Se insertó (5,5.00) al inicio de la cadena.
+---
+> 6>(5,5.00)
+> 7>5 está en la cadena.
+> 8>La cantidad es 1.
+10c70
 < 10>(5,5.00)
-< 11>La cantidad es 1.
-< 12>El elemento es (5,5.00)
-< 13>Se insertó (1,11.10) al inicio de la cadena.
-< 14>Se insertó (0,0.00) al inicio de la cadena.
-< 15>Se insertó (5,15.50) al inicio de la cadena.
+---
+> 10>(5,5.00)(5,5.00)
+16c76
 < 16>(5,15.50)(0,0.00)(1,11.10)(5,5.00)
-< 17>Se removió la primera aparición de 5 de la cadena.
-< 18>#  se removió el primero de los 5, que además es el primero de la cadena.
+---
+> 16>(5,15.50)(0,0.00)(1,11.10)(5,5.00)(5,5.00)
+19c79
 < 19>(0,0.00)(1,11.10)(5,5.00)
-< 20>5 está en la cadena.
+---
+> 19>(5,15.50)(0,0.00)(1,11.10)(5,5.00)(5,5.00)
+21c81
 < 21>La cantidad es 3.
-< 22>El elemento es (1,11.10)
-< 23>El elemento es (0,0.00)
+---
+> 21>La cantidad es 4.
+24c84
 < 24>El elemento es (5,5.00)
-< 25>Se removió la primera aparición de 5 de la cadena.
-< 26>#  se removió el último.
+---
+> 24>El elemento es (5,15.50)
+27,29c87,89
 < 27>(0,0.00)(1,11.10)
 < 28>5 no está en la cadena.
 < 29>La cantidad es 2.
-< 30>Se insertó (2,2.00) al inicio de la cadena.
+---
+> 27>(5,15.50)(0,0.00)(1,11.10)(5,5.00)(5,5.00)
+> 28>5 está en la cadena.
+> 29>La cantidad es 4.
+31c91
 < 31>(2,2.00)(0,0.00)(1,11.10)
-< 32>Se removió la primera aparición de 0 de la cadena.
-< 33>#  se removió un elemento intermedio.
+---
+> 31>(2,2.00)(5,15.50)(0,0.00)(1,11.10)(5,5.00)(5,5.00)
+34,35c94,95
 < 34>(2,2.00)(1,11.10)
 < 35>0 no está en la cadena.
-< 36>El elemento es (1,11.10)
-< 37>El elemento es (2,2.00)
+---
+> 34>(2,2.00)(5,15.50)(0,0.00)(1,11.10)(5,5.00)(5,5.00)
+> 35>0 está en la cadena.
+38c98
 < 38>La cantidad es 2.
-< 39>Se insertó (8,8.00) al inicio de la cadena.
-< 40>Se insertó (3,3.00) al inicio de la cadena.
-< 41>Se insertó (7,7.00) al inicio de la cadena.
-< 42>Se insertó (4,4.00) al inicio de la cadena.
-< 43>Se insertó (6,6.00) al inicio de la cadena.
-< 44>Se insertó (1,1.00) al inicio de la cadena.
-< 45>Se insertó (5,1.00) al inicio de la cadena.
-< 46>Se insertó (7,17.00) al inicio de la cadena.
+---
+> 38>La cantidad es 5.
+47c107
 < 47>(7,17.00)(5,1.00)(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(1,11.10)
-< 48>El elemento es (7,17.00)
+---
+> 47>(7,17.00)(5,1.00)(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(5,15.50)(0,0.00)(1,11.10)(5,5.00)(5,5.00)
+49c109
 < 49>La cantidad es 10.
-< 50>Se removió la primera aparición de 7 de la cadena.
-< 51>#  se removió el primero de los 7, que NO es el primero de la cadena.
+---
+> 49>La cantidad es 13.
+52,53c112,113
 < 52>(5,1.00)(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(1,11.10)
 < 53>La cantidad es 9.
-< 54>7 está en la cadena.
-< 55>El elemento es (7,7.00)
-< 56>Fin.
 ---
-> 6>7>timeout: la orden monitorizada ha volcado un 'core'
-> Segmentation fault
+> 52>(7,17.00)(5,1.00)(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(5,15.50)(0,0.00)(1,11.10)(5,5.00)(5,5.00)
+> 53>La cantidad es 13.
+55c115
+< 55>El elemento es (7,7.00)
+---
+> 55>El elemento es (7,17.00)

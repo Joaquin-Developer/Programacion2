@@ -1,4 +1,22 @@
-2,9c2,4
+0a1,17
+> ==45538== Invalid read of size 8
+> ==45538==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+> ==45538==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
+> ==45538==    by 0x1094FC: main (principal.cpp:90)
+> ==45538==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==45538== 
+> ==45538== 
+> ==45538== Process terminating with default action of signal 11 (SIGSEGV)
+> ==45538==  Access not within mapped region at address 0x0
+> ==45538==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+> ==45538==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
+> ==45538==    by 0x1094FC: main (principal.cpp:90)
+> ==45538==  If you believe this happened as a result of a stack
+> ==45538==  overflow in your program's main thread (unlikely but
+> ==45538==  possible), you can try to increase the size of the
+> ==45538==  main thread stack using the --main-stacksize= flag.
+> ==45538==  The main thread stack size used in this run was 8388608.
+2,16c19,20
 < 2>
 < 3>Se insertó (5,5.00) al inicio de la cadena.
 < 4>(5,5.00)
@@ -7,13 +25,13 @@
 < 7>(5,5.00)(6,6.00)
 < 8>(6,6.00)(5,5.00)
 < 9>Se insertó (9,6.00) al inicio de la cadena.
----
-> 2>3>Se insertó (5,5.00) al inicio de la cadena.
-> 4>5>Se insertó (6,6.00) al inicio de la cadena.
-> 6>7>8>9>Se insertó (9,6.00) al inicio de la cadena.
-14,16c9
+< 10>Se insertó (8,8.00) al inicio de la cadena.
+< 11>Se insertó (7,7.00) al inicio de la cadena.
+< 12>Se insertó (4,4.00) al inicio de la cadena.
+< 13>Se insertó (3,3.00) al inicio de la cadena.
 < 14>(4,4.00)(7,7.00)(8,8.00)(9,6.00)(6,6.00)(5,5.00)(3,3.00)
 < 15>(3,3.00)(4,4.00)(7,7.00)(8,8.00)(9,6.00)(6,6.00)(5,5.00)
 < 16>Fin.
 ---
-> 14>15>16>Fin.
+> 2>timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

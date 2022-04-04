@@ -1,20 +1,25 @@
-==33723== Invalid read of size 8
-==33723==    at 0x109E94: cantidadEnCadena(_rep_cadena*) (cadena.cpp:39)
-==33723==    by 0x109764: main (principal.cpp:131)
-==33723==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
-==33723== 
-==33723== 
-==33723== Process terminating with default action of signal 11 (SIGSEGV)
-==33723==  Access not within mapped region at address 0x8
-==33723==    at 0x109E94: cantidadEnCadena(_rep_cadena*) (cadena.cpp:39)
-==33723==    by 0x109764: main (principal.cpp:131)
-==33723==  If you believe this happened as a result of a stack
-==33723==  overflow in your program's main thread (unlikely but
-==33723==  possible), you can try to increase the size of the
-==33723==  main thread stack using the --main-stacksize= flag.
-==33723==  The main thread stack size used in this run was 8388608.
+==45526== Invalid read of size 8
+==45526==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+==45526==    by 0x109764: main (principal.cpp:131)
+==45526==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==45526== 
+==45526== 
+==45526== Process terminating with default action of signal 11 (SIGSEGV)
+==45526==  Access not within mapped region at address 0x0
+==45526==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+==45526==    by 0x109764: main (principal.cpp:131)
+==45526==  If you believe this happened as a result of a stack
+==45526==  overflow in your program's main thread (unlikely but
+==45526==  possible), you can try to increase the size of the
+==45526==  main thread stack using the --main-stacksize= flag.
+==45526==  The main thread stack size used in this run was 8388608.
 1>#  implementar removerPrimero.
 2>Se insertó (5,5.00) al inicio de la cadena.
 3>Se removió el primer elemento de la cadena.
-4>timeout: la orden monitorizada ha volcado un 'core'
+4>==45526== 48 (16 direct, 32 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+==45526==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==45526==    by 0x109E1C: crearCadena() (cadena.cpp:21)
+==45526==    by 0x109323: main (principal.cpp:52)
+==45526== 
+timeout: la orden monitorizada ha volcado un 'core'
 Segmentation fault
