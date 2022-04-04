@@ -1,19 +1,19 @@
 0a1,15
-> ==31184== Invalid read of size 8
-> ==31184==    at 0x109E4F: cantidadEnCadena(_rep_cadena*) (cadena.cpp:44)
-> ==31184==    by 0x109764: main (principal.cpp:131)
-> ==31184==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
-> ==31184== 
-> ==31184== 
-> ==31184== Process terminating with default action of signal 11 (SIGSEGV)
-> ==31184==  Access not within mapped region at address 0x8
-> ==31184==    at 0x109E4F: cantidadEnCadena(_rep_cadena*) (cadena.cpp:44)
-> ==31184==    by 0x109764: main (principal.cpp:131)
-> ==31184==  If you believe this happened as a result of a stack
-> ==31184==  overflow in your program's main thread (unlikely but
-> ==31184==  possible), you can try to increase the size of the
-> ==31184==  main thread stack using the --main-stacksize= flag.
-> ==31184==  The main thread stack size used in this run was 8388608.
+> ==33539== Invalid read of size 8
+> ==33539==    at 0x109E94: cantidadEnCadena(_rep_cadena*) (cadena.cpp:39)
+> ==33539==    by 0x109764: main (principal.cpp:131)
+> ==33539==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+> ==33539== 
+> ==33539== 
+> ==33539== Process terminating with default action of signal 11 (SIGSEGV)
+> ==33539==  Access not within mapped region at address 0x8
+> ==33539==    at 0x109E94: cantidadEnCadena(_rep_cadena*) (cadena.cpp:39)
+> ==33539==    by 0x109764: main (principal.cpp:131)
+> ==33539==  If you believe this happened as a result of a stack
+> ==33539==  overflow in your program's main thread (unlikely but
+> ==33539==  possible), you can try to increase the size of the
+> ==33539==  main thread stack using the --main-stacksize= flag.
+> ==33539==  The main thread stack size used in this run was 8388608.
 2,27c17,19
 < 2>
 < 3>Se insertó (5,5.00) al inicio de la cadena.

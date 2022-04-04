@@ -1,21 +1,21 @@
 0a1,17
-> ==31293== Invalid read of size 4
-> ==31293==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
-> ==31293==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
-> ==31293==    by 0x109C93: main (principal.cpp:207)
-> ==31293==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==31293== 
-> ==31293== 
-> ==31293== Process terminating with default action of signal 11 (SIGSEGV)
-> ==31293==  Access not within mapped region at address 0x0
-> ==31293==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
-> ==31293==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
-> ==31293==    by 0x109C93: main (principal.cpp:207)
-> ==31293==  If you believe this happened as a result of a stack
-> ==31293==  overflow in your program's main thread (unlikely but
-> ==31293==  possible), you can try to increase the size of the
-> ==31293==  main thread stack using the --main-stacksize= flag.
-> ==31293==  The main thread stack size used in this run was 8388608.
+> ==33636== Invalid read of size 4
+> ==33636==    at 0x10A36E: infoATexto(_rep_info*) (info.cpp:49)
+> ==33636==    by 0x10A4EF: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==33636==    by 0x109C93: main (principal.cpp:207)
+> ==33636==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==33636== 
+> ==33636== 
+> ==33636== Process terminating with default action of signal 11 (SIGSEGV)
+> ==33636==  Access not within mapped region at address 0x0
+> ==33636==    at 0x10A36E: infoATexto(_rep_info*) (info.cpp:49)
+> ==33636==    by 0x10A4EF: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==33636==    by 0x109C93: main (principal.cpp:207)
+> ==33636==  If you believe this happened as a result of a stack
+> ==33636==  overflow in your program's main thread (unlikely but
+> ==33636==  possible), you can try to increase the size of the
+> ==33636==  main thread stack using the --main-stacksize= flag.
+> ==33636==  The main thread stack size used in this run was 8388608.
 12,33c29,33
 < 12>La cantidad en la cadena 0 es 4.
 < 13>La cantidad en la cadena 5 es 4.

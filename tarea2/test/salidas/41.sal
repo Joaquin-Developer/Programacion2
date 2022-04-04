@@ -1,20 +1,20 @@
-==31358== Invalid read of size 4
-==31358==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
-==31358==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
-==31358==    by 0x1098B9: main (principal.cpp:147)
-==31358==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==31358== 
-==31358== 
-==31358== Process terminating with default action of signal 11 (SIGSEGV)
-==31358==  Access not within mapped region at address 0x0
-==31358==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
-==31358==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
-==31358==    by 0x1098B9: main (principal.cpp:147)
-==31358==  If you believe this happened as a result of a stack
-==31358==  overflow in your program's main thread (unlikely but
-==31358==  possible), you can try to increase the size of the
-==31358==  main thread stack using the --main-stacksize= flag.
-==31358==  The main thread stack size used in this run was 8388608.
+==33711== Invalid read of size 4
+==33711==    at 0x10A36E: infoATexto(_rep_info*) (info.cpp:49)
+==33711==    by 0x10A4EF: imprimirInfo(_rep_info*) (info.cpp:76)
+==33711==    by 0x1098B9: main (principal.cpp:147)
+==33711==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==33711== 
+==33711== 
+==33711== Process terminating with default action of signal 11 (SIGSEGV)
+==33711==  Access not within mapped region at address 0x0
+==33711==    at 0x10A36E: infoATexto(_rep_info*) (info.cpp:49)
+==33711==    by 0x10A4EF: imprimirInfo(_rep_info*) (info.cpp:76)
+==33711==    by 0x1098B9: main (principal.cpp:147)
+==33711==  If you believe this happened as a result of a stack
+==33711==  overflow in your program's main thread (unlikely but
+==33711==  possible), you can try to increase the size of the
+==33711==  main thread stack using the --main-stacksize= flag.
+==33711==  The main thread stack size used in this run was 8388608.
 1>#  implementar insertarAlFinal.
 2>Se insertó (5,5.00) al final de la cadena.
 3>El primero es timeout: la orden monitorizada ha volcado un 'core'

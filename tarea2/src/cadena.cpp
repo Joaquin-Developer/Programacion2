@@ -2,46 +2,41 @@
 
 #include "../include/cadena.h"
 
-// struct Nodo
-// {
-//     TInfo info;
-//     Nodo *siguiente;
-// };
-
-struct _rep_cadena
+struct Nodo
 {
     TInfo info;
     _rep_cadena *siguiente;
-    // Nodo primero;
-    // Nodo ultimo;
+};
+
+struct _rep_cadena
+{
+    // TInfo info;
+    // _rep_cadena *siguiente;
+    Nodo *primero;
+    Nodo *ultimo;
 };
 
 TCadena crearCadena()
 {
-    // TCadena cadena = new _rep_cadena;
-    // cadena->primero = NULL;
-    // cadena->ultimo = NULL;
-    TCadena cadena = NULL;
+    // TCadena cadena = NULL;
+    // return cadena;
+    TCadena cadena = new _rep_cadena;
+    cadena->primero = NULL;
+    cadena->ultimo = NULL;
     return cadena;
 }
 
 void liberarCadena(TCadena cad)
 {
-
     if (cad != NULL)
     {
-        // TCadena primero = cad;
-        // TCadena aux;
-
-        // do
-        // {
-        //     aux = cad;
-        //     cad = cad->siguiente;
-        //     delete aux;
-
-        // } while (aux->siguiente != primero);
-
-        // delete cad;
+        TCadena aux;
+        do
+        {
+            aux = cad;
+            cad = cad->siguiente;
+            delete aux;
+        } while (cad->siguiente != cad);
     }
 }
 
@@ -62,12 +57,24 @@ nat cantidadEnCadena(TCadena cad)
 
 bool estaEnCadena(nat natural, TCadena cad)
 {
-    return false;
+    bool estaEnCadena = false;
+    do
+    {
+        if (natInfo(cad->info) == natural)
+            estaEnCadena = true;
+    } while (cad->siguiente != cad && !estaEnCadena);
+
+    return estaEnCadena;
 }
 
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 {
-    return NULL;
+    TInfo nuevo = crearInfo(natural, real);
+    TCadena nuevoCadena = crearCadena();
+    nuevoCadena->info = nuevo;
+    nuevoCadena->siguiente = cad;
+
+    return cad;
 }
 
 TInfo infoCadena(nat natural, TCadena cad)
