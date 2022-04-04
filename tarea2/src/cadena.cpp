@@ -11,7 +11,7 @@
 struct _rep_cadena
 {
     TInfo info;
-    Nodo *siguiente;
+    _rep_cadena *siguiente;
     // Nodo primero;
     // Nodo ultimo;
 };
