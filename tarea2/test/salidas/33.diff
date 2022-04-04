@@ -1,0 +1,8 @@
+6c6
+< 6>Actual de it está definida.
+---
+> 6>Actual de it NO está definida.
+11c11
+< 11>Actual de it está definida.
+---
+> 11>Actual de it NO está definida.

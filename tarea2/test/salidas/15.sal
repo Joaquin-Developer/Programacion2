@@ -1,0 +1,19 @@
+==31241== Invalid read of size 8
+==31241==    at 0x109E4F: cantidadEnCadena(_rep_cadena*) (cadena.cpp:44)
+==31241==    by 0x109764: main (principal.cpp:131)
+==31241==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==31241== 
+==31241== 
+==31241== Process terminating with default action of signal 11 (SIGSEGV)
+==31241==  Access not within mapped region at address 0x8
+==31241==    at 0x109E4F: cantidadEnCadena(_rep_cadena*) (cadena.cpp:44)
+==31241==    by 0x109764: main (principal.cpp:131)
+==31241==  If you believe this happened as a result of a stack
+==31241==  overflow in your program's main thread (unlikely but
+==31241==  possible), you can try to increase the size of the
+==31241==  main thread stack using the --main-stacksize= flag.
+==31241==  The main thread stack size used in this run was 8388608.
+1>#  implementar primeroEnCadena cadenaSiguiente.
+2>#  cadena vacía.
+3>timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault

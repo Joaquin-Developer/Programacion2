@@ -1,0 +1,36 @@
+11,12c11,12
+< 11>Actual de it está definida.
+< 12>El actual de it es 5.
+---
+> 11>Actual de it NO está definida.
+> 12>El actual de it es 0.
+21,22c21,22
+< 21>Actual de it está definida.
+< 22>El actual de it es 5.
+---
+> 21>Actual de it NO está definida.
+> 22>El actual de it es 0.
+24c24
+< 24>El actual de it es 5.
+---
+> 24>El actual de it es 0.
+26c26
+< 26>El actual de it es 6.
+---
+> 26>El actual de it es 0.
+28c28
+< 28>El actual de it es 7.
+---
+> 28>El actual de it es 0.
+32,33c32,33
+< 32>Actual de it está definida.
+< 33>El actual de it es 5.
+---
+> 32>Actual de it NO está definida.
+> 33>El actual de it es 0.
+37,38c37,38
+< 37>Actual de it está definida.
+< 38>El actual de it es 7.
+---
+> 37>Actual de it NO está definida.
+> 38>El actual de it es 0.

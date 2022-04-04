@@ -1,0 +1,44 @@
+0a1,17
+> ==31358== Invalid read of size 4
+> ==31358==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
+> ==31358==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==31358==    by 0x1098B9: main (principal.cpp:147)
+> ==31358==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==31358== 
+> ==31358== 
+> ==31358== Process terminating with default action of signal 11 (SIGSEGV)
+> ==31358==  Access not within mapped region at address 0x0
+> ==31358==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
+> ==31358==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==31358==    by 0x1098B9: main (principal.cpp:147)
+> ==31358==  If you believe this happened as a result of a stack
+> ==31358==  overflow in your program's main thread (unlikely but
+> ==31358==  possible), you can try to increase the size of the
+> ==31358==  main thread stack using the --main-stacksize= flag.
+> ==31358==  The main thread stack size used in this run was 8388608.
+3,24c20,21
+< 3>El primero es (5,5.00)
+< 4>Se removió la primera aparición de 5 de la cadena.
+< 5>La cantidad es 0.
+< 6>Se insertó (6,6.00) al inicio de la cadena.
+< 7>Se insertó (7,7.00) al final de la cadena.
+< 8>El primero es (6,6.00)
+< 9>(6,6.00)(7,7.00)
+< 10>Se removió la primera aparición de 7 de la cadena.
+< 11>El primero es (6,6.00)
+< 12>Se insertó (6,16.10) al final de la cadena.
+< 13>El primero es (6,6.00)
+< 14>(6,6.00)(6,16.10)
+< 15>(6,16.10)(6,6.00)
+< 16>Estructuras reiniciadas.
+< 17>Se insertó (5,5.00) al final de la cadena.
+< 18>Se insertó (5,15.10) al final de la cadena.
+< 19>Se insertó (5,25.20) al final de la cadena.
+< 20>Se insertó (5,35.30) al final de la cadena.
+< 21>El primero es (5,5.00)
+< 22>(5,5.00)(5,15.10)(5,25.20)(5,35.30)
+< 23>(5,35.30)(5,5.00)(5,15.10)(5,25.20)
+< 24>Fin.
+---
+> 3>El primero es timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

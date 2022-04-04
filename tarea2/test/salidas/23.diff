@@ -1,0 +1,29 @@
+0a1,17
+> ==31268== Invalid read of size 4
+> ==31268==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
+> ==31268==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==31268==    by 0x109C93: main (principal.cpp:207)
+> ==31268==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==31268== 
+> ==31268== 
+> ==31268== Process terminating with default action of signal 11 (SIGSEGV)
+> ==31268==  Access not within mapped region at address 0x0
+> ==31268==    at 0x10A2EF: infoATexto(_rep_info*) (info.cpp:49)
+> ==31268==    by 0x10A470: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==31268==    by 0x109C93: main (principal.cpp:207)
+> ==31268==  If you believe this happened as a result of a stack
+> ==31268==  overflow in your program's main thread (unlikely but
+> ==31268==  possible), you can try to increase the size of the
+> ==31268==  main thread stack using the --main-stacksize= flag.
+> ==31268==  The main thread stack size used in this run was 8388608.
+12,18c29,30
+< 12>La primera aparición de 3 en la cadena 0 es (3,13.10)
+< 13>La primera aparición de 3 en la cadena 5 es (3,13.10)
+< 14>La primera aparición de 3 en la cadena 9 es (3,13.10)
+< 15>La primera aparición de 9 en la cadena 0 es (9,9.00)
+< 16>La primera aparición de 6 en la cadena 5 es (6,6.00)
+< 17>La primera aparición de 4 en la cadena 9 es (4,4.00)
+< 18>Fin.
+---
+> 12>La primera aparición de 3 en la cadena 0 es timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault
