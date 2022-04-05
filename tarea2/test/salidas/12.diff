@@ -1,48 +1,73 @@
-0a1,17
-> ==45272== Invalid read of size 8
-> ==45272==    at 0x109EF4: cantidadEnCadena(_rep_cadena*) (cadena.cpp:51)
-> ==45272==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
-> ==45272==    by 0x109A34: main (principal.cpp:171)
-> ==45272==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
-> ==45272== 
-> ==45272== 
-> ==45272== Process terminating with default action of signal 11 (SIGSEGV)
-> ==45272==  Access not within mapped region at address 0x8
-> ==45272==    at 0x109EF4: cantidadEnCadena(_rep_cadena*) (cadena.cpp:51)
-> ==45272==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
-> ==45272==    by 0x109A34: main (principal.cpp:171)
-> ==45272==  If you believe this happened as a result of a stack
-> ==45272==  overflow in your program's main thread (unlikely but
-> ==45272==  possible), you can try to increase the size of the
-> ==45272==  main thread stack using the --main-stacksize= flag.
-> ==45272==  The main thread stack size used in this run was 8388608.
-2,27c19,20
-< 2>
-< 3>Se insertó (5,5.00) al inicio de la cadena.
-< 4>(5,5.00)
-< 5>La cantidad es 1.
-< 6>1 no está en la cadena.
-< 7>5 está en la cadena.
-< 8>Se insertó (1,1.00) al inicio de la cadena.
-< 9>(1,1.00)(5,5.00)
+0a1,60
+> ==35027== Invalid read of size 8
+> ==35027==    at 0x109E6C: liberarCadena(_rep_cadena*) (cadena.cpp:33)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Address 0x4dc27e8 is 8 bytes inside a block of size 16 free'd
+> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Block was alloc'd at
+> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+> ==35027==    by 0x109846: main (principal.cpp:141)
+> ==35027== 
+> ==35027== Invalid read of size 8
+> ==35027==    at 0x109E7B: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Address 0x4dc27e0 is 0 bytes inside a block of size 16 free'd
+> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Block was alloc'd at
+> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+> ==35027==    by 0x109846: main (principal.cpp:141)
+> ==35027== 
+> ==35027== Invalid free() / delete / delete[] / realloc()
+> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
+> ==35027==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Address 0x4dc2790 is 0 bytes inside a block of size 16 free'd
+> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
+> ==35027==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Block was alloc'd at
+> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x10A52A: crearInfo(unsigned int, double) (info.cpp:25)
+> ==35027==    by 0x109FB2: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:79)
+> ==35027==    by 0x109846: main (principal.cpp:141)
+> ==35027== 
+> ==35027== Invalid free() / delete / delete[] / realloc()
+> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Address 0x4dc27e0 is 0 bytes inside a block of size 16 free'd
+> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35027==    by 0x109DDC: main (principal.cpp:235)
+> ==35027==  Block was alloc'd at
+> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35027==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+> ==35027==    by 0x109846: main (principal.cpp:141)
+> ==35027== 
+> ==35027== 
+> ==35027== More than 10000000 total errors detected.  I'm not reporting any more.
+> ==35027== Final error counts will be inaccurate.  Go fix your program!
+> ==35027== Rerun with --error-limit=no to disable this cutoff.  Note
+> ==35027== that errors may occur in your program without prior warning from
+> ==35027== Valgrind, because errors are no longer being displayed.
+> ==35027== 
+10c70
 < 10>La cantidad es 2.
-< 11>1 está en la cadena.
-< 12>Se insertó (0,0.00) al inicio de la cadena.
-< 13>Se insertó (2,2.00) al inicio de la cadena.
-< 14>Se insertó (8,8.00) al inicio de la cadena.
-< 15>Se insertó (3,3.00) al inicio de la cadena.
-< 16>Se insertó (7,7.00) al inicio de la cadena.
-< 17>Se insertó (4,4.00) al inicio de la cadena.
-< 18>Se insertó (6,6.00) al inicio de la cadena.
-< 19>Se insertó (1,1.00) al inicio de la cadena.
-< 20>(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(0,0.00)(1,1.00)(5,5.00)
-< 21>La cantidad es 10.
-< 22>1 está en la cadena.
-< 23>5 está en la cadena.
-< 24>0 está en la cadena.
-< 25>6 está en la cadena.
-< 26>9 no está en la cadena.
-< 27>Fin.
 ---
-> 2>timeout: la orden monitorizada ha volcado un 'core'
-> Segmentation fault
+> 10>La cantidad es 1.
+21c81
+< 21>La cantidad es 10.
+---
+> 21>La cantidad es 9.
+23c83
+< 23>5 está en la cadena.
+---
+> 23>5 no está en la cadena.

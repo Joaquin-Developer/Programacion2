@@ -1,47 +1,95 @@
-0a1,17
-> ==45424== Invalid read of size 4
-> ==45424==    at 0x10A558: infoATexto(_rep_info*) (info.cpp:49)
-> ==45424==    by 0x10A6D9: imprimirInfo(_rep_info*) (info.cpp:76)
-> ==45424==    by 0x109C93: main (principal.cpp:207)
-> ==45424==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==45424== 
-> ==45424== 
-> ==45424== Process terminating with default action of signal 11 (SIGSEGV)
-> ==45424==  Access not within mapped region at address 0x0
-> ==45424==    at 0x10A558: infoATexto(_rep_info*) (info.cpp:49)
-> ==45424==    by 0x10A6D9: imprimirInfo(_rep_info*) (info.cpp:76)
-> ==45424==    by 0x109C93: main (principal.cpp:207)
-> ==45424==  If you believe this happened as a result of a stack
-> ==45424==  overflow in your program's main thread (unlikely but
-> ==45424==  possible), you can try to increase the size of the
-> ==45424==  main thread stack using the --main-stacksize= flag.
-> ==45424==  The main thread stack size used in this run was 8388608.
-12,33c29,33
+0a1,72
+> ==35196== Invalid read of size 8
+> ==35196==    at 0x109E6C: liberarCadena(_rep_cadena*) (cadena.cpp:33)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Address 0x4dc2838 is 8 bytes inside a block of size 16 free'd
+> ==35196==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Block was alloc'd at
+> ==35196==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+> ==35196==    by 0x10A29D: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:46)
+> ==35196==    by 0x109BE9: main (principal.cpp:198)
+> ==35196== 
+> ==35196== Invalid read of size 8
+> ==35196==    at 0x109E7B: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Address 0x4dc2830 is 0 bytes inside a block of size 16 free'd
+> ==35196==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Block was alloc'd at
+> ==35196==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+> ==35196==    by 0x10A29D: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:46)
+> ==35196==    by 0x109BE9: main (principal.cpp:198)
+> ==35196== 
+> ==35196== Invalid free() / delete / delete[] / realloc()
+> ==35196==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
+> ==35196==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Address 0x4dc27e0 is 0 bytes inside a block of size 16 free'd
+> ==35196==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
+> ==35196==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Block was alloc'd at
+> ==35196==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x10A52A: crearInfo(unsigned int, double) (info.cpp:25)
+> ==35196==    by 0x109FB2: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:79)
+> ==35196==    by 0x10A29D: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:46)
+> ==35196==    by 0x109BE9: main (principal.cpp:198)
+> ==35196== 
+> ==35196== Invalid free() / delete / delete[] / realloc()
+> ==35196==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Address 0x4dc2830 is 0 bytes inside a block of size 16 free'd
+> ==35196==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+> ==35196==    by 0x10A1EB: liberarColCadenas(_rep_colCadenas*) (colCadenas.cpp:24)
+> ==35196==    by 0x109DEB: main (principal.cpp:236)
+> ==35196==  Block was alloc'd at
+> ==35196==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==35196==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+> ==35196==    by 0x10A29D: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:46)
+> ==35196==    by 0x109BE9: main (principal.cpp:198)
+> ==35196== 
+> ==35196== 
+> ==35196== More than 10000000 total errors detected.  I'm not reporting any more.
+> ==35196== Final error counts will be inaccurate.  Go fix your program!
+> ==35196== Rerun with --error-limit=no to disable this cutoff.  Note
+> ==35196== that errors may occur in your program without prior warning from
+> ==35196== Valgrind, because errors are no longer being displayed.
+> ==35196== 
+12,14c84,86
 < 12>La cantidad en la cadena 0 es 4.
 < 13>La cantidad en la cadena 5 es 4.
 < 14>La cantidad en la cadena 9 es 2.
-< 15>La primera aparición de 3 en la cadena 0 es (3,13.10)
-< 16>Se removió la primera aparición de 3 de la cadena 0.
+---
+> 12>La cantidad en la cadena 0 es 3.
+> 13>La cantidad en la cadena 5 es 3.
+> 14>La cantidad en la cadena 9 es 1.
+17c89
 < 17>3 está en la cadena 0.
-< 18>La primera aparición de 6 en la cadena 5 es (6,6.00)
-< 19>Se removió la primera aparición de 6 de la cadena 5.
-< 20>6 no está en la cadena 5.
-< 21>Se removió la primera aparición de 3 de la cadena 5.
-< 22>Se removió la primera aparición de 4 de la cadena 9.
-< 23>Se removió la primera aparición de 3 de la cadena 9.
-< 24>La cantidad en la cadena 0 es 3.
+---
+> 17>3 no está en la cadena 0.
+25,26c97,98
 < 25>La cantidad en la cadena 5 es 2.
 < 26>La cantidad en la cadena 9 es 0.
-< 27>Se insertó (3,3.00) en la cadena 0.
-< 28>La primera aparición de 3 en la cadena 0 es (3,3.00)
-< 29>La cantidad en la cadena 0 es 4.
-< 30>Se insertó (6,16.10) en la cadena 5.
-< 31>6 está en la cadena 5.
-< 32>La primera aparición de 6 en la cadena 5 es (6,16.10)
-< 33>Fin.
 ---
-> 12>La cantidad en la cadena 0 es 0.
-> 13>La cantidad en la cadena 5 es 0.
-> 14>La cantidad en la cadena 9 es 0.
-> 15>La primera aparición de 3 en la cadena 0 es timeout: la orden monitorizada ha volcado un 'core'
-> Segmentation fault
+> 25>La cantidad en la cadena 5 es 3.
+> 26>La cantidad en la cadena 9 es 1.
+31c103
+< 31>6 está en la cadena 5.
+---
+> 31>6 no está en la cadena 5.

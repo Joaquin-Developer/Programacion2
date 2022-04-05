@@ -1,63 +1,63 @@
-==45345== Invalid read of size 8
-==45345==    at 0x109E6C: liberarCadena(_rep_cadena*) (cadena.cpp:34)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Address 0x4dc3158 is 8 bytes inside a block of size 16 free'd
-==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Block was alloc'd at
-==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x109FB0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:75)
-==45345==    by 0x109846: main (principal.cpp:141)
-==45345== 
-==45345== Invalid read of size 8
-==45345==    at 0x109E7B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Address 0x4dc3150 is 0 bytes inside a block of size 16 free'd
-==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Block was alloc'd at
-==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x109FB0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:75)
-==45345==    by 0x109846: main (principal.cpp:141)
-==45345== 
-==45345== Invalid free() / delete / delete[] / realloc()
-==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x10A4B9: liberarInfo(_rep_info*) (info.cpp:37)
-==45345==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:35)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Address 0x4dc3100 is 0 bytes inside a block of size 16 free'd
-==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x10A4B9: liberarInfo(_rep_info*) (info.cpp:37)
-==45345==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:35)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Block was alloc'd at
-==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x10A438: crearInfo(unsigned int, double) (info.cpp:25)
-==45345==    by 0x109FA2: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:74)
-==45345==    by 0x109846: main (principal.cpp:141)
-==45345== 
-==45345== Invalid free() / delete / delete[] / realloc()
-==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Address 0x4dc3150 is 0 bytes inside a block of size 16 free'd
-==45345==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:36)
-==45345==    by 0x109DDC: main (principal.cpp:235)
-==45345==  Block was alloc'd at
-==45345==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==45345==    by 0x109FB0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:75)
-==45345==    by 0x109846: main (principal.cpp:141)
-==45345== 
-==45345== 
-==45345== More than 10000000 total errors detected.  I'm not reporting any more.
-==45345== Final error counts will be inaccurate.  Go fix your program!
-==45345== Rerun with --error-limit=no to disable this cutoff.  Note
-==45345== that errors may occur in your program without prior warning from
-==45345== Valgrind, because errors are no longer being displayed.
-==45345== 
+==35101== Invalid read of size 8
+==35101==    at 0x109E6C: liberarCadena(_rep_cadena*) (cadena.cpp:33)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Address 0x4dc3508 is 8 bytes inside a block of size 16 free'd
+==35101==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Block was alloc'd at
+==35101==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+==35101==    by 0x109846: main (principal.cpp:141)
+==35101== 
+==35101== Invalid read of size 8
+==35101==    at 0x109E7B: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Address 0x4dc3500 is 0 bytes inside a block of size 16 free'd
+==35101==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Block was alloc'd at
+==35101==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+==35101==    by 0x109846: main (principal.cpp:141)
+==35101== 
+==35101== Invalid free() / delete / delete[] / realloc()
+==35101==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
+==35101==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Address 0x4dc34b0 is 0 bytes inside a block of size 16 free'd
+==35101==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
+==35101==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Block was alloc'd at
+==35101==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x10A52A: crearInfo(unsigned int, double) (info.cpp:25)
+==35101==    by 0x109FB2: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:79)
+==35101==    by 0x109846: main (principal.cpp:141)
+==35101== 
+==35101== Invalid free() / delete / delete[] / realloc()
+==35101==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Address 0x4dc3500 is 0 bytes inside a block of size 16 free'd
+==35101==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
+==35101==    by 0x109DDC: main (principal.cpp:235)
+==35101==  Block was alloc'd at
+==35101==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==35101==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
+==35101==    by 0x109846: main (principal.cpp:141)
+==35101== 
+==35101== 
+==35101== More than 10000000 total errors detected.  I'm not reporting any more.
+==35101== Final error counts will be inaccurate.  Go fix your program!
+==35101== Rerun with --error-limit=no to disable this cutoff.  Note
+==35101== that errors may occur in your program without prior warning from
+==35101== Valgrind, because errors are no longer being displayed.
+==35101== 
 1>#  implementar removerDeCadena.
 2>Se insertó (5,5.00) al inicio de la cadena.
 3>(5,5.00)

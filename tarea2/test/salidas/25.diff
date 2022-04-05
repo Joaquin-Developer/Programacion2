@@ -1,21 +1,21 @@
 0a1,17
-> ==45446== Invalid read of size 8
-> ==45446==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-> ==45446==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
-> ==45446==    by 0x109A96: main (principal.cpp:178)
-> ==45446==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==45446== 
-> ==45446== 
-> ==45446== Process terminating with default action of signal 11 (SIGSEGV)
-> ==45446==  Access not within mapped region at address 0x0
-> ==45446==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-> ==45446==    by 0x10A117: imprimirCadena(_rep_cadena*) (cadena.cpp:134)
-> ==45446==    by 0x109A96: main (principal.cpp:178)
-> ==45446==  If you believe this happened as a result of a stack
-> ==45446==  overflow in your program's main thread (unlikely but
-> ==45446==  possible), you can try to increase the size of the
-> ==45446==  main thread stack using the --main-stacksize= flag.
-> ==45446==  The main thread stack size used in this run was 8388608.
+> ==35230== Invalid read of size 8
+> ==35230==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+> ==35230==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
+> ==35230==    by 0x109A96: main (principal.cpp:178)
+> ==35230==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==35230== 
+> ==35230== 
+> ==35230== Process terminating with default action of signal 11 (SIGSEGV)
+> ==35230==  Access not within mapped region at address 0x0
+> ==35230==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+> ==35230==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
+> ==35230==    by 0x109A96: main (principal.cpp:178)
+> ==35230==  If you believe this happened as a result of a stack
+> ==35230==  overflow in your program's main thread (unlikely but
+> ==35230==  possible), you can try to increase the size of the
+> ==35230==  main thread stack using the --main-stacksize= flag.
+> ==35230==  The main thread stack size used in this run was 8388608.
 2,26c19,20
 < 2>La cadena 0 es :
 < 3>La cadena 9 es :

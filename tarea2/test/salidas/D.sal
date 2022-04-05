@@ -1,0 +1,19 @@
+==35384== Invalid read of size 8
+==35384==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+==35384==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
+==35384==    by 0x1094FC: main (principal.cpp:90)
+==35384==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==35384== 
+==35384== 
+==35384== Process terminating with default action of signal 11 (SIGSEGV)
+==35384==  Access not within mapped region at address 0x0
+==35384==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
+==35384==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
+==35384==    by 0x1094FC: main (principal.cpp:90)
+==35384==  If you believe this happened as a result of a stack
+==35384==  overflow in your program's main thread (unlikely but
+==35384==  possible), you can try to increase the size of the
+==35384==  main thread stack using the --main-stacksize= flag.
+==35384==  The main thread stack size used in this run was 8388608.
+1>timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault

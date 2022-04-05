@@ -44,11 +44,16 @@ nat cantidadEnCadena(TCadena cad)
     nat cant = 0;
     TNodo aux = cad->primero;
 
-    do
+    if (aux == NULL)
+        cant = 0;
+    else
     {
-        cant++;
-        aux = aux->siguiente;
-    } while (aux != cad->ultimo);
+        do
+        {
+            cant++;
+            aux = aux->siguiente;
+        } while (aux != cad->ultimo);
+    }
 
     return cant;
 }
@@ -124,18 +129,18 @@ TCadena cadenaSiguiente(TCadena cad)
 
 TCadena removerDeCadena(nat natural, TCadena cad)
 {
-    TNodo aux = cad->primero;
-    TNodo remover;
-    bool remover = false;
-    do
-    {
-        if (natInfo(aux->info) == natural)
-        {
-            remover = aux;
-            remover = true;
-        }
-        aux = aux->siguiente;
-    } while (aux->siguiente != cad->primero);
+    // TNodo aux = cad->primero;
+    // TNodo remover;
+    // bool remover = false;
+    // do
+    // {
+    //     if (natInfo(aux->info) == natural)
+    //     {
+    //         remover = aux;
+    //         remover = true;
+    //     }
+    //     aux = aux->siguiente;
+    // } while (aux->siguiente != cad->primero && !remover);
 
     return cad;
 }

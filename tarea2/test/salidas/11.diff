@@ -1,23 +1,22 @@
 0a1,15
-> ==45255== Invalid read of size 8
-> ==45255==    at 0x109EF4: cantidadEnCadena(_rep_cadena*) (cadena.cpp:51)
-> ==45255==    by 0x109764: main (principal.cpp:131)
-> ==45255==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
-> ==45255== 
-> ==45255== 
-> ==45255== Process terminating with default action of signal 11 (SIGSEGV)
-> ==45255==  Access not within mapped region at address 0x8
-> ==45255==    at 0x109EF4: cantidadEnCadena(_rep_cadena*) (cadena.cpp:51)
-> ==45255==    by 0x109764: main (principal.cpp:131)
-> ==45255==  If you believe this happened as a result of a stack
-> ==45255==  overflow in your program's main thread (unlikely but
-> ==45255==  possible), you can try to increase the size of the
-> ==45255==  main thread stack using the --main-stacksize= flag.
-> ==45255==  The main thread stack size used in this run was 8388608.
-2,4c17,18
-< 2>La cantidad es 0.
+> ==35015== Invalid read of size 8
+> ==35015==    at 0x109F47: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:69)
+> ==35015==    by 0x1097B8: main (principal.cpp:136)
+> ==35015==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==35015== 
+> ==35015== 
+> ==35015== Process terminating with default action of signal 11 (SIGSEGV)
+> ==35015==  Access not within mapped region at address 0x0
+> ==35015==    at 0x109F47: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:69)
+> ==35015==    by 0x1097B8: main (principal.cpp:136)
+> ==35015==  If you believe this happened as a result of a stack
+> ==35015==  overflow in your program's main thread (unlikely but
+> ==35015==  possible), you can try to increase the size of the
+> ==35015==  main thread stack using the --main-stacksize= flag.
+> ==35015==  The main thread stack size used in this run was 8388608.
+3,4c18,19
 < 3>5 no está en la cadena.
 < 4>Fin.
 ---
-> 2>timeout: la orden monitorizada ha volcado un 'core'
+> 3>timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault
