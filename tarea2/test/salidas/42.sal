@@ -1,25 +1,30 @@
-==35308== Invalid read of size 8
-==35308==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35308==    by 0x109764: main (principal.cpp:131)
-==35308==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==35308== 
-==35308== 
-==35308== Process terminating with default action of signal 11 (SIGSEGV)
-==35308==  Access not within mapped region at address 0x0
-==35308==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35308==    by 0x109764: main (principal.cpp:131)
-==35308==  If you believe this happened as a result of a stack
-==35308==  overflow in your program's main thread (unlikely but
-==35308==  possible), you can try to increase the size of the
-==35308==  main thread stack using the --main-stacksize= flag.
-==35308==  The main thread stack size used in this run was 8388608.
+==46290== Invalid read of size 8
+==46290==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
+==46290==    by 0x1098B1: main (principal.cpp:147)
+==46290==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==46290== 
+==46290== 
+==46290== Process terminating with default action of signal 11 (SIGSEGV)
+==46290==  Access not within mapped region at address 0x0
+==46290==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
+==46290==    by 0x1098B1: main (principal.cpp:147)
+==46290==  If you believe this happened as a result of a stack
+==46290==  overflow in your program's main thread (unlikely but
+==46290==  possible), you can try to increase the size of the
+==46290==  main thread stack using the --main-stacksize= flag.
+==46290==  The main thread stack size used in this run was 8388608.
 1>#  implementar removerPrimero.
 2>Se insertó (5,5.00) al inicio de la cadena.
 3>Se removió el primer elemento de la cadena.
-4>==35308== 48 (16 direct, 32 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 5
-==35308==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==35308==    by 0x109E1C: crearCadena() (cadena.cpp:21)
-==35308==    by 0x109323: main (principal.cpp:52)
-==35308== 
+4>La cantidad es 0.
+5>Se insertó (6,6.00) al inicio de la cadena.
+6>Se insertó (7,7.00) al final de la cadena.
+7>Se removió el primer elemento de la cadena.
+8>La cantidad es 0.
+9>El primero es ==46290== 80 (48 direct, 32 indirect) bytes in 2 blocks are definitely lost in loss record 3 of 3
+==46290==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==46290==    by 0x109F3E: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:71)
+==46290==    by 0x109846: main (principal.cpp:141)
+==46290== 
 timeout: la orden monitorizada ha volcado un 'core'
 Segmentation fault

@@ -1,6 +1,20 @@
-1,98c1,19
-< 1>
-< 2>La cantidad es 0.
+0a1,15
+> ==46443== Invalid read of size 8
+> ==46443==    at 0x109EC9: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:60)
+> ==46443==    by 0x1097B8: main (principal.cpp:136)
+> ==46443==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==46443== 
+> ==46443== 
+> ==46443== Process terminating with default action of signal 11 (SIGSEGV)
+> ==46443==  Access not within mapped region at address 0x0
+> ==46443==    at 0x109EC9: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:60)
+> ==46443==    by 0x1097B8: main (principal.cpp:136)
+> ==46443==  If you believe this happened as a result of a stack
+> ==46443==  overflow in your program's main thread (unlikely but
+> ==46443==  possible), you can try to increase the size of the
+> ==46443==  main thread stack using the --main-stacksize= flag.
+> ==46443==  The main thread stack size used in this run was 8388608.
+3,98c18,19
 < 3>5 no está en la cadena.
 < 4>
 < 5>Se insertó (5,5.00) al inicio de la cadena.
@@ -98,22 +112,5 @@
 < 97>El actual de it es 6.
 < 98>Fin.
 ---
-> ==35440== Invalid read of size 8
-> ==35440==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-> ==35440==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-> ==35440==    by 0x1094FC: main (principal.cpp:90)
-> ==35440==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==35440== 
-> ==35440== 
-> ==35440== Process terminating with default action of signal 11 (SIGSEGV)
-> ==35440==  Access not within mapped region at address 0x0
-> ==35440==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-> ==35440==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-> ==35440==    by 0x1094FC: main (principal.cpp:90)
-> ==35440==  If you believe this happened as a result of a stack
-> ==35440==  overflow in your program's main thread (unlikely but
-> ==35440==  possible), you can try to increase the size of the
-> ==35440==  main thread stack using the --main-stacksize= flag.
-> ==35440==  The main thread stack size used in this run was 8388608.
-> 1>timeout: la orden monitorizada ha volcado un 'core'
+> 3>timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault

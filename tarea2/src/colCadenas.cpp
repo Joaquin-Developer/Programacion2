@@ -1,6 +1,7 @@
 /* 5124352 */
 
 #include "../include/colCadenas.h"
+#include "../include/cadena.h"
 
 struct _rep_colCadenas
 {

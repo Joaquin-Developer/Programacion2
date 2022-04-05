@@ -1,20 +1,14 @@
-==35328== Invalid read of size 8
-==35328==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35328==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-==35328==    by 0x1094FC: main (principal.cpp:90)
-==35328==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==35328== 
-==35328== 
-==35328== Process terminating with default action of signal 11 (SIGSEGV)
-==35328==  Access not within mapped region at address 0x0
-==35328==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35328==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-==35328==    by 0x1094FC: main (principal.cpp:90)
-==35328==  If you believe this happened as a result of a stack
-==35328==  overflow in your program's main thread (unlikely but
-==35328==  possible), you can try to increase the size of the
-==35328==  main thread stack using the --main-stacksize= flag.
-==35328==  The main thread stack size used in this run was 8388608.
 1>#  implementar copiaCadena.
-2>timeout: la orden monitorizada ha volcado un 'core'
-Segmentation fault
+2>
+3>Se insertó (5,5.00) al inicio de la cadena.
+4>
+5>Se insertó (6,6.00) al inicio de la cadena.
+6>
+7>(5,5.00)
+8>
+9>Se insertó (9,6.00) al inicio de la cadena.
+10>Se insertó (8,8.00) al inicio de la cadena.
+11>Se insertó (7,7.00) al inicio de la cadena.
+12>Se insertó (4,4.00) al inicio de la cadena.
+13>Se insertó (3,3.00) al inicio de la cadena.
+14>

@@ -1,22 +1,23 @@
 0a1,17
-> ==35184== Invalid read of size 4
-> ==35184==    at 0x10A64A: infoATexto(_rep_info*) (info.cpp:49)
-> ==35184==    by 0x10A7CB: imprimirInfo(_rep_info*) (info.cpp:76)
-> ==35184==    by 0x109C93: main (principal.cpp:207)
-> ==35184==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==35184== 
-> ==35184== 
-> ==35184== Process terminating with default action of signal 11 (SIGSEGV)
-> ==35184==  Access not within mapped region at address 0x0
-> ==35184==    at 0x10A64A: infoATexto(_rep_info*) (info.cpp:49)
-> ==35184==    by 0x10A7CB: imprimirInfo(_rep_info*) (info.cpp:76)
-> ==35184==    by 0x109C93: main (principal.cpp:207)
-> ==35184==  If you believe this happened as a result of a stack
-> ==35184==  overflow in your program's main thread (unlikely but
-> ==35184==  possible), you can try to increase the size of the
-> ==35184==  main thread stack using the --main-stacksize= flag.
-> ==35184==  The main thread stack size used in this run was 8388608.
-13,18c30,31
+> ==46191== Invalid read of size 8
+> ==46191==    at 0x109FD0: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:99)
+> ==46191==    by 0x10A21C: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+> ==46191==    by 0x109C8B: main (principal.cpp:207)
+> ==46191==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==46191== 
+> ==46191== 
+> ==46191== Process terminating with default action of signal 11 (SIGSEGV)
+> ==46191==  Access not within mapped region at address 0x0
+> ==46191==    at 0x109FD0: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:99)
+> ==46191==    by 0x10A21C: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+> ==46191==    by 0x109C8B: main (principal.cpp:207)
+> ==46191==  If you believe this happened as a result of a stack
+> ==46191==  overflow in your program's main thread (unlikely but
+> ==46191==  possible), you can try to increase the size of the
+> ==46191==  main thread stack using the --main-stacksize= flag.
+> ==46191==  The main thread stack size used in this run was 8388608.
+12,18c29,36
+< 12>La primera aparición de 3 en la cadena 0 es (3,13.10)
 < 13>La primera aparición de 3 en la cadena 5 es (3,13.10)
 < 14>La primera aparición de 3 en la cadena 9 es (3,13.10)
 < 15>La primera aparición de 9 en la cadena 0 es (9,9.00)
@@ -24,5 +25,11 @@
 < 17>La primera aparición de 4 en la cadena 9 es (4,4.00)
 < 18>Fin.
 ---
-> 13>La primera aparición de 3 en la cadena 5 es timeout: la orden monitorizada ha volcado un 'core'
+> 12>La primera aparición de 3 en la cadena 0 es ==46191== 400 (240 direct, 160 indirect) bytes in 10 blocks are definitely lost in loss record 3 of 3
+> ==46191==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==46191==    by 0x109F3E: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:71)
+> ==46191==    by 0x10A1E8: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
+> ==46191==    by 0x109BE9: main (principal.cpp:198)
+> ==46191== 
+> timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault

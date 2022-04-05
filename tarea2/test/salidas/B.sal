@@ -1,22 +1,36 @@
-==35359== Invalid read of size 8
-==35359==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35359==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-==35359==    by 0x109A96: main (principal.cpp:178)
-==35359==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==35359== 
-==35359== 
-==35359== Process terminating with default action of signal 11 (SIGSEGV)
-==35359==  Access not within mapped region at address 0x0
-==35359==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35359==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-==35359==    by 0x109A96: main (principal.cpp:178)
-==35359==  If you believe this happened as a result of a stack
-==35359==  overflow in your program's main thread (unlikely but
-==35359==  possible), you can try to increase the size of the
-==35359==  main thread stack using the --main-stacksize= flag.
-==35359==  The main thread stack size used in this run was 8388608.
+==46358== Invalid read of size 8
+==46358==    at 0x109FD0: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:99)
+==46358==    by 0x10A21C: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+==46358==    by 0x109C8B: main (principal.cpp:207)
+==46358==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==46358== 
+==46358== 
+==46358== Process terminating with default action of signal 11 (SIGSEGV)
+==46358==  Access not within mapped region at address 0x0
+==46358==    at 0x109FD0: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:99)
+==46358==    by 0x10A21C: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+==46358==    by 0x109C8B: main (principal.cpp:207)
+==46358==  If you believe this happened as a result of a stack
+==46358==  overflow in your program's main thread (unlikely but
+==46358==  possible), you can try to increase the size of the
+==46358==  main thread stack using the --main-stacksize= flag.
+==46358==  The main thread stack size used in this run was 8388608.
 1>La cantidad en la cadena 0 es 0.
 2>Se insertó (3,3.00) en la cadena 9.
 3>3 no está en la cadena 1.
-4>La cadena 1 es :timeout: la orden monitorizada ha volcado un 'core'
+4>La cadena 1 es :
+5>3 no está en la cadena 9.
+6>Se insertó (5,5.00) en la cadena 9.
+7>Se insertó (6,6.00) en la cadena 9.
+8>Se insertó (7,7.00) en la cadena 9.
+9>La cantidad en la cadena 9 es 0.
+10>7 no está en la cadena 9.
+11>5 no está en la cadena 9.
+12>La primera aparición de 7 en la cadena 9 es ==46358== 160 (96 direct, 64 indirect) bytes in 4 blocks are definitely lost in loss record 3 of 3
+==46358==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==46358==    by 0x109F3E: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:71)
+==46358==    by 0x10A1E8: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
+==46358==    by 0x109BE9: main (principal.cpp:198)
+==46358== 
+timeout: la orden monitorizada ha volcado un 'core'
 Segmentation fault

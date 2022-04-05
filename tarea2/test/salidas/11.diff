@@ -1,19 +1,19 @@
 0a1,15
-> ==35015== Invalid read of size 8
-> ==35015==    at 0x109F47: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:69)
-> ==35015==    by 0x1097B8: main (principal.cpp:136)
-> ==35015==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==35015== 
-> ==35015== 
-> ==35015== Process terminating with default action of signal 11 (SIGSEGV)
-> ==35015==  Access not within mapped region at address 0x0
-> ==35015==    at 0x109F47: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:69)
-> ==35015==    by 0x1097B8: main (principal.cpp:136)
-> ==35015==  If you believe this happened as a result of a stack
-> ==35015==  overflow in your program's main thread (unlikely but
-> ==35015==  possible), you can try to increase the size of the
-> ==35015==  main thread stack using the --main-stacksize= flag.
-> ==35015==  The main thread stack size used in this run was 8388608.
+> ==46039== Invalid read of size 8
+> ==46039==    at 0x109EC9: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:60)
+> ==46039==    by 0x1097B8: main (principal.cpp:136)
+> ==46039==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==46039== 
+> ==46039== 
+> ==46039== Process terminating with default action of signal 11 (SIGSEGV)
+> ==46039==  Access not within mapped region at address 0x0
+> ==46039==    at 0x109EC9: estaEnCadena(unsigned int, _rep_cadena*) (cadena.cpp:60)
+> ==46039==    by 0x1097B8: main (principal.cpp:136)
+> ==46039==  If you believe this happened as a result of a stack
+> ==46039==  overflow in your program's main thread (unlikely but
+> ==46039==  possible), you can try to increase the size of the
+> ==46039==  main thread stack using the --main-stacksize= flag.
+> ==46039==  The main thread stack size used in this run was 8388608.
 3,4c18,19
 < 3>5 no está en la cadena.
 < 4>Fin.

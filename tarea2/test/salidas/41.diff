@@ -1,20 +1,20 @@
 0a1,15
-> ==35296== Invalid read of size 8
-> ==35296==    at 0x10A0B4: primeroEnCadena(_rep_cadena*) (cadena.cpp:118)
-> ==35296==    by 0x1098B1: main (principal.cpp:147)
-> ==35296==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==35296== 
-> ==35296== 
-> ==35296== Process terminating with default action of signal 11 (SIGSEGV)
-> ==35296==  Access not within mapped region at address 0x0
-> ==35296==    at 0x10A0B4: primeroEnCadena(_rep_cadena*) (cadena.cpp:118)
-> ==35296==    by 0x1098B1: main (principal.cpp:147)
-> ==35296==  If you believe this happened as a result of a stack
-> ==35296==  overflow in your program's main thread (unlikely but
-> ==35296==  possible), you can try to increase the size of the
-> ==35296==  main thread stack using the --main-stacksize= flag.
-> ==35296==  The main thread stack size used in this run was 8388608.
-3,24c18,24
+> ==46278== Invalid read of size 8
+> ==46278==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
+> ==46278==    by 0x1098B1: main (principal.cpp:147)
+> ==46278==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==46278== 
+> ==46278== 
+> ==46278== Process terminating with default action of signal 11 (SIGSEGV)
+> ==46278==  Access not within mapped region at address 0x0
+> ==46278==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
+> ==46278==    by 0x1098B1: main (principal.cpp:147)
+> ==46278==  If you believe this happened as a result of a stack
+> ==46278==  overflow in your program's main thread (unlikely but
+> ==46278==  possible), you can try to increase the size of the
+> ==46278==  main thread stack using the --main-stacksize= flag.
+> ==46278==  The main thread stack size used in this run was 8388608.
+3,24c18,19
 < 3>El primero es (5,5.00)
 < 4>Se removió la primera aparición de 5 de la cadena.
 < 5>La cantidad es 0.
@@ -38,10 +38,5 @@
 < 23>(5,35.30)(5,5.00)(5,15.10)(5,25.20)
 < 24>Fin.
 ---
-> 3>El primero es ==35296== 16 bytes in 1 blocks are definitely lost in loss record 1 of 3
-> ==35296==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35296==    by 0x109E1C: crearCadena() (cadena.cpp:21)
-> ==35296==    by 0x109323: main (principal.cpp:52)
-> ==35296== 
-> timeout: la orden monitorizada ha volcado un 'core'
+> 3>El primero es timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault

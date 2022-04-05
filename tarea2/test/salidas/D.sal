@@ -1,19 +1,31 @@
-==35384== Invalid read of size 8
-==35384==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35384==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-==35384==    by 0x1094FC: main (principal.cpp:90)
-==35384==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==35384== 
-==35384== 
-==35384== Process terminating with default action of signal 11 (SIGSEGV)
-==35384==  Access not within mapped region at address 0x0
-==35384==    at 0x109EE5: cantidadEnCadena(_rep_cadena*) (cadena.cpp:46)
-==35384==    by 0x10A127: imprimirCadena(_rep_cadena*) (cadena.cpp:151)
-==35384==    by 0x1094FC: main (principal.cpp:90)
-==35384==  If you believe this happened as a result of a stack
-==35384==  overflow in your program's main thread (unlikely but
-==35384==  possible), you can try to increase the size of the
-==35384==  main thread stack using the --main-stacksize= flag.
-==35384==  The main thread stack size used in this run was 8388608.
-1>timeout: la orden monitorizada ha volcado un 'core'
+==46390== Invalid read of size 8
+==46390==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
+==46390==    by 0x1098B1: main (principal.cpp:147)
+==46390==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==46390== 
+==46390== 
+==46390== Process terminating with default action of signal 11 (SIGSEGV)
+==46390==  Access not within mapped region at address 0x0
+==46390==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
+==46390==    by 0x1098B1: main (principal.cpp:147)
+==46390==  If you believe this happened as a result of a stack
+==46390==  overflow in your program's main thread (unlikely but
+==46390==  possible), you can try to increase the size of the
+==46390==  main thread stack using the --main-stacksize= flag.
+==46390==  The main thread stack size used in this run was 8388608.
+1>
+2>Se insertó (5,5.00) al final de la cadena.
+3>
+4>Se removió el primer elemento de la cadena.
+5>Se insertó (6,6.00) al inicio de la cadena.
+6>El primero es (6,6.00)
+7>Se removió el primer elemento de la cadena.
+8>
+9>Se insertó (5,5.00) al final de la cadena.
+10>El primero es ==46390== 40 (24 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 3
+==46390==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==46390==    by 0x109F3E: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:71)
+==46390==    by 0x109846: main (principal.cpp:141)
+==46390== 
+timeout: la orden monitorizada ha volcado un 'core'
 Segmentation fault

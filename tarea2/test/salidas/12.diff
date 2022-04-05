@@ -1,73 +1,23 @@
-0a1,60
-> ==35027== Invalid read of size 8
-> ==35027==    at 0x109E6C: liberarCadena(_rep_cadena*) (cadena.cpp:33)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Address 0x4dc27e8 is 8 bytes inside a block of size 16 free'd
-> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Block was alloc'd at
-> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
-> ==35027==    by 0x109846: main (principal.cpp:141)
-> ==35027== 
-> ==35027== Invalid read of size 8
-> ==35027==    at 0x109E7B: liberarCadena(_rep_cadena*) (cadena.cpp:34)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Address 0x4dc27e0 is 0 bytes inside a block of size 16 free'd
-> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Block was alloc'd at
-> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
-> ==35027==    by 0x109846: main (principal.cpp:141)
-> ==35027== 
-> ==35027== Invalid free() / delete / delete[] / realloc()
-> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
-> ==35027==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Address 0x4dc2790 is 0 bytes inside a block of size 16 free'd
-> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x10A5AB: liberarInfo(_rep_info*) (info.cpp:37)
-> ==35027==    by 0x109E85: liberarCadena(_rep_cadena*) (cadena.cpp:34)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Block was alloc'd at
-> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x10A52A: crearInfo(unsigned int, double) (info.cpp:25)
-> ==35027==    by 0x109FB2: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:79)
-> ==35027==    by 0x109846: main (principal.cpp:141)
-> ==35027== 
-> ==35027== Invalid free() / delete / delete[] / realloc()
-> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Address 0x4dc27e0 is 0 bytes inside a block of size 16 free'd
-> ==35027==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x109E9B: liberarCadena(_rep_cadena*) (cadena.cpp:35)
-> ==35027==    by 0x109DDC: main (principal.cpp:235)
-> ==35027==  Block was alloc'd at
-> ==35027==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==35027==    by 0x109FC0: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:80)
-> ==35027==    by 0x109846: main (principal.cpp:141)
-> ==35027== 
-> ==35027== 
-> ==35027== More than 10000000 total errors detected.  I'm not reporting any more.
-> ==35027== Final error counts will be inaccurate.  Go fix your program!
-> ==35027== Rerun with --error-limit=no to disable this cutoff.  Note
-> ==35027== that errors may occur in your program without prior warning from
-> ==35027== Valgrind, because errors are no longer being displayed.
-> ==35027== 
-10c70
+9,27c9
+< 9>(1,1.00)(5,5.00)
 < 10>La cantidad es 2.
----
-> 10>La cantidad es 1.
-21c81
+< 11>1 está en la cadena.
+< 12>Se insertó (0,0.00) al inicio de la cadena.
+< 13>Se insertó (2,2.00) al inicio de la cadena.
+< 14>Se insertó (8,8.00) al inicio de la cadena.
+< 15>Se insertó (3,3.00) al inicio de la cadena.
+< 16>Se insertó (7,7.00) al inicio de la cadena.
+< 17>Se insertó (4,4.00) al inicio de la cadena.
+< 18>Se insertó (6,6.00) al inicio de la cadena.
+< 19>Se insertó (1,1.00) al inicio de la cadena.
+< 20>(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(0,0.00)(1,1.00)(5,5.00)
 < 21>La cantidad es 10.
----
-> 21>La cantidad es 9.
-23c83
+< 22>1 está en la cadena.
 < 23>5 está en la cadena.
+< 24>0 está en la cadena.
+< 25>6 está en la cadena.
+< 26>9 no está en la cadena.
+< 27>Fin.
 ---
-> 23>5 no está en la cadena.
+> 9>
+\ No hay ningún carácter de nueva línea al final del archivo
