@@ -1,19 +1,19 @@
 0a1,15
-> ==49573== Invalid read of size 8
-> ==49573==    at 0x109FE6: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:96)
-> ==49573==    by 0x109915: main (principal.cpp:154)
-> ==49573==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==49573== 
-> ==49573== 
-> ==49573== Process terminating with default action of signal 11 (SIGSEGV)
-> ==49573==  Access not within mapped region at address 0x0
-> ==49573==    at 0x109FE6: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:96)
-> ==49573==    by 0x109915: main (principal.cpp:154)
-> ==49573==  If you believe this happened as a result of a stack
-> ==49573==  overflow in your program's main thread (unlikely but
-> ==49573==  possible), you can try to increase the size of the
-> ==49573==  main thread stack using the --main-stacksize= flag.
-> ==49573==  The main thread stack size used in this run was 8388608.
+> ==59582== Invalid read of size 8
+> ==59582==    at 0x109FDE: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:115)
+> ==59582==    by 0x109915: main (principal.cpp:154)
+> ==59582==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==59582== 
+> ==59582== 
+> ==59582== Process terminating with default action of signal 11 (SIGSEGV)
+> ==59582==  Access not within mapped region at address 0x0
+> ==59582==    at 0x109FDE: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:115)
+> ==59582==    by 0x109915: main (principal.cpp:154)
+> ==59582==  If you believe this happened as a result of a stack
+> ==59582==  overflow in your program's main thread (unlikely but
+> ==59582==  possible), you can try to increase the size of the
+> ==59582==  main thread stack using the --main-stacksize= flag.
+> ==59582==  The main thread stack size used in this run was 8388608.
 9,98c24,30
 < 9>El elemento es (5,5.00)
 < 10>Se insertó (3,3.00) al inicio de la cadena.
@@ -106,10 +106,10 @@
 < 97>El actual de it es 6.
 < 98>Fin.
 ---
-> 9>El elemento es ==49573== 40 (24 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 3
-> ==49573==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==49573==    by 0x109F54: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:68)
-> ==49573==    by 0x109846: main (principal.cpp:141)
-> ==49573== 
+> 9>El elemento es ==59582== 40 (24 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 3
+> ==59582==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59582==    by 0x109F3D: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==59582==    by 0x109846: main (principal.cpp:141)
+> ==59582== 
 > timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault

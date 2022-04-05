@@ -64,23 +64,42 @@ bool estaEnCadena(nat natural, TCadena cad)
 
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 {
-    TInfo nuevoInfo = crearInfo(natural, real);
     TCadena cadenaNueva = new _rep_cadena;
-    cadenaNueva->info = nuevoInfo;
-    // nodo->siguiente = nodo;
+    cadenaNueva->info = crearInfo(natural, real);
 
     if (cad == NULL)
     {
+        cad = cadenaNueva;
         cadenaNueva->anterior = cadenaNueva;
         cadenaNueva->siguiente = cadenaNueva;
-        cad = cadenaNueva;
     }
     else
     {
-        TCadena ultimo = cad->anterior;
-        cadenaNueva->anterior = ultimo;
+        // Otro caso es el de insertar antes de aquel registro apuntado por r de tipo Lista.
+        // q = new nodoLista;
+        // *q = *r;
+        // r -> info = dato;
+        // r -> sig = q;
+        // O sea, copiamos el contenido del registro *r al nuevo registro *q y luego cargamos *r con los nuevos datos
+        cadenaNueva->anterior = cad->anterior;
+        cad->anterior->siguiente = cadenaNueva;
         cadenaNueva->siguiente = cad;
-        cad = cadenaNueva;
+
+        // cadenaNueva->siguiente = cad;
+        // cad->anterior = cadenaNueva;
+
+        // *cad = *cadenaNueva;
+
+        // // obtengo el ultimo nodo:
+        // TCadena ultimo = cad->anterior;
+        // // obtengo el primer nodo:
+        // TCadena primero = cad;
+        // // hago enganche:
+        // cadenaNueva->anterior = ultimo;
+        // ultimo->siguiente = cadenaNueva;
+        // cadenaNueva->siguiente = primero;
+        // primero->anterior = cadenaNueva;
+        // *cad = *cadenaNueva;
     }
 
     return cad;
@@ -108,11 +127,7 @@ TInfo primeroEnCadena(TCadena cad)
 
 TCadena cadenaSiguiente(TCadena cad)
 {
-    // TNodo prim = cad->primero;
-    // cad->primero = cad->primero->siguiente;
-    // cad->ultimo = prim;
     cad = cad->siguiente;
-
     return cad;
 }
 
@@ -141,7 +156,7 @@ void imprimirCadena(TCadena cad)
         TCadena aux = cad;
         do
         {
-            imprimirInfo(aux->info);
+            imprimirInfo((*aux).info);
             aux = aux->siguiente;
         } while (aux != cad);
     }

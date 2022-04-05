@@ -1,23 +1,61 @@
-9,27c9
+0a1,32
+> ==59202== Invalid read of size 8
+> ==59202==    at 0x109E41: liberarCadena(_rep_cadena*) (cadena.cpp:24)
+> ==59202==    by 0x109DDC: main (principal.cpp:235)
+> ==59202==  Address 0x4dc1da0 is 16 bytes inside a block of size 24 free'd
+> ==59202==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59202==    by 0x109E5E: liberarCadena(_rep_cadena*) (cadena.cpp:25)
+> ==59202==    by 0x109DDC: main (principal.cpp:235)
+> ==59202==  Block was alloc'd at
+> ==59202==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59202==    by 0x109F3D: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==59202==    by 0x109846: main (principal.cpp:141)
+> ==59202== 
+> ==59202== Invalid free() / delete / delete[] / realloc()
+> ==59202==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59202==    by 0x109E5E: liberarCadena(_rep_cadena*) (cadena.cpp:25)
+> ==59202==    by 0x109DDC: main (principal.cpp:235)
+> ==59202==  Address 0x4dc1d90 is 0 bytes inside a block of size 24 free'd
+> ==59202==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59202==    by 0x109E5E: liberarCadena(_rep_cadena*) (cadena.cpp:25)
+> ==59202==    by 0x109DDC: main (principal.cpp:235)
+> ==59202==  Block was alloc'd at
+> ==59202==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59202==    by 0x109F3D: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==59202==    by 0x109846: main (principal.cpp:141)
+> ==59202== 
+> ==59202== 
+> ==59202== More than 10000000 total errors detected.  I'm not reporting any more.
+> ==59202== Final error counts will be inaccurate.  Go fix your program!
+> ==59202== Rerun with --error-limit=no to disable this cutoff.  Note
+> ==59202== that errors may occur in your program without prior warning from
+> ==59202== Valgrind, because errors are no longer being displayed.
+> ==59202== 
+9c41
 < 9>(1,1.00)(5,5.00)
-< 10>La cantidad es 2.
-< 11>1 está en la cadena.
-< 12>Se insertó (0,0.00) al inicio de la cadena.
-< 13>Se insertó (2,2.00) al inicio de la cadena.
-< 14>Se insertó (8,8.00) al inicio de la cadena.
-< 15>Se insertó (3,3.00) al inicio de la cadena.
-< 16>Se insertó (7,7.00) al inicio de la cadena.
-< 17>Se insertó (4,4.00) al inicio de la cadena.
-< 18>Se insertó (6,6.00) al inicio de la cadena.
-< 19>Se insertó (1,1.00) al inicio de la cadena.
+---
+> 9>(5,5.00)(1,1.00)
+20,21c52,53
 < 20>(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(0,0.00)(1,1.00)(5,5.00)
 < 21>La cantidad es 10.
-< 22>1 está en la cadena.
-< 23>5 está en la cadena.
+---
+> 20>(5,5.00)(1,1.00)
+> 21>La cantidad es 2.
+24,25c56,57
 < 24>0 está en la cadena.
 < 25>6 está en la cadena.
-< 26>9 no está en la cadena.
-< 27>Fin.
 ---
-> 9>
-\ No hay ningún carácter de nueva línea al final del archivo
+> 24>0 no está en la cadena.
+> 25>6 no está en la cadena.
+27a60,70
+> ==59202== 32 bytes in 2 blocks are definitely lost in loss record 1 of 4
+> ==59202==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59202==    by 0x10A4AC: crearInfo(unsigned int, double) (info.cpp:25)
+> ==59202==    by 0x109F54: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:68)
+> ==59202==    by 0x109846: main (principal.cpp:141)
+> ==59202== 
+> ==59202== 320 (192 direct, 128 indirect) bytes in 8 blocks are definitely lost in loss record 4 of 4
+> ==59202==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==59202==    by 0x109F3D: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==59202==    by 0x109846: main (principal.cpp:141)
+> ==59202== 

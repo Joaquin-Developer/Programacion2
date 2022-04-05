@@ -28,9 +28,9 @@
 28>4 no está en la cadena 0.
 29>4 no está en la cadena 9.
 30>Fin.
-==49292== 360 (216 direct, 144 indirect) bytes in 9 blocks are definitely lost in loss record 2 of 2
-==49292==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==49292==    by 0x109F54: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:68)
-==49292==    by 0x10A1FE: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
-==49292==    by 0x109BE9: main (principal.cpp:198)
-==49292== 
+==59309== 360 (216 direct, 144 indirect) bytes in 9 blocks are definitely lost in loss record 2 of 2
+==59309==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==59309==    by 0x109F3D: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+==59309==    by 0x10A21F: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
+==59309==    by 0x109BE9: main (principal.cpp:198)
+==59309== 

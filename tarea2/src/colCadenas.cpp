@@ -28,7 +28,7 @@ void liberarColCadenas(TColCadenas col)
 
 TCadena cadenaDeColCadenas(nat pos, TColCadenas col)
 {
-    return NULL;
+    return cadenaSiguiente((*col).lista[pos]);
 }
 
 nat cantidadColCadenas(nat pos, TColCadenas col)
@@ -38,7 +38,7 @@ nat cantidadColCadenas(nat pos, TColCadenas col)
 
 bool estaEnColCadenas(nat natural, nat pos, TColCadenas col)
 {
-    return false;
+    return estaEnCadena(natural, (*col).lista[pos]);
 }
 
 TColCadenas insertarEnColCadenas(nat natural, double real, nat pos,
