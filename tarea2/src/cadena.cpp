@@ -11,17 +11,12 @@ struct _rep_cadena
 
 TCadena crearCadena()
 {
-    // TCadena cadena = new _rep_cadena;
-    // cadena->info = NULL;
-    // cadena->anterior = NULL;
-    // cadena->siguiente = NULL;
-    // return cadena;
     return NULL;
 }
 
 void liberarCadena(TCadena cad)
 {
-    TCadena aux;
+    TCadena aux = cad;
 
     while (cad != NULL)
     {
@@ -29,7 +24,6 @@ void liberarCadena(TCadena cad)
         cad = cad->siguiente;
         delete aux;
     }
-    // delete cad;
 }
 
 nat cantidadEnCadena(TCadena cad)
@@ -52,6 +46,9 @@ nat cantidadEnCadena(TCadena cad)
 
 bool estaEnCadena(nat natural, TCadena cad)
 {
+    if (cad == NULL)
+        return false;
+
     bool estaEnCadena = false;
     TCadena aux = cad;
 

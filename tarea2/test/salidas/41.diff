@@ -1,19 +1,19 @@
 0a1,15
-> ==46278== Invalid read of size 8
-> ==46278==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
-> ==46278==    by 0x1098B1: main (principal.cpp:147)
-> ==46278==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==46278== 
-> ==46278== 
-> ==46278== Process terminating with default action of signal 11 (SIGSEGV)
-> ==46278==  Access not within mapped region at address 0x0
-> ==46278==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
-> ==46278==    by 0x1098B1: main (principal.cpp:147)
-> ==46278==  If you believe this happened as a result of a stack
-> ==46278==  overflow in your program's main thread (unlikely but
-> ==46278==  possible), you can try to increase the size of the
-> ==46278==  main thread stack using the --main-stacksize= flag.
-> ==46278==  The main thread stack size used in this run was 8388608.
+> ==49392== Invalid read of size 8
+> ==49392==    at 0x10A03B: primeroEnCadena(_rep_cadena*) (cadena.cpp:106)
+> ==49392==    by 0x1098B1: main (principal.cpp:147)
+> ==49392==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==49392== 
+> ==49392== 
+> ==49392== Process terminating with default action of signal 11 (SIGSEGV)
+> ==49392==  Access not within mapped region at address 0x0
+> ==49392==    at 0x10A03B: primeroEnCadena(_rep_cadena*) (cadena.cpp:106)
+> ==49392==    by 0x1098B1: main (principal.cpp:147)
+> ==49392==  If you believe this happened as a result of a stack
+> ==49392==  overflow in your program's main thread (unlikely but
+> ==49392==  possible), you can try to increase the size of the
+> ==49392==  main thread stack using the --main-stacksize= flag.
+> ==49392==  The main thread stack size used in this run was 8388608.
 3,24c18,19
 < 3>El primero es (5,5.00)
 < 4>Se removió la primera aparición de 5 de la cadena.

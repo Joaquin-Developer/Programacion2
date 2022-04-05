@@ -1,19 +1,19 @@
 0a1,15
-> ==46290== Invalid read of size 8
-> ==46290==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
-> ==46290==    by 0x1098B1: main (principal.cpp:147)
-> ==46290==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-> ==46290== 
-> ==46290== 
-> ==46290== Process terminating with default action of signal 11 (SIGSEGV)
-> ==46290==  Access not within mapped region at address 0x0
-> ==46290==    at 0x10A025: primeroEnCadena(_rep_cadena*) (cadena.cpp:109)
-> ==46290==    by 0x1098B1: main (principal.cpp:147)
-> ==46290==  If you believe this happened as a result of a stack
-> ==46290==  overflow in your program's main thread (unlikely but
-> ==46290==  possible), you can try to increase the size of the
-> ==46290==  main thread stack using the --main-stacksize= flag.
-> ==46290==  The main thread stack size used in this run was 8388608.
+> ==49404== Invalid read of size 8
+> ==49404==    at 0x10A03B: primeroEnCadena(_rep_cadena*) (cadena.cpp:106)
+> ==49404==    by 0x1098B1: main (principal.cpp:147)
+> ==49404==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==49404== 
+> ==49404== 
+> ==49404== Process terminating with default action of signal 11 (SIGSEGV)
+> ==49404==  Access not within mapped region at address 0x0
+> ==49404==    at 0x10A03B: primeroEnCadena(_rep_cadena*) (cadena.cpp:106)
+> ==49404==    by 0x1098B1: main (principal.cpp:147)
+> ==49404==  If you believe this happened as a result of a stack
+> ==49404==  overflow in your program's main thread (unlikely but
+> ==49404==  possible), you can try to increase the size of the
+> ==49404==  main thread stack using the --main-stacksize= flag.
+> ==49404==  The main thread stack size used in this run was 8388608.
 8,17c23,30
 < 8>La cantidad es 1.
 < 9>El primero es (7,7.00)
@@ -27,10 +27,10 @@
 < 17>Fin.
 ---
 > 8>La cantidad es 0.
-> 9>El primero es ==46290== 80 (48 direct, 32 indirect) bytes in 2 blocks are definitely lost in loss record 3 of 3
-> ==46290==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==46290==    by 0x109F3E: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:71)
-> ==46290==    by 0x109846: main (principal.cpp:141)
-> ==46290== 
+> 9>El primero es ==49404== 80 (48 direct, 32 indirect) bytes in 2 blocks are definitely lost in loss record 3 of 3
+> ==49404==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==49404==    by 0x109F54: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:68)
+> ==49404==    by 0x109846: main (principal.cpp:141)
+> ==49404== 
 > timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault

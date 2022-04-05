@@ -1,20 +1,20 @@
-==46191== Invalid read of size 8
-==46191==    at 0x109FD0: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:99)
-==46191==    by 0x10A21C: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
-==46191==    by 0x109C8B: main (principal.cpp:207)
-==46191==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==46191== 
-==46191== 
-==46191== Process terminating with default action of signal 11 (SIGSEGV)
-==46191==  Access not within mapped region at address 0x0
-==46191==    at 0x109FD0: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:99)
-==46191==    by 0x10A21C: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
-==46191==    by 0x109C8B: main (principal.cpp:207)
-==46191==  If you believe this happened as a result of a stack
-==46191==  overflow in your program's main thread (unlikely but
-==46191==  possible), you can try to increase the size of the
-==46191==  main thread stack using the --main-stacksize= flag.
-==46191==  The main thread stack size used in this run was 8388608.
+==49299== Invalid read of size 8
+==49299==    at 0x109FE6: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:96)
+==49299==    by 0x10A232: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+==49299==    by 0x109C8B: main (principal.cpp:207)
+==49299==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==49299== 
+==49299== 
+==49299== Process terminating with default action of signal 11 (SIGSEGV)
+==49299==  Access not within mapped region at address 0x0
+==49299==    at 0x109FE6: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:96)
+==49299==    by 0x10A232: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+==49299==    by 0x109C8B: main (principal.cpp:207)
+==49299==  If you believe this happened as a result of a stack
+==49299==  overflow in your program's main thread (unlikely but
+==49299==  possible), you can try to increase the size of the
+==49299==  main thread stack using the --main-stacksize= flag.
+==49299==  The main thread stack size used in this run was 8388608.
 1>#  implementar infoEnColCadenas.
 2>Se insertó (3,3.00) en la cadena 0.
 3>Se insertó (3,13.10) en la cadena 0.
@@ -26,11 +26,11 @@
 9>Se insertó (6,6.00) en la cadena 5.
 10>Se insertó (7,7.00) en la cadena 5.
 11>Se insertó (4,4.00) en la cadena 9.
-12>La primera aparición de 3 en la cadena 0 es ==46191== 400 (240 direct, 160 indirect) bytes in 10 blocks are definitely lost in loss record 3 of 3
-==46191==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==46191==    by 0x109F3E: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:71)
-==46191==    by 0x10A1E8: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
-==46191==    by 0x109BE9: main (principal.cpp:198)
-==46191== 
+12>La primera aparición de 3 en la cadena 0 es ==49299== 400 (240 direct, 160 indirect) bytes in 10 blocks are definitely lost in loss record 3 of 3
+==49299==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==49299==    by 0x109F54: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:68)
+==49299==    by 0x10A1FE: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
+==49299==    by 0x109BE9: main (principal.cpp:198)
+==49299== 
 timeout: la orden monitorizada ha volcado un 'core'
 Segmentation fault
