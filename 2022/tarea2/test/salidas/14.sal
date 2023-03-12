@@ -1,0 +1,51 @@
+==41648== Invalid read of size 4
+==41648==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+==41648==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+==41648==    by 0x10991D: main (principal.cpp:154)
+==41648==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==41648== 
+==41648== 
+==41648== Process terminating with default action of signal 11 (SIGSEGV)
+==41648==  Access not within mapped region at address 0x0
+==41648==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+==41648==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+==41648==    by 0x10991D: main (principal.cpp:154)
+==41648==  If you believe this happened as a result of a stack
+==41648==  overflow in your program's main thread (unlikely but
+==41648==  possible), you can try to increase the size of the
+==41648==  main thread stack using the --main-stacksize= flag.
+==41648==  The main thread stack size used in this run was 8388608.
+1>#  implementar removerDeCadena.
+2>Se insertó (5,5.00) al inicio de la cadena.
+3>(5,5.00)
+4>Se removió la primera aparición de 5 de la cadena.
+5>#  se removió el único.
+6>(5,5.00)
+7>5 está en la cadena.
+8>La cantidad es 1.
+9>Se insertó (5,5.00) al inicio de la cadena.
+10>(5,5.00)
+11>La cantidad es 1.
+12>El elemento es (5,5.00)
+13>Se insertó (1,11.10) al inicio de la cadena.
+14>Se insertó (0,0.00) al inicio de la cadena.
+15>Se insertó (5,15.50) al inicio de la cadena.
+16>(5,15.50)
+17>Se removió la primera aparición de 5 de la cadena.
+18>#  se removió el primero de los 5, que además es el primero de la cadena.
+19>(5,15.50)
+20>5 está en la cadena.
+21>La cantidad es 1.
+22>El elemento es ==41648== 16 bytes in 1 blocks are definitely lost in loss record 2 of 6
+==41648==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==41648==    by 0x10A4E1: crearInfo(unsigned int, double) (info.cpp:25)
+==41648==    by 0x109F5B: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+==41648==    by 0x109846: main (principal.cpp:141)
+==41648== 
+==41648== 144 (96 direct, 48 indirect) bytes in 4 blocks are definitely lost in loss record 6 of 6
+==41648==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==41648==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+==41648==    by 0x109846: main (principal.cpp:141)
+==41648== 
+timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault

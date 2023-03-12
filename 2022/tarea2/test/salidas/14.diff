@@ -1,0 +1,86 @@
+0a1,17
+> ==41648== Invalid read of size 4
+> ==41648==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+> ==41648==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==41648==    by 0x10991D: main (principal.cpp:154)
+> ==41648==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==41648== 
+> ==41648== 
+> ==41648== Process terminating with default action of signal 11 (SIGSEGV)
+> ==41648==  Access not within mapped region at address 0x0
+> ==41648==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+> ==41648==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==41648==    by 0x10991D: main (principal.cpp:154)
+> ==41648==  If you believe this happened as a result of a stack
+> ==41648==  overflow in your program's main thread (unlikely but
+> ==41648==  possible), you can try to increase the size of the
+> ==41648==  main thread stack using the --main-stacksize= flag.
+> ==41648==  The main thread stack size used in this run was 8388608.
+6,8c23,25
+< 6>
+< 7>5 no está en la cadena.
+< 8>La cantidad es 0.
+---
+> 6>(5,5.00)
+> 7>5 está en la cadena.
+> 8>La cantidad es 1.
+16c33
+< 16>(5,15.50)(0,0.00)(1,11.10)(5,5.00)
+---
+> 16>(5,15.50)
+19c36
+< 19>(0,0.00)(1,11.10)(5,5.00)
+---
+> 19>(5,15.50)
+21,56c38,51
+< 21>La cantidad es 3.
+< 22>El elemento es (1,11.10)
+< 23>El elemento es (0,0.00)
+< 24>El elemento es (5,5.00)
+< 25>Se removió la primera aparición de 5 de la cadena.
+< 26>#  se removió el último.
+< 27>(0,0.00)(1,11.10)
+< 28>5 no está en la cadena.
+< 29>La cantidad es 2.
+< 30>Se insertó (2,2.00) al inicio de la cadena.
+< 31>(2,2.00)(0,0.00)(1,11.10)
+< 32>Se removió la primera aparición de 0 de la cadena.
+< 33>#  se removió un elemento intermedio.
+< 34>(2,2.00)(1,11.10)
+< 35>0 no está en la cadena.
+< 36>El elemento es (1,11.10)
+< 37>El elemento es (2,2.00)
+< 38>La cantidad es 2.
+< 39>Se insertó (8,8.00) al inicio de la cadena.
+< 40>Se insertó (3,3.00) al inicio de la cadena.
+< 41>Se insertó (7,7.00) al inicio de la cadena.
+< 42>Se insertó (4,4.00) al inicio de la cadena.
+< 43>Se insertó (6,6.00) al inicio de la cadena.
+< 44>Se insertó (1,1.00) al inicio de la cadena.
+< 45>Se insertó (5,1.00) al inicio de la cadena.
+< 46>Se insertó (7,17.00) al inicio de la cadena.
+< 47>(7,17.00)(5,1.00)(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(1,11.10)
+< 48>El elemento es (7,17.00)
+< 49>La cantidad es 10.
+< 50>Se removió la primera aparición de 7 de la cadena.
+< 51>#  se removió el primero de los 7, que NO es el primero de la cadena.
+< 52>(5,1.00)(1,1.00)(6,6.00)(4,4.00)(7,7.00)(3,3.00)(8,8.00)(2,2.00)(1,11.10)
+< 53>La cantidad es 9.
+< 54>7 está en la cadena.
+< 55>El elemento es (7,7.00)
+< 56>Fin.
+---
+> 21>La cantidad es 1.
+> 22>El elemento es ==41648== 16 bytes in 1 blocks are definitely lost in loss record 2 of 6
+> ==41648==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41648==    by 0x10A4E1: crearInfo(unsigned int, double) (info.cpp:25)
+> ==41648==    by 0x109F5B: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==41648==    by 0x109846: main (principal.cpp:141)
+> ==41648== 
+> ==41648== 144 (96 direct, 48 indirect) bytes in 4 blocks are definitely lost in loss record 6 of 6
+> ==41648==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41648==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+> ==41648==    by 0x109846: main (principal.cpp:141)
+> ==41648== 
+> timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

@@ -1,0 +1,30 @@
+==41954== Invalid read of size 8
+==41954==    at 0x10A013: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:94)
+==41954==    by 0x109915: main (principal.cpp:154)
+==41954==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==41954== 
+==41954== 
+==41954== Process terminating with default action of signal 11 (SIGSEGV)
+==41954==  Access not within mapped region at address 0x0
+==41954==    at 0x10A013: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:94)
+==41954==    by 0x109915: main (principal.cpp:154)
+==41954==  If you believe this happened as a result of a stack
+==41954==  overflow in your program's main thread (unlikely but
+==41954==  possible), you can try to increase the size of the
+==41954==  main thread stack using the --main-stacksize= flag.
+==41954==  The main thread stack size used in this run was 8388608.
+1>
+2>La cantidad es 0.
+3>5 no está en la cadena.
+4>
+5>Se insertó (5,5.00) al inicio de la cadena.
+6>El primero es (5,5.00)
+7>Se removió la primera aparición de 5 de la cadena.
+8>Se insertó (5,5.00) al final de la cadena.
+9>El elemento es ==41954== 40 (24 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 3
+==41954==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==41954==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+==41954==    by 0x109846: main (principal.cpp:141)
+==41954== 
+timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault

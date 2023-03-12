@@ -1,0 +1,95 @@
+0a1,60
+> ==41904== Invalid read of size 8
+> ==41904==    at 0x109E39: liberarCadena(_rep_cadena*) (cadena.cpp:22)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Address 0x4dc1da0 is 16 bytes inside a block of size 24 free'd
+> ==41904==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109E65: liberarCadena(_rep_cadena*) (cadena.cpp:24)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Block was alloc'd at
+> ==41904==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+> ==41904==    by 0x109846: main (principal.cpp:141)
+> ==41904== 
+> ==41904== Invalid read of size 8
+> ==41904==    at 0x109E45: liberarCadena(_rep_cadena*) (cadena.cpp:23)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Address 0x4dc1d90 is 0 bytes inside a block of size 24 free'd
+> ==41904==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109E65: liberarCadena(_rep_cadena*) (cadena.cpp:24)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Block was alloc'd at
+> ==41904==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+> ==41904==    by 0x109846: main (principal.cpp:141)
+> ==41904== 
+> ==41904== Invalid free() / delete / delete[] / realloc()
+> ==41904==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x10A562: liberarInfo(_rep_info*) (info.cpp:37)
+> ==41904==    by 0x109E4F: liberarCadena(_rep_cadena*) (cadena.cpp:23)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Address 0x4dc2710 is 0 bytes inside a block of size 16 free'd
+> ==41904==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x10A562: liberarInfo(_rep_info*) (info.cpp:37)
+> ==41904==    by 0x109E4F: liberarCadena(_rep_cadena*) (cadena.cpp:23)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Block was alloc'd at
+> ==41904==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x10A4E1: crearInfo(unsigned int, double) (info.cpp:25)
+> ==41904==    by 0x109F5B: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==41904==    by 0x109846: main (principal.cpp:141)
+> ==41904== 
+> ==41904== Invalid free() / delete / delete[] / realloc()
+> ==41904==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109E65: liberarCadena(_rep_cadena*) (cadena.cpp:24)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Address 0x4dc1d90 is 0 bytes inside a block of size 24 free'd
+> ==41904==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109E65: liberarCadena(_rep_cadena*) (cadena.cpp:24)
+> ==41904==    by 0x109DDC: main (principal.cpp:235)
+> ==41904==  Block was alloc'd at
+> ==41904==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+> ==41904==    by 0x109846: main (principal.cpp:141)
+> ==41904== 
+> ==41904== 
+> ==41904== More than 10000000 total errors detected.  I'm not reporting any more.
+> ==41904== Final error counts will be inaccurate.  Go fix your program!
+> ==41904== Rerun with --error-limit=no to disable this cutoff.  Note
+> ==41904== that errors may occur in your program without prior warning from
+> ==41904== Valgrind, because errors are no longer being displayed.
+> ==41904== 
+5c65
+< 5>(5,5.00)(5,5.00)
+---
+> 5>(5,5.00)
+7,9c67,69
+< 7>(3,3.00)(5,5.00)(5,5.00)
+< 8>(5,5.00)(5,5.00)(3,3.00)
+< 9>(5,5.00)(3,3.00)(5,5.00)
+---
+> 7>(3,3.00)
+> 8>(3,3.00)
+> 9>(3,3.00)
+19,22c79,82
+< 19>(33,33.00)(19,19.00)(0,0.00)(9,9.00)(14,14.00)(6,6.00)(8,8.00)(25,25.00)(13,13.00)(3,3.00)(5,5.00)(5,5.00)
+< 20>(19,19.00)(0,0.00)(9,9.00)(14,14.00)(6,6.00)(8,8.00)(25,25.00)(13,13.00)(3,3.00)(5,5.00)(5,5.00)(33,33.00)
+< 21>(5,5.00)(33,33.00)(19,19.00)(0,0.00)(9,9.00)(14,14.00)(6,6.00)(8,8.00)(25,25.00)(13,13.00)(3,3.00)(5,5.00)
+< 22>(33,33.00)(19,19.00)(0,0.00)(9,9.00)(14,14.00)(6,6.00)(8,8.00)(25,25.00)(13,13.00)(3,3.00)(5,5.00)(5,5.00)
+---
+> 19>(33,33.00)
+> 20>(33,33.00)
+> 21>(33,33.00)
+> 22>(33,33.00)
+23a84,94
+> ==41904== 16 bytes in 1 blocks are definitely lost in loss record 1 of 4
+> ==41904==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x10A4E1: crearInfo(unsigned int, double) (info.cpp:25)
+> ==41904==    by 0x109F5B: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==41904==    by 0x109846: main (principal.cpp:141)
+> ==41904== 
+> ==41904== 424 (264 direct, 160 indirect) bytes in 11 blocks are definitely lost in loss record 4 of 4
+> ==41904==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41904==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+> ==41904==    by 0x109846: main (principal.cpp:141)
+> ==41904== 

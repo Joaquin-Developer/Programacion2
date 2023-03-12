@@ -1,0 +1,49 @@
+0a1,17
+> ==41840== Invalid read of size 4
+> ==41840==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+> ==41840==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==41840==    by 0x10991D: main (principal.cpp:154)
+> ==41840==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==41840== 
+> ==41840== 
+> ==41840== Process terminating with default action of signal 11 (SIGSEGV)
+> ==41840==  Access not within mapped region at address 0x0
+> ==41840==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+> ==41840==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+> ==41840==    by 0x10991D: main (principal.cpp:154)
+> ==41840==  If you believe this happened as a result of a stack
+> ==41840==  overflow in your program's main thread (unlikely but
+> ==41840==  possible), you can try to increase the size of the
+> ==41840==  main thread stack using the --main-stacksize= flag.
+> ==41840==  The main thread stack size used in this run was 8388608.
+9c26
+< 9>La cantidad es 0.
+---
+> 9>La cantidad es 1.
+14c31
+< 14>(6,6.00)(7,7.00)(8,8.00)(9,9.00)
+---
+> 14>(6,6.00)
+16,23c33,45
+< 16>El elemento es (9,9.00)
+< 17>El elemento es (7,7.00)
+< 18>El elemento es (6,6.00)
+< 19>Se removió la primera aparición de 7 de la cadena.
+< 20>Se removió la primera aparición de 6 de la cadena.
+< 21>Se removió la primera aparición de 9 de la cadena.
+< 22>El primero es (8,8.00)
+< 23>Fin.
+---
+> 16>El elemento es ==41840== 16 bytes in 1 blocks are definitely lost in loss record 2 of 6
+> ==41840==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41840==    by 0x10A4E1: crearInfo(unsigned int, double) (info.cpp:25)
+> ==41840==    by 0x109F5B: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+> ==41840==    by 0x109846: main (principal.cpp:141)
+> ==41840== 
+> ==41840== 144 (96 direct, 48 indirect) bytes in 4 blocks are definitely lost in loss record 6 of 6
+> ==41840==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41840==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+> ==41840==    by 0x109846: main (principal.cpp:141)
+> ==41840== 
+> timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

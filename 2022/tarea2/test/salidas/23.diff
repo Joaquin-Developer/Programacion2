@@ -1,0 +1,35 @@
+0a1,17
+> ==41686== Invalid read of size 8
+> ==41686==    at 0x10A013: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:94)
+> ==41686==    by 0x10A288: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+> ==41686==    by 0x109C8B: main (principal.cpp:207)
+> ==41686==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==41686== 
+> ==41686== 
+> ==41686== Process terminating with default action of signal 11 (SIGSEGV)
+> ==41686==  Access not within mapped region at address 0x0
+> ==41686==    at 0x10A013: infoCadena(unsigned int, _rep_cadena*) (cadena.cpp:94)
+> ==41686==    by 0x10A288: infoEnColCadenas(unsigned int, unsigned int, _rep_colCadenas*) (colCadenas.cpp:53)
+> ==41686==    by 0x109C8B: main (principal.cpp:207)
+> ==41686==  If you believe this happened as a result of a stack
+> ==41686==  overflow in your program's main thread (unlikely but
+> ==41686==  possible), you can try to increase the size of the
+> ==41686==  main thread stack using the --main-stacksize= flag.
+> ==41686==  The main thread stack size used in this run was 8388608.
+12,18c29,36
+< 12>La primera aparición de 3 en la cadena 0 es (3,13.10)
+< 13>La primera aparición de 3 en la cadena 5 es (3,13.10)
+< 14>La primera aparición de 3 en la cadena 9 es (3,13.10)
+< 15>La primera aparición de 9 en la cadena 0 es (9,9.00)
+< 16>La primera aparición de 6 en la cadena 5 es (6,6.00)
+< 17>La primera aparición de 4 en la cadena 9 es (4,4.00)
+< 18>Fin.
+---
+> 12>La primera aparición de 3 en la cadena 0 es ==41686== 400 (240 direct, 160 indirect) bytes in 10 blocks are definitely lost in loss record 3 of 3
+> ==41686==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==41686==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+> ==41686==    by 0x10A254: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
+> ==41686==    by 0x109BE9: main (principal.cpp:198)
+> ==41686== 
+> timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

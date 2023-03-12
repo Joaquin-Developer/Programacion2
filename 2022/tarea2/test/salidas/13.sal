@@ -1,0 +1,45 @@
+==41636== Invalid read of size 4
+==41636==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+==41636==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+==41636==    by 0x10991D: main (principal.cpp:154)
+==41636==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==41636== 
+==41636== 
+==41636== Process terminating with default action of signal 11 (SIGSEGV)
+==41636==  Access not within mapped region at address 0x0
+==41636==    at 0x10A601: infoATexto(_rep_info*) (info.cpp:49)
+==41636==    by 0x10A782: imprimirInfo(_rep_info*) (info.cpp:76)
+==41636==    by 0x10991D: main (principal.cpp:154)
+==41636==  If you believe this happened as a result of a stack
+==41636==  overflow in your program's main thread (unlikely but
+==41636==  possible), you can try to increase the size of the
+==41636==  main thread stack using the --main-stacksize= flag.
+==41636==  The main thread stack size used in this run was 8388608.
+1>#  implementar infoCadena.
+2>Se insertó (5,5.00) al inicio de la cadena.
+3>El elemento es (5,5.00)
+4>Se insertó (1,11.10) al inicio de la cadena.
+5>Se insertó (0,0.00) al inicio de la cadena.
+6>Se insertó (2,2.00) al inicio de la cadena.
+7>Se insertó (8,8.00) al inicio de la cadena.
+8>Se insertó (3,3.00) al inicio de la cadena.
+9>Se insertó (7,7.00) al inicio de la cadena.
+10>Se insertó (4,4.00) al inicio de la cadena.
+11>Se insertó (6,6.00) al inicio de la cadena.
+12>Se insertó (1,1.00) al inicio de la cadena.
+13>(1,1.00)
+14>La cantidad es 1.
+15>El elemento es (1,1.00)
+16>El elemento es ==41636== 16 bytes in 1 blocks are definitely lost in loss record 2 of 6
+==41636==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==41636==    by 0x10A4E1: crearInfo(unsigned int, double) (info.cpp:25)
+==41636==    by 0x109F5B: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:67)
+==41636==    by 0x109846: main (principal.cpp:141)
+==41636== 
+==41636== 344 (216 direct, 128 indirect) bytes in 9 blocks are definitely lost in loss record 6 of 6
+==41636==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==41636==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+==41636==    by 0x109846: main (principal.cpp:141)
+==41636== 
+timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault

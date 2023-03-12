@@ -1,0 +1,23 @@
+==41660== Invalid read of size 8
+==41660==    at 0x10A07D: cadenaSiguiente(_rep_cadena*) (cadena.cpp:109)
+==41660==    by 0x109986: main (principal.cpp:161)
+==41660==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==41660== 
+==41660== 
+==41660== Process terminating with default action of signal 11 (SIGSEGV)
+==41660==  Access not within mapped region at address 0x10
+==41660==    at 0x10A07D: cadenaSiguiente(_rep_cadena*) (cadena.cpp:109)
+==41660==    by 0x109986: main (principal.cpp:161)
+==41660==  If you believe this happened as a result of a stack
+==41660==  overflow in your program's main thread (unlikely but
+==41660==  possible), you can try to increase the size of the
+==41660==  main thread stack using the --main-stacksize= flag.
+==41660==  The main thread stack size used in this run was 8388608.
+1>#  implementar primeroEnCadena cadenaSiguiente.
+2>#  cadena vacía.
+3>La cantidad es 0.
+4>5 no está en la cadena.
+5>
+6>
+7>timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault

@@ -1,0 +1,28 @@
+==41865== Invalid read of size 8
+==41865==    at 0x10A07D: cadenaSiguiente(_rep_cadena*) (cadena.cpp:109)
+==41865==    by 0x10A1BE: cadenaDeColCadenas(unsigned int, _rep_colCadenas*) (colCadenas.cpp:31)
+==41865==    by 0x109A8E: main (principal.cpp:178)
+==41865==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==41865== 
+==41865== 
+==41865== Process terminating with default action of signal 11 (SIGSEGV)
+==41865==  Access not within mapped region at address 0x10
+==41865==    at 0x10A07D: cadenaSiguiente(_rep_cadena*) (cadena.cpp:109)
+==41865==    by 0x10A1BE: cadenaDeColCadenas(unsigned int, _rep_colCadenas*) (colCadenas.cpp:31)
+==41865==    by 0x109A8E: main (principal.cpp:178)
+==41865==  If you believe this happened as a result of a stack
+==41865==  overflow in your program's main thread (unlikely but
+==41865==  possible), you can try to increase the size of the
+==41865==  main thread stack using the --main-stacksize= flag.
+==41865==  The main thread stack size used in this run was 8388608.
+1>La cantidad en la cadena 0 es 0.
+2>Se insertó (3,3.00) en la cadena 9.
+3>3 no está en la cadena 1.
+4>La cadena 1 es :==41865== 40 (24 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 3
+==41865==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==41865==    by 0x109F44: insertarAlInicio(unsigned int, double, _rep_cadena*) (cadena.cpp:66)
+==41865==    by 0x10A254: insertarEnColCadenas(unsigned int, double, unsigned int, _rep_colCadenas*) (colCadenas.cpp:47)
+==41865==    by 0x109BE9: main (principal.cpp:198)
+==41865== 
+timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault
