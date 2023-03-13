@@ -1,4 +1,4 @@
-/* 1234567 */
+/* 5124352 */
 /*
   Módulo de implementación de 'utils'.
 
@@ -8,24 +8,27 @@
 
 #include "../include/utils.h"
 
-nat leerNat() {
+nat leerNat()
+{
     nat res;
     scanf("%u", &res);
     return res;
 }
 
-char leerChar() {
+char leerChar()
+{
     char res;
     scanf(" %c", &res);
     return res;
 }
 
-double leerDouble() {
+double leerDouble()
+{
     double res;
     scanf("%lf", &res);
     return res;
 }
 
-void leerChars(char* cs) { scanf("%s", cs); }
+void leerChars(char *cs) { scanf("%s", cs); }
 
-void leerRestoLinea(char* cs) { scanf("%[^\n]", cs); }
+void leerRestoLinea(char *cs) { scanf("%[^\n]", cs); }
