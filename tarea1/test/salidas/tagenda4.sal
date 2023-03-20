@@ -1,0 +1,14 @@
+11,20c11
+< 17>La nueva fecha del evento 1 pospuesto 3 dias es: 25/3/2023
+< 18>Evento 2:  Descripcion dos
+< Fecha: 23/3/2023
+< Evento 3:  Descripcion tres
+< Fecha: 24/3/2023
+< Evento 1:  Descripcion uno
+< Fecha: 25/3/2023
+< Evento 4:  Descripcion cuatro
+< Fecha: 1/4/2023
+< 19>20>Fin.
+---
+> 17>
+\ No hay ningún carácter de nueva línea al final del archivo
