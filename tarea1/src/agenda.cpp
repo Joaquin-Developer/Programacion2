@@ -105,8 +105,53 @@ TEvento obtenerDeAgenda(TAgenda agenda, int id)
     return res;
 }
 
+// Funcion auxiliar para a partir de un id, obtengo el indice donde se ubica en el Array agenda
+// PRE: El evento debe estar en la agenda
+int obtenerIndiceEnArray(TAgenda agenda, int id)
+{
+    int indice = -1;
+    nat i = 0;
+
+    while (indice == -1 && i < tamanioAgenda(agenda))
+    {
+        if (idTEvento((*agenda).lista[i]) == id)
+            indice = i;
+        i++;
+    }
+    return indice;
+}
+
 void posponerEnAgenda(TAgenda &agenda, int id, nat n)
 {
+    TEvento evento = obtenerDeAgenda(agenda, id);
+    posponerTEvento(evento, n);
+
+    int indiceActual = obtenerIndiceEnArray(agenda, id);
+
+    // calculo el índice de donde voy a tener que insertarlo:
+    int indiceInsertar = -1;
+
+    // si fecha evento a mover es mayor a ultima fecha, entonces muevo al final.
+    if (compararTFechas(fechaTEvento(evento), fechaTEvento((*agenda).lista[tamanioAgenda(agenda) - 1])) == 1)
+        indiceInsertar = tamanioAgenda(agenda);
+    else
+    {
+        nat i = indiceActual;
+        while (indiceInsertar == -1 && i < tamanioAgenda(agenda))
+        {
+            // si fecha actual >= fecha evento mover, entonces muevo a indice actual.
+            if (compararTFechas(fechaTEvento((*agenda).lista[0]), fechaTEvento(evento)) >= 0)
+                indiceInsertar = i;
+            i++;
+        }
+    }
+
+    for (int i = indiceActual; i <= indiceInsertar - 1; i++)
+    {
+        (*agenda).lista[i] = (*agenda).lista[i + 1];
+    }
+
+    (*agenda).lista[indiceInsertar] = evento;
 }
 
 void imprimirEventosFecha(TAgenda agenda, TFecha fecha)
@@ -151,8 +196,10 @@ bool hayEventosFecha(TAgenda agenda, TFecha fecha)
 
 void removerDeAgenda(TAgenda &agenda, int id)
 {
-    /************ Parte 5.8 ************/
-    /*Escriba el código a continuación */
+    int indiceBorrar = obtenerIndiceEnArray(agenda, id);
 
-    /****** Fin de parte Parte 5.8 *****/
+    for (int i = indiceBorrar; i < tamanioAgenda(agenda); i--)
+        (*agenda).lista[i] = (*agenda).lista[i + 1];
+
+    (*agenda).tope--;
 }

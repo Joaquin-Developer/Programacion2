@@ -63,9 +63,5 @@ TFecha fechaTEvento(TEvento evento)
 
 void posponerTEvento(TEvento &evento, int dias)
 {
-    /************ Parte 4.5 ************/
-    /*Escriba el código a continuación */
-
-    /****** Fin de parte Parte 4.5 *****/
     aumentarTFecha(evento->fecha, dias);
 }
