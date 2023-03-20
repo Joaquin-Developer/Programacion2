@@ -1,0 +1,75 @@
+0a1,40
+> ==66623== Invalid read of size 8
+> ==66623==    at 0x10A3AF: aumentarTFecha(rep_fecha*&, unsigned int) (fecha.cpp:57)
+> ==66623==    by 0x10A6CF: posponerTEvento(rep_evento*&, int) (evento.cpp:66)
+> ==66623==    by 0x10AB7E: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:133)
+> ==66623==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+> ==66623==    by 0x1096E2: main (principal.cpp:150)
+> ==66623==  Address 0x4dbe2c8 is 104 bytes inside a block of size 112 free'd
+> ==66623==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==66623==    by 0x10A65F: liberarTEvento(rep_evento*&) (evento.cpp:41)
+> ==66623==    by 0x10AD99: removerDeAgenda(rep_agenda*&, int) (agenda.cpp:237)
+> ==66623==    by 0x10AB6D: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:131)
+> ==66623==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+> ==66623==    by 0x1096E2: main (principal.cpp:150)
+> ==66623==  Block was alloc'd at
+> ==66623==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==66623==    by 0x10A567: crearTEvento(int, char const*, rep_fecha*) (evento.cpp:12)
+> ==66623==    by 0x109ADE: main_crearEvento(rep_evento*&, rep_fecha*&) (principal.cpp:229)
+> ==66623==    by 0x1094DE: main (principal.cpp:113)
+> ==66623== 
+> ==66623== Invalid read of size 4
+> ==66623==    at 0x10A3B2: aumentarTFecha(rep_fecha*&, unsigned int) (fecha.cpp:57)
+> ==66623==    by 0x10A6CF: posponerTEvento(rep_evento*&, int) (evento.cpp:66)
+> ==66623==    by 0x10AB7E: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:133)
+> ==66623==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+> ==66623==    by 0x1096E2: main (principal.cpp:150)
+> ==66623==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+> ==66623== 
+> ==66623== 
+> ==66623== Process terminating with default action of signal 11 (SIGSEGV)
+> ==66623==  Access not within mapped region at address 0x0
+> ==66623==    at 0x10A3B2: aumentarTFecha(rep_fecha*&, unsigned int) (fecha.cpp:57)
+> ==66623==    by 0x10A6CF: posponerTEvento(rep_evento*&, int) (evento.cpp:66)
+> ==66623==    by 0x10AB7E: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:133)
+> ==66623==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+> ==66623==    by 0x1096E2: main (principal.cpp:150)
+> ==66623==  If you believe this happened as a result of a stack
+> ==66623==  overflow in your program's main thread (unlikely but
+> ==66623==  possible), you can try to increase the size of the
+> ==66623==  main thread stack using the --main-stacksize= flag.
+> ==66623==  The main thread stack size used in this run was 8388608.
+11,40c51,52
+< 17>La nueva fecha del evento 2 pospuesto 15 dias es: 7/4/2023
+< 18>Evento 1:  Descripcion uno
+< Fecha: 22/3/2023
+< Evento 3:  Descripcion tres
+< Fecha: 24/3/2023
+< Evento 4:  Descripcion cuatro
+< Fecha: 1/4/2023
+< Evento 2:  Descripcion dos
+< Fecha: 7/4/2023
+< 19>#  posponer evento 3 treinta dias.
+< 20>La nueva fecha del evento 3 pospuesto 30 dias es: 23/4/2023
+< 21>Evento 1:  Descripcion uno
+< Fecha: 22/3/2023
+< Evento 4:  Descripcion cuatro
+< Fecha: 1/4/2023
+< Evento 2:  Descripcion dos
+< Fecha: 7/4/2023
+< Evento 3:  Descripcion tres
+< Fecha: 23/4/2023
+< 22>#  posponer evento 4 cincuenta dias (y vuelve al orden original).
+< 23>La nueva fecha del evento 4 pospuesto 50 dias es: 21/5/2023
+< 24>Evento 1:  Descripcion uno
+< Fecha: 22/3/2023
+< Evento 2:  Descripcion dos
+< Fecha: 7/4/2023
+< Evento 3:  Descripcion tres
+< Fecha: 23/4/2023
+< Evento 4:  Descripcion cuatro
+< Fecha: 21/5/2023
+< 25>26>Fin.
+---
+> 17>timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

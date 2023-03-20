@@ -1,0 +1,31 @@
+0a1,17
+> ==66635== Invalid read of size 8
+> ==66635==    at 0x10ACB9: hayEventosFecha(rep_agenda*, rep_fecha*) (agenda.cpp:218)
+> ==66635==    by 0x10A053: main_hayEventosFechaAgenda(rep_agenda*) (principal.cpp:320)
+> ==66635==    by 0x10973B: main (principal.cpp:156)
+> ==66635==  Address 0x404dbdcf8 is not stack'd, malloc'd or (recently) free'd
+> ==66635== 
+> ==66635== 
+> ==66635== Process terminating with default action of signal 11 (SIGSEGV)
+> ==66635==  Access not within mapped region at address 0x404DBDCF8
+> ==66635==    at 0x10ACB9: hayEventosFecha(rep_agenda*, rep_fecha*) (agenda.cpp:218)
+> ==66635==    by 0x10A053: main_hayEventosFechaAgenda(rep_agenda*) (principal.cpp:320)
+> ==66635==    by 0x10973B: main (principal.cpp:156)
+> ==66635==  If you believe this happened as a result of a stack
+> ==66635==  overflow in your program's main thread (unlikely but
+> ==66635==  possible), you can try to increase the size of the
+> ==66635==  main thread stack using the --main-stacksize= flag.
+> ==66635==  The main thread stack size used in this run was 8388608.
+3,11c20,21
+< 19>No se encontraron eventos en la fecha determinada.
+< 20>#  Hay tres eventos fecha.
+< 21>Evento 5:  Descripcion cinco
+< Fecha: 23/3/2023
+< Evento 3:  Descripcion tres
+< Fecha: 23/3/2023
+< Evento 2:  Descripcion dos
+< Fecha: 23/3/2023
+< 22>23>Fin.
+---
+> 19>timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

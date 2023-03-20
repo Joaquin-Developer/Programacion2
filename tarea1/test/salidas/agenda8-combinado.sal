@@ -1,0 +1,63 @@
+==66655== Invalid read of size 8
+==66655==    at 0x10A3AF: aumentarTFecha(rep_fecha*&, unsigned int) (fecha.cpp:57)
+==66655==    by 0x10A6CF: posponerTEvento(rep_evento*&, int) (evento.cpp:66)
+==66655==    by 0x10AB7E: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:133)
+==66655==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+==66655==    by 0x1096E2: main (principal.cpp:150)
+==66655==  Address 0x4dbe2c8 is 104 bytes inside a block of size 112 free'd
+==66655==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==66655==    by 0x10A65F: liberarTEvento(rep_evento*&) (evento.cpp:41)
+==66655==    by 0x10AD99: removerDeAgenda(rep_agenda*&, int) (agenda.cpp:237)
+==66655==    by 0x10AB6D: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:131)
+==66655==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+==66655==    by 0x1096E2: main (principal.cpp:150)
+==66655==  Block was alloc'd at
+==66655==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==66655==    by 0x10A567: crearTEvento(int, char const*, rep_fecha*) (evento.cpp:12)
+==66655==    by 0x109ADE: main_crearEvento(rep_evento*&, rep_fecha*&) (principal.cpp:229)
+==66655==    by 0x1094DE: main (principal.cpp:113)
+==66655== 
+==66655== Invalid read of size 4
+==66655==    at 0x10A3B2: aumentarTFecha(rep_fecha*&, unsigned int) (fecha.cpp:57)
+==66655==    by 0x10A6CF: posponerTEvento(rep_evento*&, int) (evento.cpp:66)
+==66655==    by 0x10AB7E: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:133)
+==66655==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+==66655==    by 0x1096E2: main (principal.cpp:150)
+==66655==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==66655== 
+==66655== 
+==66655== Process terminating with default action of signal 11 (SIGSEGV)
+==66655==  Access not within mapped region at address 0x0
+==66655==    at 0x10A3B2: aumentarTFecha(rep_fecha*&, unsigned int) (fecha.cpp:57)
+==66655==    by 0x10A6CF: posponerTEvento(rep_evento*&, int) (evento.cpp:66)
+==66655==    by 0x10AB7E: posponerEnAgenda(rep_agenda*&, int, unsigned int) (agenda.cpp:133)
+==66655==    by 0x109F72: main_posponerEnAgenda(rep_agenda*&) (principal.cpp:306)
+==66655==    by 0x1096E2: main (principal.cpp:150)
+==66655==  If you believe this happened as a result of a stack
+==66655==  overflow in your program's main thread (unlikely but
+==66655==  possible), you can try to increase the size of the
+==66655==  main thread stack using the --main-stacksize= flag.
+==66655==  The main thread stack size used in this run was 8388608.
+1>2>#  se crean 10 eventos para ingresarlos a la agenda.
+3>4>5>6>7>8>9>10>11>12>13>14>15>16>17>18>19>20>21>22>23>24>25>26>27>28>29>30>31>32>33>Evento 8:  Descripcion ocho
+Fecha: 1/1/1900
+Evento 10:  Descripcion diez
+Fecha: 10/2/2023
+Evento 1:  Descripcion uno
+Fecha: 22/3/2023
+Evento 5:  Descripcion cinco
+Fecha: 23/3/2023
+Evento 3:  Descripcion tres
+Fecha: 23/3/2023
+Evento 2:  Descripcion dos
+Fecha: 23/3/2023
+Evento 4:  Descripcion cuatro
+Fecha: 1/4/2023
+Evento 6:  Descripcion seis
+Fecha: 23/10/2023
+Evento 7:  Descripcion siete
+Fecha: 30/10/2023
+Evento 9:  Descripcion nueve
+Fecha: 1/12/2500
+34>timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault
