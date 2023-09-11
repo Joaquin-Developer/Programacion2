@@ -22,31 +22,56 @@ void agregarEnTPartida(TPartida &partida, TJugada jugada)
     // si recibimos una partida NULL o si no tiene jugadas, insertamos nuevaPartida en la pos. 1 de la Lista
     if (partida == NULL || partida->jugada == NULL)
     {
-        nuevaPartida->sig = partida;
+        nuevaPartida->sig = NULL;
         partida = nuevaPartida;
     }
     else
     {
         TPartida actual = partida;
 
-        if (actual->sig != NULL)
-            printf("no es null el sig\n");
-        else
-            printf("SI es null el sig\n");
-
-        while (actual->sig != NULL)
+        TPartida x = partida;
+        while (x != NULL)
         {
-            if (numeroTJugada(jugada) > numeroTJugada(actual->sig->jugada))
-            {
-                printf("%i\n", numeroTJugada(actual->sig->jugada));
-                actual = actual->sig;
-            }
-            else
-                break;
+            printf("L");
+            x = x->sig;
         }
 
-        nuevaPartida->sig = actual->sig;
-        actual->sig = nuevaPartida;
+        if (actual->sig == NULL)
+        {
+            printf("act->sig == NULL\n");
+            // lista con 1 solo elemento
+            if (numeroTJugada(jugada) > numeroTJugada(actual->jugada))
+            {
+                // insertar al final
+                printf("insertar al final\n");
+                partida->sig = nuevaPartida;
+            }
+            else
+            {
+                // insertar al comienzo
+                printf("insertar al comienzo\n");
+                partida = nuevaPartida;
+                nuevaPartida->sig = actual;
+            }
+        }
+        else
+        {
+            // lista con mas de 1 elemento
+            printf("L con elementos > 1\n");
+            while (actual->sig != NULL)
+            {
+                TPartida siguiente = actual->sig;
+                if (numeroTJugada(actual->jugada) < numeroTJugada(jugada) && numeroTJugada(jugada) < numeroTJugada(siguiente->jugada))
+                {
+                    printf("inserto entre medio de actual y siguiente\n");
+                    // si actual < jugada < siguiente => inserto entre medio de actual y siguiente
+                    nuevaPartida->sig = siguiente;
+                    actual->sig = nuevaPartida;
+                    return;
+                }
+                actual = actual->sig;
+            }
+        }
     }
 }
 
@@ -65,10 +90,10 @@ void liberarTPartida(TPartida &partida)
 {
     while (partida != NULL)
     {
-        TPartida siguiente = partida->sig;
-        liberarTJugada(partida->jugada);
-        delete partida;
-        partida = siguiente;
+        TPartida aux = partida;
+        partida = partida->sig;
+        liberarTJugada(aux->jugada);
+        delete aux;
     }
 }
 
