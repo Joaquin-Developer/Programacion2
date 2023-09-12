@@ -35,48 +35,52 @@ void imprimirTJugador(TJugador jugador)
 
 nat idTJugador(TJugador jugador)
 {
-    return 0;
+    return jugador->id;
 }
 
 nat edadTJugador(TJugador jugador)
 {
-    return 0;
+    return jugador->edad;
 }
 
 char *nombreTJugador(TJugador jugador)
 {
-    return NULL;
+    return jugador->nombre;
 }
 
 char *paisTJugador(TJugador jugador)
 {
-    return NULL;
+    return jugador->pais;
 }
 
 TPartida partidaTJugador(TJugador jugador)
 {
-    return NULL;
+    return jugador->partida;
 }
 
 void agregarJugadaATJugador(TJugador &jugador, TJugada jugada)
 {
+    agregarEnTPartida(jugador->partida, jugada);
 }
 
 void removerJugadaDeTJugador(TJugador &jugador, int numeroDeJugada)
 {
+    removerDeTPartida(jugador->partida, numeroDeJugada);
 }
 
 bool estaEnPartidaDeTJugador(TJugador jugador, int numeroDeJugada)
 {
-    return false;
+    return estaEnTPartida(jugador->partida, numeroDeJugada);
 }
 
 TJugada obtenerDePartidaDeTJugador(TJugador jugador, int numeroDeJugada)
 {
-    return NULL;
+    return obtenerDeTPartida(jugador->partida, numeroDeJugada);
 }
 
 TJugador copiarTJugador(TJugador jugador)
 {
-    return NULL;
+    TPartida copiaPartida = copiarTPartida(jugador->partida);
+    TJugador copia = crearTJugador(jugador->id, jugador->edad, jugador->pais, jugador->nombre, copiaPartida);
+    return copia;
 }
