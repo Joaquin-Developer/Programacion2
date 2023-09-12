@@ -8,11 +8,6 @@ struct rep_partida
 
 TPartida crearTPartida()
 {
-    // TPartida partida = new rep_partida;
-    // // partida->jugada = NULL;
-    // // partida->sig = NULL;
-    // // partida = NULL;
-    // return partida;
     return NULL;
 }
 
@@ -123,41 +118,32 @@ void imprimirJugadasConMovimiento(TPartida partida, int pos, Movimiento mov)
     }
 }
 
-// void removerDeTPartida(TPartida &partida, int numeroDeJugada)
-// {
-// }
 void removerDeTPartida(TPartida &partida, int numeroDeJugada)
 {
-    if (partida == NULL)
-    {
-        // La partida está vacía, no hay nada que eliminar
-        return;
-    }
-
-    // Verificar si la primera jugada debe ser eliminada
+    // jugadas contiguas al comienzo:
     while (partida != NULL && numeroTJugada(partida->jugada) == numeroDeJugada)
     {
-        TPartida temp = partida;
+        TPartida borrar = partida;
         partida = partida->sig;
-        delete temp;
+        liberarTJugada(borrar->jugada);
+        delete borrar;
     }
 
-    // Recorrer la lista para eliminar jugadas intermedias o finales
-    TPartida anterior = partida;
-    TPartida actual = partida->sig;
+    if (partida == NULL)
+        return;
 
-    while (actual != NULL)
+    // jugadas intermedias o finales:
+    TPartida aux = partida;
+    while (aux->sig != NULL)
     {
-        if (numeroTJugada(actual->jugada) == numeroDeJugada)
-        {
-            anterior->sig = actual->sig;
-            delete actual;
-            actual = anterior->sig;
-        }
+        if (numeroTJugada(aux->sig->jugada) != numeroDeJugada)
+            aux = aux->sig;
         else
         {
-            anterior = actual;
-            actual = actual->sig;
+            TPartida borrar = aux->sig;
+            aux->sig = borrar->sig;
+            liberarTJugada(borrar->jugada);
+            delete borrar;
         }
     }
 }
