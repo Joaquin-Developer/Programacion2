@@ -8,72 +8,108 @@ struct rep_partida
 
 TPartida crearTPartida()
 {
-    TPartida partida = new rep_partida;
-    partida->jugada = NULL;
-    partida->sig = NULL;
-    return partida;
+    // TPartida partida = new rep_partida;
+    // // partida->jugada = NULL;
+    // // partida->sig = NULL;
+    // // partida = NULL;
+    // return partida;
+    return NULL;
 }
 
 void agregarEnTPartida(TPartida &partida, TJugada jugada)
 {
-    TPartida nuevaPartida = crearTPartida();
-    nuevaPartida->jugada = jugada;
+    TPartida nuevo = new rep_partida;
+    nuevo->jugada = jugada;
 
-    // si recibimos una partida NULL o si no tiene jugadas, insertamos nuevaPartida en la pos. 1 de la Lista
-    if (partida == NULL || partida->jugada == NULL)
+    if (partida == NULL)
     {
-        nuevaPartida->sig = NULL;
-        partida = nuevaPartida;
+        nuevo->sig = partida;
+        partida = nuevo;
+        return;
+    }
+    else if (numeroTJugada(partida->jugada) >= numeroTJugada(jugada))
+    {
+        nuevo->sig = partida;
+        partida = nuevo;
     }
     else
     {
-        TPartida actual = partida;
-
-        TPartida x = partida;
-        while (x != NULL)
-        {
-            printf("L");
-            x = x->sig;
-        }
-
-        if (actual->sig == NULL)
-        {
-            printf("act->sig == NULL\n");
-            // lista con 1 solo elemento
-            if (numeroTJugada(jugada) > numeroTJugada(actual->jugada))
-            {
-                // insertar al final
-                printf("insertar al final\n");
-                partida->sig = nuevaPartida;
-            }
-            else
-            {
-                // insertar al comienzo
-                printf("insertar al comienzo\n");
-                partida = nuevaPartida;
-                nuevaPartida->sig = actual;
-            }
-        }
-        else
-        {
-            // lista con mas de 1 elemento
-            printf("L con elementos > 1\n");
-            while (actual->sig != NULL)
-            {
-                TPartida siguiente = actual->sig;
-                if (numeroTJugada(actual->jugada) < numeroTJugada(jugada) && numeroTJugada(jugada) < numeroTJugada(siguiente->jugada))
-                {
-                    printf("inserto entre medio de actual y siguiente\n");
-                    // si actual < jugada < siguiente => inserto entre medio de actual y siguiente
-                    nuevaPartida->sig = siguiente;
-                    actual->sig = nuevaPartida;
-                    return;
-                }
-                actual = actual->sig;
-            }
-        }
+        TPartida aux = partida;
+        while (aux->sig != NULL && numeroTJugada(aux->sig->jugada) < numeroTJugada(jugada))
+            aux = aux->sig;
+        nuevo->sig = aux->sig;
+        aux->sig = nuevo;
     }
+
+    // if (partida == NULL || numeroTJugada(partida->jugada) >= numeroTJugada(jugada))
+    // {
+    //     nuevo->sig = partida;
+    //     partida = nuevo;
+    // }
+    // else
+    // {
+    //     TPartida aux = partida;
+    //     while (aux->sig != NULL && numeroTJugada(aux->sig->jugada) < numeroTJugada(jugada))
+    //         aux = aux->sig;
+    //     nuevo->sig = aux->sig;
+    //     aux->sig = nuevo;
+    // }
 }
+
+// void agregarEnTPartidaV2(TPartida &partida, TJugada jugada)
+// {
+//     TPartida nuevaPartida = crearTPartida();
+//     nuevaPartida->jugada = jugada;
+
+//     // si recibimos una partida NULL o si no tiene jugadas, insertamos nuevaPartida en la pos. 1 de la Lista
+//     if (partida == NULL || partida->jugada == NULL)
+//     {
+//         nuevaPartida->sig = NULL;
+//         partida = nuevaPartida;
+//     }
+//     else
+//     {
+//         TPartida actual = partida;
+
+//         if (actual->sig == NULL)
+//         {
+//             printf("act->sig == NULL\n");
+//             // lista con 1 solo elemento
+//             if (numeroTJugada(jugada) > numeroTJugada(actual->jugada))
+//             {
+//                 // insertar al final
+//                 partida->sig = nuevaPartida;
+//             }
+//             else
+//             {
+//                 // insertar al comienzo
+//                 partida = nuevaPartida;
+//                 nuevaPartida->sig = actual;
+//             }
+//         }
+//         else
+//         {
+//             // lista con mas de 1 elemento
+//             printf("\nLista con elementos > 1\n");
+//             while (actual->sig != NULL)
+//             {
+//                 TPartida siguiente = actual->sig;
+
+//                 printf("(%i, %i)\n", numeroTJugada(actual->jugada), numeroTJugada(actual->sig->jugada));
+
+//                 if (numeroTJugada(actual->jugada) < numeroTJugada(jugada) && numeroTJugada(jugada) < numeroTJugada(siguiente->jugada))
+//                 {
+//                     printf("inserto entre medio de actual y siguiente\n");
+//                     // si actual < jugada < siguiente => inserto entre medio de actual y siguiente
+//                     nuevaPartida->sig = siguiente;
+//                     actual->sig = nuevaPartida;
+//                     return;
+//                 }
+//                 actual = actual->sig;
+//             }
+//         }
+//     }
+// }
 
 void imprimirTPartida(TPartida partida)
 {
