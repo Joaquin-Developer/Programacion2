@@ -82,11 +82,32 @@ TPartida copiarTPartida(TPartida partida)
 
 bool estaEnTPartida(TPartida partida, int numeroDeJugada)
 {
+    if (partida == NULL)
+        return false;
+
+    TPartida aux = partida;
+    while (aux != NULL)
+    {
+        if (numeroTJugada(aux->jugada) == numeroDeJugada)
+            return true;
+        aux = aux->sig;
+    }
     return false;
 }
 
 TJugada obtenerDeTPartida(TPartida partida, int numeroDeJugada)
 {
+    if (partida == NULL)
+        return NULL;
+
+    TPartida aux = partida;
+    while (aux != NULL)
+    {
+        if (numeroTJugada(aux->jugada) == numeroDeJugada)
+            return aux->jugada;
+        aux = aux->sig;
+    }
+
     return NULL;
 }
 
