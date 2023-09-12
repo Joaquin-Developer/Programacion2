@@ -117,13 +117,47 @@ void imprimirJugadasConMovimiento(TPartida partida, int pos, Movimiento mov)
 
     while (aux != NULL)
     {
-        if (tieneMovimientoEnPosTJugada(aux->jugada, pos, mov))
+        if (tieneMovimientoEnPosTJugada(aux->jugada, pos - 1, mov))
             imprimirTJugada(aux->jugada);
-
         aux = aux->sig;
     }
 }
 
+// void removerDeTPartida(TPartida &partida, int numeroDeJugada)
+// {
+// }
 void removerDeTPartida(TPartida &partida, int numeroDeJugada)
 {
+    if (partida == NULL)
+    {
+        // La partida está vacía, no hay nada que eliminar
+        return;
+    }
+
+    // Verificar si la primera jugada debe ser eliminada
+    while (partida != NULL && numeroTJugada(partida->jugada) == numeroDeJugada)
+    {
+        TPartida temp = partida;
+        partida = partida->sig;
+        delete temp;
+    }
+
+    // Recorrer la lista para eliminar jugadas intermedias o finales
+    TPartida anterior = partida;
+    TPartida actual = partida->sig;
+
+    while (actual != NULL)
+    {
+        if (numeroTJugada(actual->jugada) == numeroDeJugada)
+        {
+            anterior->sig = actual->sig;
+            delete actual;
+            actual = anterior->sig;
+        }
+        else
+        {
+            anterior = actual;
+            actual = actual->sig;
+        }
+    }
 }
