@@ -1,0 +1,128 @@
+0a1,17
+> ==958625== Invalid read of size 4
+> ==958625==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+> ==958625==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+> ==958625==    by 0x109F7E: main (principal.cpp:363)
+> ==958625==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+> ==958625== 
+> ==958625== 
+> ==958625== Process terminating with default action of signal 11 (SIGSEGV)
+> ==958625==  Access not within mapped region at address 0x4
+> ==958625==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+> ==958625==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+> ==958625==    by 0x109F7E: main (principal.cpp:363)
+> ==958625==  If you believe this happened as a result of a stack
+> ==958625==  overflow in your program's main thread (unlikely but
+> ==958625==  possible), you can try to increase the size of the
+> ==958625==  main thread stack using the --main-stacksize= flag.
+> ==958625==  The main thread stack size used in this run was 8388608.
+4,103c21,28
+< Jugador 1:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< 9>#  -- Segundo jugador Roberto 5 --.
+< 10>11>12>13>14>#  -- Tercer jugador Luis 7 --.
+< 15>16>17>18>19>#  arbol con 3 elementos - maxId 7.
+< 20>El jugador con mayor id en el árbol es: 
+< Jugador 7:  Luis, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Izquierda Izquierda 
+< 21>#  -- Cuarto jugador Andres 8 --.
+< 22>23>24>25>26>#  -- Quinto jugador Emilia 2 --.
+< 27>28>29>30>31>#  -- Sexto jugador Ines 10 --.
+< 32>33>34>35>36>#  -- Septimo jugador Isabel 3 --.
+< 37>38>39>40>41>#  arbol con 7 elementos - maxId 10.
+< 42>El jugador con mayor id en el árbol es: 
+< Jugador 10:  Ines, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Arriba Arriba 
+< 43>#  arbol con 7 elementos.
+< 44>Jugador 1:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< Jugador 2:  Emmilia, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 3:  Isabel, Uruguay, 26 años
+< Jugada: 1 
+< Movimientos: Abajo Abajo Abajo Abajo 
+< Jugador 5:  Roberto, Brasil, 19 años
+< Jugada: 1 
+< Movimientos: Abajo Arriba Izquierda Derecha 
+< Jugador 7:  Luis, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Izquierda Izquierda 
+< Jugador 8:  Andres, Uruguay, 19 años
+< Jugada: 1 
+< Movimientos: Arriba Arriba Arriba Arriba 
+< Jugador 10:  Ines, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Arriba Arriba 
+< 45>#  remuevo la persona 3.
+< 46>47>Jugador 1:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< Jugador 2:  Emmilia, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 5:  Roberto, Brasil, 19 años
+< Jugada: 1 
+< Movimientos: Abajo Arriba Izquierda Derecha 
+< Jugador 7:  Luis, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Izquierda Izquierda 
+< Jugador 8:  Andres, Uruguay, 19 años
+< Jugada: 1 
+< Movimientos: Arriba Arriba Arriba Arriba 
+< Jugador 10:  Ines, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Arriba Arriba 
+< 48>#  remuevo la persona 2.
+< 49>50>Jugador 1:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< Jugador 5:  Roberto, Brasil, 19 años
+< Jugada: 1 
+< Movimientos: Abajo Arriba Izquierda Derecha 
+< Jugador 7:  Luis, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Izquierda Izquierda 
+< Jugador 8:  Andres, Uruguay, 19 años
+< Jugada: 1 
+< Movimientos: Arriba Arriba Arriba Arriba 
+< Jugador 10:  Ines, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Arriba Arriba 
+< 51>#  remuevo la persona 10.
+< 52>53>#  arbol con 4 elementos - maxId 8.
+< 54>El jugador con mayor id en el árbol es: 
+< Jugador 8:  Andres, Uruguay, 19 años
+< Jugada: 1 
+< Movimientos: Arriba Arriba Arriba Arriba 
+< 55>#  -- Quinto jugador Augusto 30 --.
+< 56>57>58>59>60>La cantidad de jugadores en el árbol es: 5.
+< 61>Jugador 1:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< Jugador 5:  Roberto, Brasil, 19 años
+< Jugada: 1 
+< Movimientos: Abajo Arriba Izquierda Derecha 
+< Jugador 7:  Luis, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Izquierda Izquierda 
+< Jugador 8:  Andres, Uruguay, 19 años
+< Jugada: 1 
+< Movimientos: Arriba Arriba Arriba Arriba 
+< Jugador 30:  Augusto, Uruguay, 26 años
+< Jugada: 1 
+< Movimientos: Izquierda Izquierda Arriba Abajo 
+< 62>63>Fin.
+---
+> ==958625== 252 (216 direct, 36 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+> ==958625==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==958625==    by 0x10CCE8: crearTJugador(unsigned int, unsigned int, char const*, char const*, rep_partida*) (jugador.cpp:14)
+> ==958625==    by 0x10ABFF: main_crearJugador(rep_jugador*&, rep_partida*&) (principal.cpp:621)
+> ==958625==    by 0x109885: main (principal.cpp:237)
+> ==958625== 
+> timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

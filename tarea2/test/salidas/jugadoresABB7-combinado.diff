@@ -1,0 +1,43 @@
+3c3
+< 8>El árbol de jugadores es perfecto.
+---
+> 8>El árbol de jugadores NO es perfecto.
+9c9
+< 30>La altura del árbol de jugadores es: 3.
+---
+> 30>La altura del árbol de jugadores es: 0.
+12c12
+< 34>La altura del árbol de jugadores es: 3.
+---
+> 34>La altura del árbol de jugadores es: 0.
+17c17
+< 40>La cantidad de jugadores en el árbol es: 3.
+---
+> 40>La cantidad de jugadores en el árbol es: 0.
+19c19
+< 42>La altura del árbol de jugadores es: 2.
+---
+> 42>La altura del árbol de jugadores es: 0.
+21c21
+< 44>El árbol de jugadores es perfecto.
+---
+> 44>El árbol de jugadores NO es perfecto.
+25c25
+< 56>La altura del árbol de jugadores es: 4.
+---
+> 56>La altura del árbol de jugadores es: 0.
+31c31
+< 64>La cantidad de jugadores en el árbol es: 3.
+---
+> 64>La cantidad de jugadores en el árbol es: 0.
+33c33
+< 66>El árbol de jugadores es perfecto.
+---
+> 66>El árbol de jugadores NO es perfecto.
+34a35,40
+> ==958876== 1,764 (1,512 direct, 252 indirect) bytes in 7 blocks are definitely lost in loss record 3 of 3
+> ==958876==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==958876==    by 0x10CCE8: crearTJugador(unsigned int, unsigned int, char const*, char const*, rep_partida*) (jugador.cpp:14)
+> ==958876==    by 0x10ABFF: main_crearJugador(rep_jugador*&, rep_partida*&) (principal.cpp:621)
+> ==958876==    by 0x109885: main (principal.cpp:237)
+> ==958876== 

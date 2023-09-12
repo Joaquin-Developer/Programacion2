@@ -1,0 +1,77 @@
+0a1,17
+> ==958842== Invalid read of size 4
+> ==958842==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+> ==958842==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+> ==958842==    by 0x109F7E: main (principal.cpp:363)
+> ==958842==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+> ==958842== 
+> ==958842== 
+> ==958842== Process terminating with default action of signal 11 (SIGSEGV)
+> ==958842==  Access not within mapped region at address 0x4
+> ==958842==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+> ==958842==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+> ==958842==    by 0x109F7E: main (principal.cpp:363)
+> ==958842==  If you believe this happened as a result of a stack
+> ==958842==  overflow in your program's main thread (unlikely but
+> ==958842==  possible), you can try to increase the size of the
+> ==958842==  main thread stack using the --main-stacksize= flag.
+> ==958842==  The main thread stack size used in this run was 8388608.
+6,54c23,30
+< Jugador 5:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< 11>#  -- Segundo jugador Roberto 10 --.
+< 12>13>14>15>16>#  -- Tercer jugador Luis 2 --.
+< 17>18>19>20>21>#  arbol con 3 elementos max Id 10.
+< 22>El jugador con mayor id en el árbol es: 
+< Jugador 10:  Roberto, Brasil, 19 años
+< Jugada: 1 
+< Movimientos: Abajo Arriba Izquierda Derecha 
+< 23>#  arbol con mayores a 20 - 2 elementos.
+< 24>Jugador 2:  Luis, Uruguay, 23 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 5:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< 25>#  -- Cuarto jugador Andres 20 --.
+< 26>27>28>29>30>#  -- Quinto jugador Emilia 7 --.
+< 31>32>33>34>35>#  -- Sexto jugador Ines 1 --.
+< 36>37>38>39>40>#  -- Septimo jugador Isabel 3 --.
+< 41>42>43>44>45>#  arbol con mayores a 22 - 4 elementos.
+< 46>Jugador 2:  Luis, Uruguay, 23 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 3:  Isabel, Uruguay, 33 años
+< Jugada: 1 
+< Movimientos: Abajo Abajo Abajo Abajo 
+< Jugador 7:  Emmilia, Uruguay, 77 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 20:  Andres, Uruguay, 200 años
+< Jugada: 1 
+< Movimientos: Arriba Arriba Arriba Arriba 
+< 47>#  remuevo la persona 20.
+< 48>49>#  remuevo la persona 5.
+< 50>51>#  remuevo la persona 2.
+< 52>53>#  -- jugador Erika 4 --.
+< 54>55>56>57>58>#  arbol con mayores a 22 - 3 elementos.
+< 59>Jugador 3:  Isabel, Uruguay, 33 años
+< Jugada: 1 
+< Movimientos: Abajo Abajo Abajo Abajo 
+< Jugador 4:  Isabel, Uruguay, 44 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 7:  Emmilia, Uruguay, 77 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< 60>61>Fin.
+---
+> ==958842== 252 (216 direct, 36 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+> ==958842==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==958842==    by 0x10CCE8: crearTJugador(unsigned int, unsigned int, char const*, char const*, rep_partida*) (jugador.cpp:14)
+> ==958842==    by 0x10ABFF: main_crearJugador(rep_jugador*&, rep_partida*&) (principal.cpp:621)
+> ==958842==    by 0x109885: main (principal.cpp:237)
+> ==958842== 
+> timeout: la orden monitorizada ha volcado un 'core'
+> Segmentation fault

@@ -80,6 +80,8 @@ void aumentarTFecha(TFecha &fecha, nat dias)
 }
 
 // Función para comparar dos fechas representadas por objetos de tipo TFecha
+// Si fecha1 es mayor que fecha2 retorna 1, si es menor retorna -1,
+// si son iguales retorna 0
 int compararTFechas(TFecha fecha1, TFecha fecha2)
 {
     if ((fecha1->anio > fecha2->anio) || (fecha1->anio == fecha2->anio && fecha1->mes > fecha2->mes) || (fecha1->anio == fecha2->anio && fecha1->mes == fecha2->mes && fecha1->dia > fecha2->dia))

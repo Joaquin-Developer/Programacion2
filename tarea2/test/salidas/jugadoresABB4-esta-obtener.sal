@@ -1,0 +1,16 @@
+1>2>#  -- Primer jugador Juan 1 --.
+3>4>5>6>7>#  -- Segundo jugador Roberto 2 --.
+8>9>10>11>12>#  -- Tercer jugador Luis 3 --.
+13>14>15>16>17>La jugador con id 3 NO está en el árbol de jugadores.
+18>La jugador con id 5 NO está en el árbol de jugadores.
+19>La jugador con id 2 NO está en el árbol de jugadores.
+20>La jugador con id 0 NO está en el árbol de jugadores.
+21>La jugador con id 3 NO está en el árbol de jugadores.
+22>La jugador con id 1 NO está en el árbol de jugadores.
+23>24>Fin.
+==958650== 756 (648 direct, 108 indirect) bytes in 3 blocks are definitely lost in loss record 3 of 3
+==958650==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==958650==    by 0x10CCE8: crearTJugador(unsigned int, unsigned int, char const*, char const*, rep_partida*) (jugador.cpp:14)
+==958650==    by 0x10ABFF: main_crearJugador(rep_jugador*&, rep_partida*&) (principal.cpp:621)
+==958650==    by 0x109885: main (principal.cpp:237)
+==958650== 

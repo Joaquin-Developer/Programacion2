@@ -1,0 +1,7 @@
+1,2c1,3
+< 1>2>Bien.
+< 3>4>Fin.
+---
+> principal: principal.cpp:706: void main_liberarListaJugadores(rep_jugadoresLDE*&): Assertion `listaJugadores != NULL' failed.
+> timeout: la orden monitorizada ha volcado un 'core'
+> Aborted

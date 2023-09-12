@@ -1,0 +1,28 @@
+==958625== Invalid read of size 4
+==958625==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+==958625==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+==958625==    by 0x109F7E: main (principal.cpp:363)
+==958625==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==958625== 
+==958625== 
+==958625== Process terminating with default action of signal 11 (SIGSEGV)
+==958625==  Access not within mapped region at address 0x4
+==958625==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+==958625==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+==958625==    by 0x109F7E: main (principal.cpp:363)
+==958625==  If you believe this happened as a result of a stack
+==958625==  overflow in your program's main thread (unlikely but
+==958625==  possible), you can try to increase the size of the
+==958625==  main thread stack using the --main-stacksize= flag.
+==958625==  The main thread stack size used in this run was 8388608.
+1>2>#  -- Primer jugador Juan 1 --.
+3>4>5>6>7>#  arbol con 1 elemento.
+8>El jugador con mayor id en el árbol es: 
+==958625== 252 (216 direct, 36 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+==958625==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==958625==    by 0x10CCE8: crearTJugador(unsigned int, unsigned int, char const*, char const*, rep_partida*) (jugador.cpp:14)
+==958625==    by 0x10ABFF: main_crearJugador(rep_jugador*&, rep_partida*&) (principal.cpp:621)
+==958625==    by 0x109885: main (principal.cpp:237)
+==958625== 
+timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault
