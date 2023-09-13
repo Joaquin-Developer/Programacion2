@@ -56,11 +56,19 @@ void liberarTJugadoresABB(TJugadoresABB &jugadoresABB)
 
 void imprimirTJugadoresABB(TJugadoresABB jugadoresABB)
 {
+    if (jugadoresABB == NULL)
+        return;
+
+    imprimirTJugadoresABB(jugadoresABB->izq);
+    imprimirTJugador(jugadoresABB->jugador);
+    imprimirTJugadoresABB(jugadoresABB->der);
 }
 
 nat cantidadTJugadoresABB(TJugadoresABB jugadoresABB)
 {
-    return 0;
+    if (jugadoresABB == NULL)
+        return 0;
+    return 1 + cantidadTJugadoresABB(jugadoresABB->izq) + cantidadTJugadoresABB(jugadoresABB->der);
 }
 
 TJugador maxIdJugador(TJugadoresABB jugadoresABB)
