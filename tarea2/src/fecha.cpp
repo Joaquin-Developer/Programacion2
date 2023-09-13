@@ -19,8 +19,11 @@ TFecha crearTFecha(nat dia, nat mes, nat anio)
 // Función para liberar un objeto de tipo TFecha previamente creado
 void liberarTFecha(TFecha &fecha)
 {
-    delete fecha;
-    fecha = NULL;
+    if (fecha != NULL)
+    {
+        delete fecha;
+        fecha = NULL;
+    }
 }
 
 // Función para imprimir una fecha representada por un objeto de tipo TFecha

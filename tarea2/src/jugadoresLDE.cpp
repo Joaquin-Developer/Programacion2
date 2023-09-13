@@ -16,12 +16,14 @@ struct rep_jugadoresLDE
 {
     NDJugador primero;
     NDJugador ultimo;
+    nat tamanio;
 };
 
 TJugadoresLDE crearTJugadoresLDE()
 {
     TJugadoresLDE lista = new rep_jugadoresLDE;
     lista->primero = lista->ultimo = NULL;
+    lista->tamanio = 0;
     return lista;
 }
 
@@ -30,46 +32,87 @@ void insertarTJugadoresLDE(TJugadoresLDE &jugadores, TJugador &jugador, TFecha &
     NDJugador insertar = new rep_nodo_jugadores;
     insertar->fecha = fecha;
     insertar->jugador = jugador;
+    insertar->ant = NULL;
+    insertar->sig = NULL;
 
-    // caso 1 - LDE vacia
+    // Caso 1 - Lista vacía
     if (jugadores->primero == NULL && jugadores->ultimo == NULL)
     {
-        insertar->ant = NULL;
-        insertar->sig = NULL;
         jugadores->primero = insertar;
         jugadores->ultimo = insertar;
+        jugadores->tamanio = 1;
         return;
     }
 
-    // caso 2 - LDE con 1 elemento
+    // Caso 2 - Lista con un elemento
     if (jugadores->primero == jugadores->ultimo)
     {
-        // fecha insertar >= fecha primer elemento => inserto al comienzo de la lista
-        if (compararTFechas(insertar->fecha, jugadores->primero->fecha) >= 0)
+        // comparo la fecha de insertar con la fecha del único elemento en la lista.
+        int comparacion = compararTFechas(insertar->fecha, jugadores->primero->fecha);
+
+        if (comparacion == -1)
         {
+            // Insertar al comienzo de la lista.
+            insertar->sig = jugadores->primero;
+            jugadores->primero->ant = insertar;
             jugadores->primero = insertar;
-            insertar->ant = NULL;
-            insertar->sig = jugadores->ultimo;
-            jugadores->ultimo->ant = insertar;
         }
         else
         {
-            // si no, inserto al final de la lista
+            // Insertar al final de la lista.
+            jugadores->ultimo->sig = insertar;
+            insertar->ant = jugadores->ultimo;
             jugadores->ultimo = insertar;
-            insertar->sig = NULL;
-            insertar->ant = jugadores->primero;
-            jugadores->primero->sig = insertar;
         }
+        jugadores->tamanio = 2;
         return;
     }
 
-    // caso 3 - Genérico (len(lista) > 1)
-
+    // Caso 3 - Lista con más de un elemento
     NDJugador aux = jugadores->primero;
+
+    // Comparar la fecha de insertar con la fecha del primer elemento.
+    int comparacion = compararTFechas(insertar->fecha, aux->fecha);
+
+    if (comparacion < 0)
+    {
+        // Insertar al comienzo de la lista.
+        insertar->sig = aux;
+        aux->ant = insertar;
+        jugadores->primero = insertar;
+        jugadores->tamanio++;
+        return;
+    }
 
     while (aux->sig != NULL)
     {
+        if (compararTFechas(insertar->fecha, aux->sig->fecha) >= 0)
+            aux = aux->sig; // Avanzar al siguiente nodo.
+        else
+        {
+            // Insertar antes del nodo siguiente.
+            insertar->sig = aux->sig;
+            insertar->ant = aux;
+            aux->sig->ant = insertar;
+            aux->sig = insertar;
+            jugadores->tamanio++;
+            return;
+        }
     }
+
+    // Si llegamos aquí, insertar al final de la lista.
+    jugadores->ultimo->sig = insertar;
+    insertar->ant = jugadores->ultimo;
+    jugadores->ultimo = insertar;
+    jugadores->tamanio++;
+}
+
+void liberarNDJugador(NDJugador &nodo)
+{
+    liberarTFecha(nodo->fecha);
+    liberarTJugador(nodo->jugador);
+    delete nodo;
+    nodo = NULL;
 }
 
 void liberarTJugadoresLDE(TJugadoresLDE &jugadoresLDE)
@@ -79,9 +122,7 @@ void liberarTJugadoresLDE(TJugadoresLDE &jugadoresLDE)
     {
         borrar = jugadoresLDE->primero;
         jugadoresLDE->primero = jugadoresLDE->primero->sig;
-        liberarTFecha(borrar->fecha);
-        liberarTJugador(borrar->jugador);
-        delete borrar;
+        liberarNDJugador(borrar);
     }
     delete jugadoresLDE;
     jugadoresLDE = NULL;
@@ -90,12 +131,13 @@ void liberarTJugadoresLDE(TJugadoresLDE &jugadoresLDE)
 void imprimirMayorAMenorTJugadoresLDE(TJugadoresLDE jugadores)
 {
     // recorro lista de fin a principio
-    NDJugador aux = jugadores->primero;
+    NDJugador aux = jugadores->ultimo;
 
     while (aux != NULL)
     {
         imprimirTJugador(aux->jugador);
-        aux = aux->sig;
+        imprimirTFecha(aux->fecha);
+        aux = aux->ant;
     }
 }
 
@@ -107,13 +149,14 @@ void imprimirMenorAMayorTJugadoresLDE(TJugadoresLDE jugadores)
     while (aux != NULL)
     {
         imprimirTJugador(aux->jugador);
-        aux = aux->ant;
+        imprimirTFecha(aux->fecha);
+        aux = aux->sig;
     }
 }
 
 nat cantidadTJugadoresLDE(TJugadoresLDE jugadores)
 {
-    return 0;
+    return jugadores->tamanio;
 }
 
 void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
