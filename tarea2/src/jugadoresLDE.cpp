@@ -47,21 +47,21 @@ void insertarTJugadoresLDE(TJugadoresLDE &jugadores, TJugador &jugador, TFecha &
     // Caso 2 - Lista con un elemento
     if (jugadores->primero == jugadores->ultimo)
     {
-        // comparo la fecha de insertar con la fecha del único elemento en la lista.
         if (compararTFechas(insertar->fecha, jugadores->primero->fecha) == -1)
         {
-            // si fecha_insertar es menor que fecha de elemento, inserto al comienzo de la lista.
-            insertar->sig = jugadores->primero;
-            jugadores->primero->ant = insertar;
-            jugadores->primero = insertar;
-        }
-        else
-        {
-            // si fecha_insertar es mayor o igual, inserto al final de la lista.
+            // si fecha insertar es menor que fecha lista, inserto al final
             jugadores->ultimo->sig = insertar;
             insertar->ant = jugadores->ultimo;
             jugadores->ultimo = insertar;
         }
+        else
+        {
+            /// si fecha insertar es mayor o igual que fecha lista, inserto al comienzo
+            insertar->sig = jugadores->primero;
+            jugadores->primero->ant = insertar;
+            jugadores->primero = insertar;
+        }
+
         jugadores->tamanio = 2;
         return;
     }
@@ -70,7 +70,7 @@ void insertarTJugadoresLDE(TJugadoresLDE &jugadores, TJugador &jugador, TFecha &
     NDJugador aux = jugadores->primero;
 
     // Comparar la fecha de insertar con la fecha del primer elemento:
-    if (compararTFechas(insertar->fecha, aux->fecha) < 0)
+    if (compararTFechas(insertar->fecha, aux->fecha) >= 0)
     {
         // Insertar al comienzo de la lista.
         insertar->sig = aux;
@@ -126,19 +126,6 @@ void liberarTJugadoresLDE(TJugadoresLDE &jugadoresLDE)
 
 void imprimirMayorAMenorTJugadoresLDE(TJugadoresLDE jugadores)
 {
-    // recorro lista de fin a principio
-    NDJugador aux = jugadores->ultimo;
-
-    while (aux != NULL)
-    {
-        imprimirTJugador(aux->jugador);
-        imprimirTFecha(aux->fecha);
-        aux = aux->ant;
-    }
-}
-
-void imprimirMenorAMayorTJugadoresLDE(TJugadoresLDE jugadores)
-{
     // recorro lista de principio a fin
     NDJugador aux = jugadores->primero;
 
@@ -150,23 +137,25 @@ void imprimirMenorAMayorTJugadoresLDE(TJugadoresLDE jugadores)
     }
 }
 
+void imprimirMenorAMayorTJugadoresLDE(TJugadoresLDE jugadores)
+{
+    // recorro lista de fin a principio
+    NDJugador aux = jugadores->ultimo;
+
+    while (aux != NULL)
+    {
+        imprimirTJugador(aux->jugador);
+        imprimirTFecha(aux->fecha);
+        aux = aux->ant;
+    }
+}
+
 nat cantidadTJugadoresLDE(TJugadoresLDE jugadores)
 {
     return jugadores->tamanio;
 }
 
-// void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
-// {
-//     if (jugadores->primero == NULL && jugadores->ultimo == NULL)
-//         return;
-//     NDJugador p = jugadores->primero;
-//     jugadores->primero = p->sig;
-//     jugadores->primero->ant = NULL;
-//     liberarNDJugador(p);
-//     jugadores->tamanio--;
-// }
-
-void eliminarFinalTJugadoresLDE(TJugadoresLDE &jugadores)
+void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
 {
     if (jugadores->primero == NULL)
         return;
@@ -190,7 +179,7 @@ void eliminarFinalTJugadoresLDE(TJugadoresLDE &jugadores)
     }
 }
 
-void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
+void eliminarFinalTJugadoresLDE(TJugadoresLDE &jugadores)
 {
     if (jugadores->ultimo == NULL)
         return;
@@ -213,17 +202,6 @@ void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
         jugadores->primero = NULL;
     }
 }
-
-// void eliminarFinalTJugadoresLDE(TJugadoresLDE &jugadores)
-// {
-//     if (jugadores->primero == NULL && jugadores->ultimo == NULL)
-//         return;
-//     NDJugador p = jugadores->ultimo;
-//     jugadores->ultimo = p->ant;
-//     jugadores->ultimo->sig = NULL;
-//     liberarNDJugador(p);
-//     jugadores->tamanio--;
-// }
 
 bool estaEnTJugadoresLDE(TJugadoresLDE jugadores, nat id)
 {
