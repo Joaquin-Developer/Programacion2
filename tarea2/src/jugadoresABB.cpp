@@ -166,12 +166,35 @@ TJugador obtenerDeTJugadoresABB(TJugadoresABB jugadoresABB, nat id)
 
 nat alturaTJugadoresABB(TJugadoresABB jugadoresABB)
 {
-    return 0;
+    if (jugadoresABB == NULL)
+        return 0;
+
+    nat alturaIzq = alturaTJugadoresABB(jugadoresABB->izq);
+    nat alturaDer = alturaTJugadoresABB(jugadoresABB->der);
+    nat maximaAlturaSubarboles;
+
+    if (alturaIzq >= alturaDer)
+        maximaAlturaSubarboles = alturaIzq;
+    else
+        maximaAlturaSubarboles = alturaDer;
+
+    return 1 + maximaAlturaSubarboles;
 }
 
 bool esPerfectoTJugadoresABB(TJugadoresABB jugadoresABB)
 {
-    return false;
+    if (jugadoresABB == NULL)
+        return true; // arbol vacio se considera perfecto
+
+    // altura de los subarboles izquierdo y derecho
+    nat alturaIzq = alturaTJugadoresABB(jugadoresABB->izq);
+    nat alturaDer = alturaTJugadoresABB(jugadoresABB->der);
+
+    if (alturaIzq != alturaDer)
+        return false;
+
+    // Verificar si los subarboles izquierdo y derecho tambien son perfectos:
+    return esPerfectoTJugadoresABB(jugadoresABB->izq) && esPerfectoTJugadoresABB(jugadoresABB->der);
 }
 
 TJugadoresABB mayoresTJugadoresABB(TJugadoresABB jugadoresABB, nat edad)
