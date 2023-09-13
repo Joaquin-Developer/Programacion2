@@ -48,18 +48,16 @@ void insertarTJugadoresLDE(TJugadoresLDE &jugadores, TJugador &jugador, TFecha &
     if (jugadores->primero == jugadores->ultimo)
     {
         // comparo la fecha de insertar con la fecha del único elemento en la lista.
-        int comparacion = compararTFechas(insertar->fecha, jugadores->primero->fecha);
-
-        if (comparacion == -1)
+        if (compararTFechas(insertar->fecha, jugadores->primero->fecha) == -1)
         {
-            // Insertar al comienzo de la lista.
+            // si fecha_insertar es menor que fecha de elemento, inserto al comienzo de la lista.
             insertar->sig = jugadores->primero;
             jugadores->primero->ant = insertar;
             jugadores->primero = insertar;
         }
         else
         {
-            // Insertar al final de la lista.
+            // si fecha_insertar es mayor o igual, inserto al final de la lista.
             jugadores->ultimo->sig = insertar;
             insertar->ant = jugadores->ultimo;
             jugadores->ultimo = insertar;
@@ -71,10 +69,8 @@ void insertarTJugadoresLDE(TJugadoresLDE &jugadores, TJugador &jugador, TFecha &
     // Caso 3 - Lista con más de un elemento
     NDJugador aux = jugadores->primero;
 
-    // Comparar la fecha de insertar con la fecha del primer elemento.
-    int comparacion = compararTFechas(insertar->fecha, aux->fecha);
-
-    if (comparacion < 0)
+    // Comparar la fecha de insertar con la fecha del primer elemento:
+    if (compararTFechas(insertar->fecha, aux->fecha) < 0)
     {
         // Insertar al comienzo de la lista.
         insertar->sig = aux;
@@ -159,13 +155,75 @@ nat cantidadTJugadoresLDE(TJugadoresLDE jugadores)
     return jugadores->tamanio;
 }
 
-void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
-{
-}
+// void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
+// {
+//     if (jugadores->primero == NULL && jugadores->ultimo == NULL)
+//         return;
+//     NDJugador p = jugadores->primero;
+//     jugadores->primero = p->sig;
+//     jugadores->primero->ant = NULL;
+//     liberarNDJugador(p);
+//     jugadores->tamanio--;
+// }
 
 void eliminarFinalTJugadoresLDE(TJugadoresLDE &jugadores)
 {
+    if (jugadores->primero == NULL)
+        return;
+
+    NDJugador borrar = jugadores->primero;
+    jugadores->primero = borrar->sig;
+    if (jugadores->primero != NULL)
+    {
+        // Si todavía hay elementos en la lista, actualiza el puntero 'ant' del nuevo primero.
+        jugadores->primero->ant = NULL;
+    }
+
+    // Libera la memoria del jugador y su partida
+    liberarNDJugador(borrar);
+    jugadores->tamanio--;
+
+    if (jugadores->primero == NULL)
+    {
+        // La lista está vacía después de la eliminación, actualiza el último puntero.
+        jugadores->ultimo = NULL;
+    }
 }
+
+void eliminarInicioTJugadoresLDE(TJugadoresLDE &jugadores)
+{
+    if (jugadores->ultimo == NULL)
+        return;
+
+    NDJugador borrar = jugadores->ultimo;
+    jugadores->ultimo = borrar->ant;
+    if (jugadores->ultimo != NULL)
+    {
+        // Si todavía hay elementos en la lista, actualiza el puntero 'sig' del nuevo último.
+        jugadores->ultimo->sig = NULL;
+    }
+
+    // Libera la memoria del jugador y su partida
+    liberarNDJugador(borrar);
+    jugadores->tamanio--;
+
+    if (jugadores->ultimo == NULL)
+    {
+        // La lista está vacía después de la eliminación, actualiza el primer puntero.
+        jugadores->primero = NULL;
+    }
+}
+
+// void eliminarFinalTJugadoresLDE(TJugadoresLDE &jugadores)
+// {
+//     if (jugadores->primero == NULL && jugadores->ultimo == NULL)
+//         return;
+//     NDJugador p = jugadores->ultimo;
+//     jugadores->ultimo = p->ant;
+//     jugadores->ultimo->sig = NULL;
+//     liberarNDJugador(p);
+//     jugadores->tamanio--;
+// }
 
 bool estaEnTJugadoresLDE(TJugadoresLDE jugadores, nat id)
 {
