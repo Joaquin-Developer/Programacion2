@@ -205,25 +205,111 @@ void eliminarFinalTJugadoresLDE(TJugadoresLDE &jugadores)
 
 bool estaEnTJugadoresLDE(TJugadoresLDE jugadores, nat id)
 {
-    return false;
+    NDJugador aux = jugadores->primero;
+    bool encontrado = false;
+
+    while (!encontrado && aux != NULL)
+    {
+        if (idTJugador(aux->jugador) == id)
+            encontrado = true;
+        aux = aux->sig;
+    }
+    return encontrado;
 }
 
 TJugador obtenerTJugadorDeTJugadoresLDE(TJugadoresLDE jugadores, nat id)
 {
-    return NULL;
+    TJugador jugador = NULL;
+    NDJugador aux = jugadores->primero;
+
+    while (jugador == NULL && aux != NULL)
+    {
+        if (idTJugador(aux->jugador) == id)
+            jugador = aux->jugador;
+        aux = aux->sig;
+    }
+    return jugador;
 }
 
 TFecha obtenerTFechaDeTJugadoresLDE(TJugadoresLDE jugadores, nat id)
 {
-    return NULL;
+    TFecha fecha = NULL;
+    NDJugador aux = jugadores->primero;
+
+    while (fecha == NULL && aux != NULL)
+    {
+        if (idTJugador(aux->jugador) == id)
+            fecha = aux->fecha;
+        aux = aux->sig;
+    }
+    return fecha;
 }
+
+// Función para obtener los jugadores en la lista de jugadores que tienen fecha igual al parametro "fecha"
+// La lista resultado debe de respetar el orden de la lista original
+// La lista resultado NO comparte memoria con la lista parametro
+// Si no hay ningun jugador con esa fecha, se devuelve la lista vacia.
+// La función es O(n*m) peor caso, donde n es la cantidad de jugadores en la lista y m es la cantidad de jugadas de la partida con mas jugadas entre todas las jugadores de la lista.
 
 TJugadoresLDE obtenerSegunTFecha(TJugadoresLDE jugadores, TFecha fecha)
 {
-    return NULL;
+    TJugadoresLDE nuevaLista = crearTJugadoresLDE();
+    NDJugador actual = jugadores->primero;
+
+    while (actual != NULL)
+    {
+        if (compararTFechas(actual->fecha, fecha) == 0)
+        {
+            TJugador copiaJugador = copiarTJugador(actual->jugador);
+            TFecha copiaFecha = copiarTFecha(fecha);
+            insertarTJugadoresLDE(nuevaLista, copiaJugador, copiaFecha);
+        }
+        actual = actual->sig;
+    }
+
+    return nuevaLista;
 }
 
 TJugadoresLDE unirTJugadoresLDE(TJugadoresLDE &jugadores1, TJugadoresLDE &jugadores2)
 {
-    return NULL;
+    TJugadoresLDE nuevaLista = crearTJugadoresLDE();
+
+    // se conectan los nodos de jugadores1 en la nueva lista
+    nuevaLista->primero = jugadores1->primero;
+    if (jugadores1->ultimo != NULL)
+    {
+        nuevaLista->ultimo = jugadores1->ultimo;
+        jugadores1->ultimo->sig = NULL; // Desconecta jugadores1 de su último nodo
+    }
+
+    // Actualiza el tamaño de nuevaLista
+    nuevaLista->tamanio = jugadores1->tamanio;
+
+    // Libera la memoria de la lista jugadores1 sin duplicar el recorrido
+    jugadores1->primero = NULL;
+    jugadores1->ultimo = NULL;
+    liberarTJugadoresLDE(jugadores1);
+
+    // Combina los nodos de jugadores2 en la nueva lista resultado
+    if (nuevaLista->ultimo != NULL)
+    {
+        nuevaLista->ultimo->sig = jugadores2->primero;
+    }
+    else
+    {
+        nuevaLista->primero = jugadores2->primero;
+    }
+    if (jugadores2->ultimo != NULL)
+    {
+        nuevaLista->ultimo = jugadores2->ultimo;
+    }
+
+    // Actualiza el tamaño de resultado
+    nuevaLista->tamanio += jugadores2->tamanio;
+
+    // Libera la memoria de la lista jugadores2 sin duplicar el recorrido
+    jugadores2->primero = NULL;
+    jugadores2->ultimo = NULL;
+    liberarTJugadoresLDE(jugadores2);
+    return nuevaLista;
 }
