@@ -1,22 +1,22 @@
 0a1,17
-> ==958842== Invalid read of size 4
-> ==958842==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
-> ==958842==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
-> ==958842==    by 0x109F7E: main (principal.cpp:363)
-> ==958842==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-> ==958842== 
-> ==958842== 
-> ==958842== Process terminating with default action of signal 11 (SIGSEGV)
-> ==958842==  Access not within mapped region at address 0x4
-> ==958842==    at 0x10CDA3: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
-> ==958842==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
-> ==958842==    by 0x109F7E: main (principal.cpp:363)
-> ==958842==  If you believe this happened as a result of a stack
-> ==958842==  overflow in your program's main thread (unlikely but
-> ==958842==  possible), you can try to increase the size of the
-> ==958842==  main thread stack using the --main-stacksize= flag.
-> ==958842==  The main thread stack size used in this run was 8388608.
-6,54c23,30
+> ==1051333== Invalid read of size 4
+> ==1051333==    at 0x10CDAF: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+> ==1051333==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+> ==1051333==    by 0x109F7E: main (principal.cpp:363)
+> ==1051333==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+> ==1051333== 
+> ==1051333== 
+> ==1051333== Process terminating with default action of signal 11 (SIGSEGV)
+> ==1051333==  Access not within mapped region at address 0x4
+> ==1051333==    at 0x10CDAF: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
+> ==1051333==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
+> ==1051333==    by 0x109F7E: main (principal.cpp:363)
+> ==1051333==  If you believe this happened as a result of a stack
+> ==1051333==  overflow in your program's main thread (unlikely but
+> ==1051333==  possible), you can try to increase the size of the
+> ==1051333==  main thread stack using the --main-stacksize= flag.
+> ==1051333==  The main thread stack size used in this run was 8388608.
+6,54c23,24
 < Jugador 5:  Juan, Uruguay, 21 años
 < Jugada: 1 
 < Movimientos: Derecha Izquierda Arriba Abajo 
@@ -67,11 +67,5 @@
 < Movimientos: Derecha Derecha Derecha Derecha 
 < 60>61>Fin.
 ---
-> ==958842== 252 (216 direct, 36 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
-> ==958842==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-> ==958842==    by 0x10CCE8: crearTJugador(unsigned int, unsigned int, char const*, char const*, rep_partida*) (jugador.cpp:14)
-> ==958842==    by 0x10ABFF: main_crearJugador(rep_jugador*&, rep_partida*&) (principal.cpp:621)
-> ==958842==    by 0x109885: main (principal.cpp:237)
-> ==958842== 
 > timeout: la orden monitorizada ha volcado un 'core'
 > Segmentation fault

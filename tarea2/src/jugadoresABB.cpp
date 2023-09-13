@@ -73,11 +73,67 @@ nat cantidadTJugadoresABB(TJugadoresABB jugadoresABB)
 
 TJugador maxIdJugador(TJugadoresABB jugadoresABB)
 {
-    return NULL;
+    if (jugadoresABB == NULL)
+        return NULL;
+
+    while (jugadoresABB->der != NULL)
+        jugadoresABB = jugadoresABB->der;
+
+    return jugadoresABB->jugador;
 }
 
 void removerTJugadoresABB(TJugadoresABB &jugadoresABB, nat id)
 {
+    if (jugadoresABB == NULL)
+        return;
+
+    if (id < idTJugador(jugadoresABB->jugador))
+    {
+        // El id a remover es menor, buscar en el subárbol izquierdo
+        removerTJugadoresABB(jugadoresABB->izq, id);
+    }
+    else if (id > idTJugador(jugadoresABB->jugador))
+    {
+        // El id a remover es mayor, buscar en el subárbol derecho
+        removerTJugadoresABB(jugadoresABB->der, id);
+    }
+    else
+    {
+        // Se encontró el jugador a eliminar
+        if (jugadoresABB->izq == NULL && jugadoresABB->der == NULL)
+        {
+            // Caso 1: El nodo es una hoja, simplemente eliminarlo
+            liberarTJugador(jugadoresABB->jugador);
+            delete jugadoresABB;
+            jugadoresABB = NULL;
+        }
+        else if (jugadoresABB->izq == NULL)
+        {
+            // Caso 2: El nodo tiene solo un hijo derecho
+            TJugadoresABB temp = jugadoresABB;
+            jugadoresABB = jugadoresABB->der;
+            liberarTJugador(temp->jugador);
+            delete temp;
+        }
+        else if (jugadoresABB->der == NULL)
+        {
+            // Caso 2: El nodo tiene solo un hijo izquierdo
+            TJugadoresABB temp = jugadoresABB;
+            jugadoresABB = jugadoresABB->izq;
+            liberarTJugador(temp->jugador);
+            delete temp;
+        }
+        else
+        {
+            // Caso 3: El nodo tiene dos hijos
+            // encontrar el nodo con el id máximo en el subárbol izquierdo:
+            TJugador maxIzq = maxIdJugador(jugadoresABB->izq);
+            // Reemplazar el contenido del nodo actual con el contenido del nodo máximo encontrado:
+            jugadoresABB->jugador = maxIzq;
+            // eliminar el nodo máximo del subárbol izquierdo:
+            removerTJugadoresABB(jugadoresABB->izq, idTJugador(maxIzq));
+        }
+    }
 }
 
 bool estaTJugadoresABB(TJugadoresABB jugadoresABB, nat id)

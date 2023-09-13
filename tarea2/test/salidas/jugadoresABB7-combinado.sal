@@ -14,7 +14,7 @@
 36>El árbol de jugadores NO es perfecto.
 37>#  remuevo la raiz, me quedo con subarbol derecho.
 38>39>#  arbol con 3 elementos.
-40>La cantidad de jugadores en el árbol es: 0.
+40>La cantidad de jugadores en el árbol es: 5.
 41>#  arbol de altura 2.
 42>La altura del árbol de jugadores es: 0.
 43>#  arbol perfecto.
@@ -28,13 +28,7 @@
 59>#  remuevo el jugador 7.
 60>61>#  remuevo el jugador 1.
 62>63>#  arbol con 3 elementos.
-64>La cantidad de jugadores en el árbol es: 0.
+64>La cantidad de jugadores en el árbol es: 7.
 65>#  arbol perfecto.
 66>El árbol de jugadores NO es perfecto.
 67>68>Fin.
-==958876== 1,764 (1,512 direct, 252 indirect) bytes in 7 blocks are definitely lost in loss record 3 of 3
-==958876==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==958876==    by 0x10CCE8: crearTJugador(unsigned int, unsigned int, char const*, char const*, rep_partida*) (jugador.cpp:14)
-==958876==    by 0x10ABFF: main_crearJugador(rep_jugador*&, rep_partida*&) (principal.cpp:621)
-==958876==    by 0x109885: main (principal.cpp:237)
-==958876== 
