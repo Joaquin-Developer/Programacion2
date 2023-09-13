@@ -138,12 +138,30 @@ void removerTJugadoresABB(TJugadoresABB &jugadoresABB, nat id)
 
 bool estaTJugadoresABB(TJugadoresABB jugadoresABB, nat id)
 {
-    return false;
+    if (jugadoresABB == NULL)
+        return false;
+
+    if (idTJugador(jugadoresABB->jugador) == id)
+        return true;
+
+    if (idTJugador(jugadoresABB->jugador) > id)
+        return estaTJugadoresABB(jugadoresABB->izq, id);
+    else
+        return estaTJugadoresABB(jugadoresABB->der, id);
 }
 
 TJugador obtenerDeTJugadoresABB(TJugadoresABB jugadoresABB, nat id)
 {
-    return NULL;
+    if (jugadoresABB == NULL)
+        return NULL;
+
+    if (idTJugador(jugadoresABB->jugador) == id)
+        return jugadoresABB->jugador;
+
+    if (idTJugador(jugadoresABB->jugador) > id)
+        return obtenerDeTJugadoresABB(jugadoresABB->izq, id);
+    else
+        return obtenerDeTJugadoresABB(jugadoresABB->der, id);
 }
 
 nat alturaTJugadoresABB(TJugadoresABB jugadoresABB)
