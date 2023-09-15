@@ -29,7 +29,7 @@ void insertarTJugadoresABB(TJugadoresABB &jugadoresABB, TJugador jugador)
     }
     // recursivamente voy iterando el arbol binario:
 
-    if (idTJugador(jugador) > idTJugador(jugadoresABB->jugador))
+    if (idTJugador(jugador) >= idTJugador(jugadoresABB->jugador))
     {
         // si el id del jugador a insertar es mayor al del nodo, inserto sobre la derecha
         insertarTJugadoresABB(jugadoresABB->der, jugador);
@@ -41,6 +41,13 @@ void insertarTJugadoresABB(TJugadoresABB &jugadoresABB, TJugador jugador)
     }
 }
 
+void liberarNodoABB(TJugadoresABB &jugadores)
+{
+    liberarTJugador(jugadores->jugador);
+    delete jugadores;
+    jugadores = NULL;
+}
+
 void liberarTJugadoresABB(TJugadoresABB &jugadoresABB)
 {
     if (jugadoresABB == NULL)
@@ -48,10 +55,7 @@ void liberarTJugadoresABB(TJugadoresABB &jugadoresABB)
 
     liberarTJugadoresABB(jugadoresABB->izq);
     liberarTJugadoresABB(jugadoresABB->der);
-
-    liberarTJugador(jugadoresABB->jugador);
-    delete jugadoresABB;
-    jugadoresABB = NULL;
+    liberarNodoABB(jugadoresABB);
 }
 
 void imprimirTJugadoresABB(TJugadoresABB jugadoresABB)
@@ -84,54 +88,61 @@ TJugador maxIdJugador(TJugadoresABB jugadoresABB)
 
 void removerTJugadoresABB(TJugadoresABB &jugadoresABB, nat id)
 {
-    if (jugadoresABB == NULL)
-        return;
-
-    if (id < idTJugador(jugadoresABB->jugador))
+    if (jugadoresABB != NULL)
     {
-        // El id a remover es menor, buscar en el subárbol izquierdo
-        removerTJugadoresABB(jugadoresABB->izq, id);
-    }
-    else if (id > idTJugador(jugadoresABB->jugador))
-    {
-        // El id a remover es mayor, buscar en el subárbol derecho
-        removerTJugadoresABB(jugadoresABB->der, id);
-    }
-    else
-    {
-        // Se encontró el jugador a eliminar
-        if (jugadoresABB->izq == NULL && jugadoresABB->der == NULL)
+        if (id < idTJugador(jugadoresABB->jugador))
         {
-            // Caso 1: El nodo es una hoja, simplemente eliminarlo
-            liberarTJugador(jugadoresABB->jugador);
-            delete jugadoresABB;
-            jugadoresABB = NULL;
-        }
-        else if (jugadoresABB->izq == NULL)
-        {
-            // Caso 2: El nodo tiene solo un hijo derecho
-            TJugadoresABB temp = jugadoresABB;
-            jugadoresABB = jugadoresABB->der;
-            liberarTJugador(temp->jugador);
-            delete temp;
-        }
-        else if (jugadoresABB->der == NULL)
-        {
-            // Caso 2: El nodo tiene solo un hijo izquierdo
-            TJugadoresABB temp = jugadoresABB;
-            jugadoresABB = jugadoresABB->izq;
-            liberarTJugador(temp->jugador);
-            delete temp;
+            // El id a remover es menor, buscar en el subárbol izquierdo
+            removerTJugadoresABB(jugadoresABB->izq, id);
         }
         else
         {
-            // Caso 3: El nodo tiene dos hijos
-            // encontrar el nodo con el id máximo en el subárbol izquierdo:
-            TJugador maxIzq = maxIdJugador(jugadoresABB->izq);
-            // Reemplazar el contenido del nodo actual con el contenido del nodo máximo encontrado:
-            jugadoresABB->jugador = maxIzq;
-            // eliminar el nodo máximo del subárbol izquierdo:
-            removerTJugadoresABB(jugadoresABB->izq, idTJugador(maxIzq));
+            if (id > idTJugador(jugadoresABB->jugador))
+            {
+                // El id a remover es mayor, buscar en el subárbol derecho
+                removerTJugadoresABB(jugadoresABB->der, id);
+            }
+            else
+            {
+                // Se encontró el jugador a eliminar
+                if (jugadoresABB->izq == NULL && jugadoresABB->der == NULL)
+                {
+                    // caso 1: el nodo es una hoja, se elimina
+                    liberarNodoABB(jugadoresABB);
+                    // liberarTJugador(jugadoresABB->jugador);
+                    // delete jugadoresABB;
+                }
+                else
+                {
+                    if (jugadoresABB->izq == NULL)
+                    {
+                        // caso 2: el nodo tiene solo un hijo derecho
+                        TJugadoresABB aux = jugadoresABB;
+                        jugadoresABB = jugadoresABB->der;
+                        liberarNodoABB(aux);
+                    }
+                    else
+                    {
+                        if (jugadoresABB->der == NULL)
+                        {
+                            // caso 3: el nodo tiene solo un hijo izquierdo
+                            TJugadoresABB aux = jugadoresABB;
+                            jugadoresABB = jugadoresABB->izq;
+                            liberarNodoABB(aux);
+                        }
+                        else
+                        {
+                            // caso 4
+                            // encontrar el nodo con el ID máximo en el subárbol izquierdo
+                            // y reemplazar el contenido del nodo actual con el contenido del nodo máximo encontrado
+                            liberarTJugador(jugadoresABB->jugador);
+                            jugadoresABB->jugador = copiarTJugador(maxIdJugador(jugadoresABB->izq));
+                            // eliminar el nodo máximo del subárbol izquierdo
+                            removerTJugadoresABB(jugadoresABB->izq, idTJugador(jugadoresABB->jugador));
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -173,7 +184,7 @@ nat alturaTJugadoresABB(TJugadoresABB jugadoresABB)
     nat alturaDer = alturaTJugadoresABB(jugadoresABB->der);
     nat maximaAlturaSubarboles;
 
-    if (alturaIzq >= alturaDer)
+    if (alturaIzq > alturaDer)
         maximaAlturaSubarboles = alturaIzq;
     else
         maximaAlturaSubarboles = alturaDer;
@@ -199,5 +210,37 @@ bool esPerfectoTJugadoresABB(TJugadoresABB jugadoresABB)
 
 TJugadoresABB mayoresTJugadoresABB(TJugadoresABB jugadoresABB, nat edad)
 {
-    return NULL;
+    TJugadoresABB resultado;
+
+    if (esVacioTJugadoresABB(jugadoresABB))
+        resultado = crearTJugadoresABB();
+    else
+    {
+        TJugadoresABB mayoresIzq = mayoresTJugadoresABB(jugadoresABB->izq, edad);
+        TJugadoresABB mayoresDer = mayoresTJugadoresABB(jugadoresABB->der, edad);
+
+        if (edadTJugador(jugadoresABB->jugador) > edad)
+        {
+            resultado = new rep_jugadoresABB;
+            resultado->jugador = copiarTJugador(jugadoresABB->jugador);
+            resultado->izq = mayoresIzq;
+            resultado->der = mayoresDer;
+        }
+        else if (esVacioTJugadoresABB(mayoresIzq))
+            resultado = mayoresDer;
+
+        else if (esVacioTJugadoresABB(mayoresDer))
+            resultado = mayoresIzq;
+
+        else
+        {
+            resultado = new rep_jugadoresABB;
+            resultado->der = mayoresDer;
+            resultado->jugador = copiarTJugador(maxIdJugador(mayoresIzq));
+            removerTJugadoresABB(mayoresIzq, idTJugador(resultado->jugador));
+            resultado->izq = mayoresIzq;
+        }
+    }
+
+    return resultado;
 }

@@ -1,0 +1,13 @@
+crearArbolJugadores
+esPerfectoArbolJugadoresTiempo 10000 2
+liberarArbolJugadores
+
+crearArbolJugadores
+esPerfectoArbolJugadoresTiempo2 10000 2
+liberarArbolJugadores
+
+crearArbolJugadores
+esPerfectoArbolJugadoresTiempo2 16383 2
+liberarArbolJugadores
+
+Fin

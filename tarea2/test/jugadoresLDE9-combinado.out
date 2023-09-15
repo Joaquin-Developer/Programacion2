@@ -86,47 +86,13 @@ Movimientos: Izquierda Izquierda Arriba Abajo
 Jugada: 3 
 Movimientos: Arriba Izquierda Izquierda Derecha 
 5/12/2022
-52>Comando no reconocido.
-53>Comando no reconocido.
-54>#  La lista queda vacía.
-55>La cantidad de jugadores en la lista es: 2.
-56>Jugador 7:  Luis, Uruguay, 21 años
-Jugada: 1 
-Movimientos: Derecha Derecha Derecha Derecha 
-Jugada: 2 
-Movimientos: Izquierda Izquierda Izquierda Izquierda 
-Jugada: 3 
-Movimientos: Izquierda Arriba Abajo Abajo 
-1/1/2023
-Jugador 5:  Roberto, Brasil, 19 años
-Jugada: 1 
-Movimientos: Abajo Arriba Izquierda Derecha 
-Jugada: 2 
-Movimientos: Izquierda Izquierda Arriba Abajo 
-Jugada: 3 
-Movimientos: Arriba Izquierda Izquierda Derecha 
-5/12/2022
-57>58>Jugador 7:  Luis, Uruguay, 21 años
-Jugada: 1 
-Movimientos: Derecha Derecha Derecha Derecha 
-Jugada: 2 
-Movimientos: Izquierda Izquierda Izquierda Izquierda 
-Jugada: 3 
-Movimientos: Izquierda Arriba Abajo Abajo 
-1/1/2023
-Jugador 5:  Roberto, Brasil, 19 años
-Jugada: 1 
-Movimientos: Abajo Arriba Izquierda Derecha 
-Jugada: 2 
-Movimientos: Izquierda Izquierda Arriba Abajo 
-Jugada: 3 
-Movimientos: Arriba Izquierda Izquierda Derecha 
-5/12/2022
-Jugador 3: Maria, Australia, 22 años
+52>53>54>#  La lista queda vacía.
+55>La cantidad de jugadores en la lista es: 0.
+56>57>58>Jugador 3: Maria, Australia, 22 años
 7/5/2002
 Jugador 2: Pedro, China, 21 años
 2/5/2002
 Jugador 1: Juan, Uruguay, 20 años
 26/1/1999
-59>La cantidad de jugadores en la lista es: 5.
+59>La cantidad de jugadores en la lista es: 3.
 60>61>Fin.

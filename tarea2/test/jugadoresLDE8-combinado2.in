@@ -1,0 +1,57 @@
+crearListaJugadores
+
+crearJugada
+1 1 2 3 4
+agregarEnPartida
+crearJugador 1 18 Uruguay Persona1
+crearFecha 18/4/2023
+insertarJugadorListaJugadores
+
+
+crearJugada
+1 4 3 2 1
+agregarEnPartida
+crearJugador 2 20 Uruguay Persona2
+crearFecha 10/3/2023
+insertarJugadorListaJugadores
+
+crearJugada
+1 1 1 3 4
+agregarEnPartida
+crearJugador 3 25 Uruguay Persona3
+crearFecha 22/4/2023
+insertarJugadorListaJugadores
+
+crearJugada
+1 1 1 3 4
+agregarEnPartida
+crearJugada
+2 1 1 2 2
+agregarEnPartida
+crearJugador 4 30 Brasil Persona4
+crearFecha 12/11/2022
+insertarJugadorListaJugadores
+
+
+imprimirCantidadListaJugadores
+imprimirListaJugadores
+
+estaEnListaJugadores 5
+estaEnListaJugadores 2
+
+eliminarInicioListaJugadores
+
+estaEnListaJugadores 3
+
+imprimirMenorAMayorTJugadoresLDE
+
+unirConVacioListaJugadores
+
+imprimirMayorAMenorTJugadoresLDE
+
+imprimirJugadorListaJugadores 1 
+imprimirJugadorListaJugadores 4
+
+liberarListaJugadores
+
+Fin

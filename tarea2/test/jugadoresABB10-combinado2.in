@@ -1,0 +1,76 @@
+crearArbolJugadores
+
+# -- primer jugador Persona1 --
+crearJugada
+1 1 2 3 4
+agregarEnPartida
+crearJugador 1 1 Uruguay Persona1
+insertarJugadorArbolJugadores
+
+
+imprimirArbolJugadores
+
+removerArbolJugadores 1
+
+estaEnArbolJugadores 1
+esVacioArbolJugadores
+
+# -- segundo jugador Persona5 --
+crearJugada
+1 1 2 3 3
+agregarEnPartida
+crearJugador 5 55 Argentina Persona5
+insertarJugadorArbolJugadores
+
+# -- tercer jugador Persona10 --
+crearJugada
+1 1 2 3 3
+agregarEnPartida
+crearJugador 10 10 Argentina Persona10
+insertarJugadorArbolJugadores
+
+# -- cuarto jugador Persona20 --
+crearJugada
+1 4 4 4 4
+agregarEnPartida
+crearJugador 20 20 Argentina Persona20
+insertarJugadorArbolJugadores
+
+# -- quinto jugador Persona15 --
+crearJugada
+1 2 2 2 2
+agregarEnPartida
+crearJugador 15 15 Argentina Persona15
+insertarJugadorArbolJugadores
+
+
+aplanarArbolJugadores
+
+removerArbolJugadores 10
+estaEnArbolJugadores 10
+
+mayoresEdadArbolJugadores 10
+
+removerArbolJugadores 20
+
+esPerfectoArbolJugadores
+
+# -- quinto jugador Persona2 --
+crearJugada
+1 2 2 2 2
+agregarEnPartida
+crearJugador 2 22 Bolivia Persona2
+insertarJugadorArbolJugadores
+
+esPerfectoArbolJugadores
+
+liberarArbolJugadores
+
+Fin
+
+
+
+
+
+
+

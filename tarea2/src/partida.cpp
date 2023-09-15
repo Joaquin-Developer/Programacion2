@@ -16,25 +16,19 @@ void agregarEnTPartida(TPartida &partida, TJugada jugada)
     TPartida nuevo = new rep_partida;
     nuevo->jugada = jugada;
 
-    if (partida == NULL)
+    // si la partida es null o si el elem actual tiene una jugada menor, inserto al final
+    if ((partida == NULL) || numeroTJugada(partida->jugada) >= numeroTJugada(jugada))
     {
         nuevo->sig = partida;
         partida = nuevo;
         return;
     }
-    else if (numeroTJugada(partida->jugada) >= numeroTJugada(jugada))
-    {
-        nuevo->sig = partida;
-        partida = nuevo;
-    }
-    else
-    {
-        TPartida aux = partida;
-        while (aux->sig != NULL && numeroTJugada(aux->sig->jugada) < numeroTJugada(jugada))
-            aux = aux->sig;
-        nuevo->sig = aux->sig;
-        aux->sig = nuevo;
-    }
+
+    TPartida aux = partida;
+    while (aux->sig != NULL && numeroTJugada(aux->sig->jugada) < numeroTJugada(jugada))
+        aux = aux->sig;
+    nuevo->sig = aux->sig;
+    aux->sig = nuevo;
 }
 
 void imprimirTPartida(TPartida partida)

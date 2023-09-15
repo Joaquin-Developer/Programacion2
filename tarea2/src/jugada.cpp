@@ -4,7 +4,7 @@
 struct rep_jugada
 {
     int numero;
-    Movimiento movimientos[4];
+    Movimiento *movimientos;
 };
 
 // Crea una jugada con los valores dados
@@ -12,7 +12,7 @@ TJugada crearTJugada(int numero, Movimiento mov1, Movimiento mov2, Movimiento mo
 {
     TJugada jugada = new rep_jugada;
     jugada->numero = numero;
-    // jugada->movimientos = new Movimiento[4];
+    jugada->movimientos = new Movimiento[4];
     jugada->movimientos[0] = mov1;
     jugada->movimientos[1] = mov2;
     jugada->movimientos[2] = mov3;
@@ -69,7 +69,7 @@ void liberarTJugada(TJugada &jugada)
 {
     if (jugada != NULL)
     {
-        // delete[] jugada->movimientos;
+        delete[] jugada->movimientos;
         delete jugada;
         jugada = NULL;
     }
@@ -81,6 +81,10 @@ TJugada copiarTJugada(TJugada jugada)
     if (jugada == NULL)
         return NULL;
 
-    Movimiento *movs = movimientoTJugada(jugada);
-    return crearTJugada(numeroTJugada(jugada), movs[0], movs[1], movs[2], movs[3]);
+    return crearTJugada(
+        numeroTJugada(jugada),
+        jugada->movimientos[0],
+        jugada->movimientos[1],
+        jugada->movimientos[2],
+        jugada->movimientos[3]);
 }

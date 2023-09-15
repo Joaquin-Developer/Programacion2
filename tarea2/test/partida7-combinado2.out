@@ -1,0 +1,29 @@
+1>2>La jugada con numero 1 NO está en la partida.
+3>4>5>La jugada con numero 1 está en la partida.
+6>7>8>9>10>11>12>Jugada: 1 
+Movimientos: Derecha Izquierda Arriba Abajo 
+Jugada: 2 
+Movimientos: Izquierda Derecha Izquierda Izquierda 
+Jugada: 3 
+Movimientos: Izquierda Arriba Abajo Abajo 
+Jugada: 4 
+Movimientos: Abajo Arriba Izquierda Derecha 
+13>#  jugadas en pos "4" con el movimiento "1".
+14>Jugada: 4 
+Movimientos: Abajo Arriba Izquierda Derecha 
+15>Jugada: 1 
+Movimientos: Derecha Izquierda Arriba Abajo 
+Jugada: 2 
+Movimientos: Izquierda Derecha Izquierda Izquierda 
+Jugada: 3 
+Movimientos: Izquierda Arriba Abajo Abajo 
+Jugada: 4 
+Movimientos: Abajo Arriba Izquierda Derecha 
+16>La jugada con numero 1 se removió de la partida.
+17>Jugada: 2 
+Movimientos: Izquierda Derecha Izquierda Izquierda 
+Jugada: 3 
+Movimientos: Izquierda Arriba Abajo Abajo 
+Jugada: 4 
+Movimientos: Abajo Arriba Izquierda Derecha 
+18>19>Fin.

@@ -1,6 +1,12 @@
 crearListaJugadores
 
-# Creamos ListaLDE de 3 jugadores
+# --- Creamos ListaLDE de 4 jugadores ---
+crearJugada
+1 1 2 3 4
+agregarEnPartida
+crearJugador 6 21 Uruguay Juan
+crearFecha 1/12/2022
+insertarJugadorListaJugadores
 
 crearJugada
 1 4 3 2 1
@@ -28,7 +34,6 @@ crearJugador 7 21 Uruguay Luis
 crearFecha 1/1/2023
 insertarJugadorListaJugadores
 
-
 crearJugada
 2 2 2 2 2 
 agregarEnPartida
@@ -39,46 +44,49 @@ crearJugada
 4 3 3 2 2
 agregarEnPartida
 crearJugador 8 21 Argentina Andres
-crearFecha 5/1/2023
+crearFecha 6/1/2023
 insertarJugadorListaJugadores
 
+# --- Fin creacion ListaLDE de jugadores (5 - 8) ---
 
-# Imprimir cantidad de jugadores
 imprimirCantidadListaJugadores
+imprimirMenorAMayorTJugadoresLDE
 
-# Imprimir lista completa
-imprimirMayorAMenorTJugadoresLDE
+estaEnListaJugadores 3
+estaEnListaJugadores 5
+estaEnListaJugadores 6
+estaEnListaJugadores 0
 
-# elimino el inicio, es decir Andres
+imprimirJugadorListaJugadores 7
+
+unirConVacioListaJugadores
+
 eliminarInicioListaJugadores
 
-# lista sin el jugador Andres
-imprimirMayorAMenorTJugadoresLDE
+imprimirCantidadListaJugadores
+imprimirMenorAMayorTJugadoresLDE
 
-# elimino el final, es decir Roberto
 eliminarFinalListaJugadores
 
-# debe quedar solo 1 jugador en la LDE
+estaEnListaJugadores 6
+
+imprimirJugadorListaJugadores 5
+
 imprimirCantidadListaJugadores
-
-# debe quedar solo la persona Luis en la lista
 imprimirMayorAMenorTJugadoresLDE
 
-# elimino el inicio, la lista queda vacia
-eliminarInicioListaJugadores
+eliminarFinalListaJugadores
+eliminarFinalListaJugadores
 
-# no se debe imprimir nada
+# La lista queda vacía
+
+imprimirCantidadListaJugadores
 imprimirMayorAMenorTJugadoresLDE
 
-crearJugada
-1 3 3 3 3
-agregarEnPartida
-crearJugador 10 17 Uruguay Pedro
-crearFecha 5/1/2023
-insertarJugadorListaJugadores
+crearYUnirListaJugadores
 
-# ahora debe haber solo 1 solo jugador en la Lista
 imprimirMayorAMenorTJugadoresLDE
+imprimirCantidadListaJugadores
 
 liberarListaJugadores
 

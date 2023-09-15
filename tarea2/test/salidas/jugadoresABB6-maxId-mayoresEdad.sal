@@ -1,24 +1,54 @@
-==1051333== Invalid read of size 4
-==1051333==    at 0x10CDAF: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
-==1051333==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
-==1051333==    by 0x109F7E: main (principal.cpp:363)
-==1051333==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-==1051333== 
-==1051333== 
-==1051333== Process terminating with default action of signal 11 (SIGSEGV)
-==1051333==  Access not within mapped region at address 0x4
-==1051333==    at 0x10CDAF: imprimirTJugador(rep_jugador*) (jugador.cpp:32)
-==1051333==    by 0x10BF92: main_maxIdJugadorArbolJugadores(rep_jugadoresABB*) (principal.cpp:954)
-==1051333==    by 0x109F7E: main (principal.cpp:363)
-==1051333==  If you believe this happened as a result of a stack
-==1051333==  overflow in your program's main thread (unlikely but
-==1051333==  possible), you can try to increase the size of the
-==1051333==  main thread stack using the --main-stacksize= flag.
-==1051333==  The main thread stack size used in this run was 8388608.
 1>2>#  arbol vacio, retorna arbol vacio.
 3>#  mayoresEdadArbolJugadores 3.
 4>#  -- Primer jugador Juan 5 --.
 5>6>7>8>9>#  arbol con 1 elemento - maxId 5.
 10>El jugador con mayor id en el árbol es: 
-timeout: la orden monitorizada ha volcado un 'core'
-Segmentation fault
+Jugador 5:  Juan, Uruguay, 21 años
+Jugada: 1 
+Movimientos: Derecha Izquierda Arriba Abajo 
+11>#  -- Segundo jugador Roberto 10 --.
+12>13>14>15>16>#  -- Tercer jugador Luis 2 --.
+17>18>19>20>21>#  arbol con 3 elementos max Id 10.
+22>El jugador con mayor id en el árbol es: 
+Jugador 10:  Roberto, Brasil, 19 años
+Jugada: 1 
+Movimientos: Abajo Arriba Izquierda Derecha 
+23>#  arbol con mayores a 20 - 2 elementos.
+24>Jugador 2:  Luis, Uruguay, 23 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 5:  Juan, Uruguay, 21 años
+Jugada: 1 
+Movimientos: Derecha Izquierda Arriba Abajo 
+25>#  -- Cuarto jugador Andres 20 --.
+26>27>28>29>30>#  -- Quinto jugador Emilia 7 --.
+31>32>33>34>35>#  -- Sexto jugador Ines 1 --.
+36>37>38>39>40>#  -- Septimo jugador Isabel 3 --.
+41>42>43>44>45>#  arbol con mayores a 22 - 4 elementos.
+46>Jugador 2:  Luis, Uruguay, 23 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 3:  Isabel, Uruguay, 33 años
+Jugada: 1 
+Movimientos: Abajo Abajo Abajo Abajo 
+Jugador 7:  Emmilia, Uruguay, 77 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 20:  Andres, Uruguay, 200 años
+Jugada: 1 
+Movimientos: Arriba Arriba Arriba Arriba 
+47>#  remuevo la persona 20.
+48>49>#  remuevo la persona 5.
+50>51>#  remuevo la persona 2.
+52>53>#  -- jugador Erika 4 --.
+54>55>56>57>58>#  arbol con mayores a 22 - 3 elementos.
+59>Jugador 3:  Isabel, Uruguay, 33 años
+Jugada: 1 
+Movimientos: Abajo Abajo Abajo Abajo 
+Jugador 4:  Isabel, Uruguay, 44 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 7:  Emmilia, Uruguay, 77 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+60>61>Fin.
