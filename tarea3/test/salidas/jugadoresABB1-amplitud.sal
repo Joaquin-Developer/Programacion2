@@ -10,10 +10,3 @@
 35>36>37>38>39>#  La maxima amplitud es 2.
 40>La amplitud del árbol es: 2.
 41>42>Fin.
-==575992== 24 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==575992==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==575992==    by 0x10FBE8: crearTColaJugadoresABB() (colaJugadoresABB.cpp:21)
-==575992==    by 0x10F8E7: amplitudTJugadoresABB(rep_jugadoresABB*) (jugadoresABB.cpp:265)
-==575992==    by 0x10C97E: main_amplitudArbolJugadores(rep_jugadoresABB*) (principal.cpp:1176)
-==575992==    by 0x10A1DC: main (principal.cpp:447)
-==575992== 
