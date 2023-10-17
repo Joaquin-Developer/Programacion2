@@ -80,7 +80,13 @@ void liberarTConjuntoIds(TConjuntoIds &c)
 
 TConjuntoIds unionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
 {
-    return NULL;
+    TConjuntoIds conjuntoUnion = crearTConjuntoIds(c1->cantidadMaxima);
+
+    for (nat i = 1; i <= c1->cantidadMaxima; i++)
+        if (perteneceTConjuntoIds(i, c1) || perteneceTConjuntoIds(i, c2))
+            insertarTConjuntoIds(i, conjuntoUnion);
+
+    return conjuntoUnion;
 };
 
 TConjuntoIds interseccionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
