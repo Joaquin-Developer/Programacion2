@@ -91,7 +91,13 @@ TConjuntoIds unionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
 
 TConjuntoIds interseccionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
 {
-    return NULL;
+    TConjuntoIds conjuntoInterseccion = crearTConjuntoIds(c1->cantidadMaxima);
+
+    for (nat i = 1; i <= c1->cantidadMaxima; i++)
+        if (perteneceTConjuntoIds(i, c1) && perteneceTConjuntoIds(i, c2))
+            insertarTConjuntoIds(i, conjuntoInterseccion);
+
+    return conjuntoInterseccion;
 };
 
 TConjuntoIds diferenciaTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
