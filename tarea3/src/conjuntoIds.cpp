@@ -1,60 +1,92 @@
 #include "../include/conjuntoIds.h"
 
-struct rep_conjuntoIds{
-
+struct rep_conjuntoIds
+{
+    nat *idJugadores;
+    nat cardinal;
+    nat cantidadMaxima;
 };
 
+TConjuntoIds crearTConjuntoIds(nat cantMax)
+{
+    TConjuntoIds conjunto = new rep_conjuntoIds;
+    conjunto->idJugadores = new nat[cantMax];
+    conjunto->cantidadMaxima = cantMax;
 
-TConjuntoIds crearTConjuntoIds(nat cantMax){
+    for (nat i = 0; i < cantMax; i++)
+        conjunto->idJugadores[i] = 0;
+
+    conjunto->cardinal = 0;
+    return conjunto;
+};
+
+bool esVacioTConjuntoIds(TConjuntoIds c)
+{
+    return c->cardinal == 0;
+};
+
+void insertarTConjuntoIds(nat id, TConjuntoIds &c)
+{
+    if (c != NULL && 0 < id && id <= c->cantidadMaxima)
+    {
+        c->idJugadores[id - 1] = 1;
+        c->cardinal++;
+    }
+};
+
+void borrarTConjuntoIds(nat id, TConjuntoIds &c)
+{
+    if (c != NULL && 0 < id && id <= c->cantidadMaxima)
+    {
+        c->idJugadores[id - 1] = 0;
+        c->cardinal--;
+    }
+};
+
+bool perteneceTConjuntoIds(nat id, TConjuntoIds c)
+{
+    return c->idJugadores[id - 1] == 1;
+};
+
+nat cardinalTConjuntoIds(TConjuntoIds c)
+{
+    return c->cardinal;
+};
+
+nat cantMaxTConjuntoIds(TConjuntoIds c)
+{
+    return c->cantidadMaxima;
+};
+
+void imprimirTConjuntoIds(TConjuntoIds c)
+{
+    for (nat i = 0; i < c->cantidadMaxima; i++)
+        if (c->idJugadores[i] == 1)
+            printf("%i ", i + 1);
+    printf("\n");
+};
+
+void liberarTConjuntoIds(TConjuntoIds &c)
+{
+    if (c != NULL)
+    {
+        delete[] c->idJugadores;
+        delete c;
+        c = NULL;
+    }
+};
+
+TConjuntoIds unionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
+{
     return NULL;
 };
 
-
-bool esVacioTConjuntoIds(TConjuntoIds c){
-    return false;
-};
-
-
-void insertarTConjuntoIds(nat id, TConjuntoIds &c){
-
-}; 
-
-void borrarTConjuntoIds(nat id, TConjuntoIds &c){
-
-};
-
-bool perteneceTConjuntoIds(nat id, TConjuntoIds c){
-    return false;
-};
-
-
-nat cardinalTConjuntoIds(TConjuntoIds c){
-    return 0;
-};
-
-nat cantMaxTConjuntoIds(TConjuntoIds c){
-    return 0;
-};
-
-void imprimirTConjuntoIds(TConjuntoIds c){
-
-};
-
-void liberarTConjuntoIds(TConjuntoIds &c){
-
-};
-
-
-
-
-TConjuntoIds unionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2){
+TConjuntoIds interseccionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
+{
     return NULL;
 };
 
-TConjuntoIds interseccionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2){
-    return NULL;
-};
-
-TConjuntoIds diferenciaTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2){
+TConjuntoIds diferenciaTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
+{
     return NULL;
 };

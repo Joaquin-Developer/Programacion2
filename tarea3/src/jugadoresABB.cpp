@@ -306,7 +306,7 @@ TPilaJugador serializarTJugadoresABB(TJugadoresABB t)
     if (t == NULL)
         return pila;
 
-    TColaJugadoresABB cola = crearTColaJugadoresABB();
+    TColaJugadoresABB cola = crearTColaJugadoresABB(); // queue auxiliar
     encolarEnTColaJugadoresABB(t, cola);
 
     while (cantidadEnTColaJugadoresABB(cola) > 0)
@@ -348,6 +348,23 @@ TPilaJugador serializarTJugadoresABB(TJugadoresABB t)
 TJugadoresABB deserializarTJugadoresABB(TPilaJugador &p)
 {
     return NULL;
+    /*
+    if (cantidadEnTPilaJugador(p) == 0)
+        return NULL;
+
+    TJugadoresABB t = crearTJugadoresABB();
+    // queue auxiliar
+    TColaJugadoresABB cola = crearTColaJugadoresABB();
+
+    while (cantidadEnTPilaJugador(p) > 0)
+    {
+        TJugador nodo = cimaDeTPilaJugador(p);
+        TJugadoresABB nodoABB = NULL;
+        encolarEnTColaJugadoresABB(nodoABB, cola);
+        desapilarDeTPilaJugador(p);
+    }
+    // seguir...
+    */
 }
 
 ///////////////////////////////////////////////////////////////////////////
