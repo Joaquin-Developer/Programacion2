@@ -301,7 +301,48 @@ nat amplitudTJugadoresABB(TJugadoresABB t)
 
 TPilaJugador serializarTJugadoresABB(TJugadoresABB t)
 {
-    return NULL;
+    TPilaJugador pila = crearTPilaJugador();
+
+    if (t == NULL)
+        return pila;
+
+    TColaJugadoresABB cola = crearTColaJugadoresABB();
+    encolarEnTColaJugadoresABB(t, cola);
+
+    while (cantidadEnTColaJugadoresABB(cola) > 0)
+    {
+        nat amplitudNivelActual = cantidadEnTColaJugadoresABB(cola);
+
+        // desencolo y encolo sub-nodos tantas veces como elementos tenga en la queue
+        for (nat i = 1; i <= amplitudNivelActual; i++)
+        {
+            TJugadoresABB nodo = frenteDeTColaJugadoresABB(cola);
+            apilarEnTPilaJugador(pila, nodo->jugador);
+
+            if (nodo->izq != NULL)
+                encolarEnTColaJugadoresABB(nodo->izq, cola);
+
+            if (nodo->der != NULL)
+                encolarEnTColaJugadoresABB(nodo->der, cola);
+
+            desencolarDeTColaJugadoresABB(cola);
+        }
+    }
+
+    liberarTColaJugadoresABB(cola);
+
+    // invierto la pila
+    TPilaJugador pilaInvertida = crearTPilaJugador();
+
+    while (cantidadEnTPilaJugador(pila) > 0)
+    {
+        TJugador nodo = cimaDeTPilaJugador(pila);
+        apilarEnTPilaJugador(pilaInvertida, nodo);
+        desapilarDeTPilaJugador(pila);
+    }
+
+    liberarTPilaJugador(pila);
+    return pilaInvertida;
 }
 
 TJugadoresABB deserializarTJugadoresABB(TPilaJugador &p)
