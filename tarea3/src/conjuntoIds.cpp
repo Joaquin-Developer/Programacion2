@@ -102,5 +102,11 @@ TConjuntoIds interseccionTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
 
 TConjuntoIds diferenciaTConjuntoIds(TConjuntoIds c1, TConjuntoIds c2)
 {
-    return NULL;
+    TConjuntoIds conjuntoDiferencia = crearTConjuntoIds(c1->cantidadMaxima);
+
+    for (nat i = 1; i <= c1->cantidadMaxima; i++)
+        if (!perteneceTConjuntoIds(i, c2))
+            insertarTConjuntoIds(i, conjuntoDiferencia);
+
+    return conjuntoDiferencia;
 };
