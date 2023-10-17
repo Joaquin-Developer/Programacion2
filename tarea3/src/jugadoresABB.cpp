@@ -257,8 +257,47 @@ TJugadoresABB mayoresTJugadoresABB(TJugadoresABB jugadoresABB, nat edad)
 
 nat amplitudTJugadoresABB(TJugadoresABB t)
 {
-    return 0;
+    if (t == NULL)
+        return 0;
+
+    nat amplitud = 1;
+
+    TColaJugadoresABB cola = crearTColaJugadoresABB();
+    encolarEnTColaJugadoresABB(t, cola);
+
+    while (cantidadEnTColaJugadoresABB(cola) > 0)
+    {
+        nat amplitudNivelActual = cantidadEnTColaJugadoresABB(cola);
+
+        if (amplitudNivelActual > amplitud)
+            amplitud = amplitudNivelActual;
+
+        // desencolo y encolo sub-nodos tantas veces como elementos tenga en la queue
+        for (nat i = 1; i <= amplitudNivelActual; i++)
+        {
+            TJugadoresABB nodo = frenteDeTColaJugadoresABB(cola);
+
+            if (nodo->izq != NULL)
+                encolarEnTColaJugadoresABB(nodo->izq, cola);
+
+            if (nodo->der != NULL)
+                encolarEnTColaJugadoresABB(nodo->der, cola);
+
+            desencolarDeTColaJugadoresABB(cola);
+        }
+    }
+
+    liberarTColaJugadoresABB(cola);
+
+    return amplitud;
 }
+
+// Función que transforma el árbol en una pila de jugadores de tipo TJugador, donde los jugadores están ordenadas como
+// en una recorrida por niveles del árbol.
+// Es decir, en la lista primero deben estar los nodos del nivel 1 (la raiz), luego los del nivel 2, etc.
+// El árbol no se debe modificar y los elementos de la pila no comparten memoria con el árbol original.
+// *REV* La funcion es O(n*m) peor caso, siendo n la cantidad de jugadores en el árbol binario y m la cantidad de
+// eventos de la agenda con mas eventos entre todas las personas del árbol.
 
 TPilaJugador serializarTJugadoresABB(TJugadoresABB t)
 {

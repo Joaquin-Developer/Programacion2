@@ -1,0 +1,5 @@
+principal: principal.cpp:1303: void main_insertarConjuntoIds(rep_conjuntoIds*&): Assertion `conjuntoIds != NULL' failed.
+1>#  crea un conjunto con rango 1..10.
+2>3>#  imprime el conjunto vacio, esto es, una linea vacia.
+4>5>timeout: la orden monitorizada ha volcado un 'core'
+Aborted

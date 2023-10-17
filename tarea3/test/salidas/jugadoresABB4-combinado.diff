@@ -1,0 +1,109 @@
+0a1
+> principal: principal.cpp:1284: void main_imprimirPila(rep_pilaJugador*&): Assertion `pilaJugadores != NULL' failed.
+6,101c7,15
+< 137>Jugador 20:  Juan, Uruguay, 20 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 12:  Rosa, Uruguay, 12 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 30:  Perez, Uruguay, 30 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 6:  Jose, Uruguay, 6 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 15:  Raul, Uruguay, 15 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 25:  Noelia, Uruguay, 25 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 35:  Nicolas, Uruguay, 35 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 3:  Sofia, Uruguay, 3 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 7:  Emiliano, Uruguay, 7 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 13:  Lucia, Uruguay, 13 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 16:  Enrique, Uruguay, 16 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 22:  Matias, Uruguay, 22 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 26:  Martin, Uruguay, 26 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 33:  Emily, Uruguay, 33 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 36:  Diego, Uruguay, 36 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 23:  Noelia, Uruguay, 23 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< 138>139>140>#  Construyo lista .
+< 141>142>143>144>145>146>147>148>149>150>151>152>153>154>155>156>157>158>159>160>161>162>163>164>165>166>167>168>169>170>171>172>173>174>175>176>177>178>179>180>181>182>183>184>185>186>187>188>189>190>191>192>193>194>195>196>197>198>199>200>201>202>203>204>205>206>207>208>209>210>211>212>213>214>215>216>#  Transformo lista en arbol.
+< 217>Jugador 3:  Sofia, Uruguay, 3 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 6:  Jose, Uruguay, 6 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 7:  Emiliano, Uruguay, 7 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 12:  Rosa, Uruguay, 12 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 13:  Lucia, Uruguay, 13 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 15:  Raul, Uruguay, 15 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 16:  Enrique, Uruguay, 16 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 20:  Juan, Uruguay, 20 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 22:  Matias, Uruguay, 22 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 25:  Noelia, Uruguay, 25 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 26:  Martin, Uruguay, 26 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 30:  Perez, Uruguay, 30 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 33:  Emily, Uruguay, 33 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 35:  Nicolas, Uruguay, 35 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 36:  Diego, Uruguay, 36 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< 218>Fin.
+---
+> 137>==576190== 24 bytes in 1 blocks are definitely lost in loss record 17 of 21
+> ==576190==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+> ==576190==    by 0x10FBE8: crearTColaJugadoresABB() (colaJugadoresABB.cpp:21)
+> ==576190==    by 0x10F8E7: amplitudTJugadoresABB(rep_jugadoresABB*) (jugadoresABB.cpp:265)
+> ==576190==    by 0x10C97E: main_amplitudArbolJugadores(rep_jugadoresABB*) (principal.cpp:1176)
+> ==576190==    by 0x10A1DC: main (principal.cpp:447)
+> ==576190== 
+> timeout: la orden monitorizada ha volcado un 'core'
+> Aborted

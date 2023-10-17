@@ -1,0 +1,5 @@
+principal: principal.cpp:1345: void main_cantMaxConjuntoIds(rep_conjuntoIds*&): Assertion `conjuntoIds != NULL' failed.
+1>#  crea un conjunto con rango 1..10.
+2>3>#  verifica cantidad máxima del conjunto (10).
+4>timeout: la orden monitorizada ha volcado un 'core'
+Aborted

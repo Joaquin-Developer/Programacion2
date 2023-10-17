@@ -1,0 +1,16 @@
+0a1
+> principal: principal.cpp:1284: void main_imprimirPila(rep_pilaJugador*&): Assertion `pilaJugadores != NULL' failed.
+16,25c17,18
+< 21>Jugador 7:  Juan, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Izquierda Arriba Abajo 
+< Jugador 2:  Luis, Uruguay, 21 años
+< Jugada: 1 
+< Movimientos: Derecha Derecha Derecha Derecha 
+< Jugador 20:  Roberto, Brasil, 19 años
+< Jugada: 1 
+< Movimientos: Abajo Arriba Izquierda Derecha 
+< 22>23>Fin.
+---
+> 21>timeout: la orden monitorizada ha volcado un 'core'
+> Aborted
