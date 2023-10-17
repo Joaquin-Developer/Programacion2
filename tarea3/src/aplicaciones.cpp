@@ -12,10 +12,7 @@ bool sumaPares(nat k, TConjuntoIds c)
         nat id1 = i;
         nat id2 = k - id1;
 
-        if (id1 == id2)
-            continue;
-
-        if (perteneceTConjuntoIds(id1, c) && perteneceTConjuntoIds(id2, c))
+        if (id1 != id2 && (perteneceTConjuntoIds(id1, c) && perteneceTConjuntoIds(id2, c)))
             return true;
     }
     return false;
