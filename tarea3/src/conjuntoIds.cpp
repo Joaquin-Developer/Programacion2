@@ -45,7 +45,9 @@ void borrarTConjuntoIds(nat id, TConjuntoIds &c)
 
 bool perteneceTConjuntoIds(nat id, TConjuntoIds c)
 {
-    return c->idJugadores[id - 1] == 1;
+    if (c != NULL && 0 < id && id <= c->cantidadMaxima)
+        return c->idJugadores[id - 1] == 1;
+    return false;
 };
 
 nat cardinalTConjuntoIds(TConjuntoIds c)
