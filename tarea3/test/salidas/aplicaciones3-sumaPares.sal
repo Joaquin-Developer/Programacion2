@@ -24,6 +24,6 @@
 30>#  Chequea si hay un par que suma 1 (da false).
 31>No existe un par de elementos en el conjunto cuya suma es 1.
 32>#  Chequea si hay un par que suma 10 (da false).
-33>Existe un par de elementos en el conjunto cuya suma es 10.
+33>No existe un par de elementos en el conjunto cuya suma es 10.
 34>#  libera el conjunto.
 35>36>Fin.

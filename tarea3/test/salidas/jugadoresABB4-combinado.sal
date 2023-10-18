@@ -53,10 +53,49 @@ Jugada: 1
 Movimientos: Derecha Derecha Derecha Derecha 
 138>139>140>#  Construyo lista .
 141>142>143>144>145>146>147>148>149>150>151>152>153>154>155>156>157>158>159>160>161>162>163>164>165>166>167>168>169>170>171>172>173>174>175>176>177>178>179>180>181>182>183>184>185>186>187>188>189>190>191>192>193>194>195>196>197>198>199>200>201>202>203>204>205>206>207>208>209>210>211>212>213>214>215>216>#  Transformo lista en arbol.
-217>218>Fin.
-==1002652== 4,216 (16 direct, 4,200 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
-==1002652==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1002652==    by 0x10FB8A: crearTPilaJugador() (pilaJugador.cpp:19)
-==1002652==    by 0x10CDB7: main_crearPilaJugadores(rep_pilaJugador*&) (principal.cpp:1254)
-==1002652==    by 0x109B11: main (principal.cpp:326)
-==1002652== 
+217>Jugador 3:  Sofia, Uruguay, 3 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 6:  Jose, Uruguay, 6 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 7:  Emiliano, Uruguay, 7 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 12:  Rosa, Uruguay, 12 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 13:  Lucia, Uruguay, 13 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 15:  Raul, Uruguay, 15 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 16:  Enrique, Uruguay, 16 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 20:  Juan, Uruguay, 20 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 22:  Matias, Uruguay, 22 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 25:  Noelia, Uruguay, 25 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 26:  Martin, Uruguay, 26 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 30:  Perez, Uruguay, 30 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 33:  Emily, Uruguay, 33 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 35:  Nicolas, Uruguay, 35 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+Jugador 36:  Diego, Uruguay, 36 años
+Jugada: 1 
+Movimientos: Derecha Derecha Derecha Derecha 
+218>Fin.

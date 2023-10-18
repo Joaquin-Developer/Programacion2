@@ -2,7 +2,38 @@
 
 TPilaJugador menoresQueElResto(TJugadoresLDE lista)
 {
-    return NULL;
+    if (lista == NULL || cantidadTJugadoresLDE(lista) == 0)
+        return NULL;
+
+    TPilaJugador pila = crearTPilaJugador();
+    TJugador inicio = obtenerInicioDeTJugadoresLDE(lista);
+    apilarEnTPilaJugador(pila, inicio);
+    eliminarInicioTJugadoresLDE(lista);
+
+    while (cantidadTJugadoresLDE(lista) > 0)
+    {
+        TJugador cimaPila = cimaDeTPilaJugador(pila);
+        TJugador inicioLDE = obtenerInicioDeTJugadoresLDE(lista);
+
+        if (edadTJugador(inicioLDE) < edadTJugador(cimaPila)) // desapilo
+            desapilarDeTPilaJugador(pila);
+        else
+        {
+            // apilo y borro primer elemento de LDE
+            apilarEnTPilaJugador(pila, inicioLDE);
+            eliminarInicioTJugadoresLDE(lista);
+        }
+
+        // si la pila quedo vacia, apilo y borro primer elem de LDE
+        if (cantidadEnTPilaJugador(pila) == 0)
+        {
+            apilarEnTPilaJugador(pila, inicioLDE);
+            eliminarInicioTJugadoresLDE(lista);
+        }
+    }
+    // liberarTJugadoresLDE(lista);
+
+    return pila;
 }
 
 bool sumaPares(nat k, TConjuntoIds c)

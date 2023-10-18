@@ -291,7 +291,9 @@ TJugadoresLDE unirTJugadoresLDE(TJugadoresLDE &jugadores1, TJugadoresLDE &jugado
 
 TJugador obtenerInicioDeTJugadoresLDE(TJugadoresLDE jugadores)
 {
-    return jugadores->primero->jugador;
+    if (jugadores != NULL || cantidadTJugadoresLDE(jugadores) > 0)
+        return jugadores->primero->jugador;
+    return NULL;
 }
 
 ///////////////////////////////////////////////////////////////////////////
