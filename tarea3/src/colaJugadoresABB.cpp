@@ -62,7 +62,9 @@ void encolarEnTColaJugadoresABB(TJugadoresABB t, TColaJugadoresABB &c)
 
 TJugadoresABB frenteDeTColaJugadoresABB(TColaJugadoresABB c)
 {
-  return c->primero->jugadoresABB;
+  if (c->primero != NULL)
+    return c->primero->jugadoresABB;
+  return NULL;
 }
 
 void desencolarDeTColaJugadoresABB(TColaJugadoresABB &c)

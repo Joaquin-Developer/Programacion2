@@ -106,7 +106,10 @@ IDS_PUBLICOS = tarea2-combinado \
 		aplicaciones2-menoresQueElResto-tiempo \
 		aplicaciones3-sumaPares
 
-IDS_PRIVADOS = 
+IDS_PRIVADOS = colaJugadoresABB3-combinado \
+			jugadoresABB6-deserializar-tiempo \
+			conjuntoIds7-combinado \
+			aplicaciones4-sumaPares-tiempo
 
 CASOS = $(IDS_PUBLICOS) $(IDS_PRIVADOS)
 

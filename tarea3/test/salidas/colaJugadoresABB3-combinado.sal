@@ -1,0 +1,67 @@
+==239679== Invalid write of size 8
+==239679==    at 0x10FF84: encolarEnTColaJugadoresABB(rep_jugadoresABB*, rep_colaJugadoresABB*&) (colaJugadoresABB.cpp:56)
+==239679==    by 0x10D58D: main_encolar(rep_colaJugadoresABB*&, rep_jugadoresABB*&) (principal.cpp:1389)
+==239679==    by 0x10A666: main (principal.cpp:526)
+==239679==  Address 0x4dc2d68 is 8 bytes inside a block of size 16 free'd
+==239679==    at 0x483D1CF: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==239679==    by 0x110030: desencolarDeTColaJugadoresABB(rep_colaJugadoresABB*&) (colaJugadoresABB.cpp:75)
+==239679==    by 0x10D66D: main_desencolar(rep_colaJugadoresABB*&) (principal.cpp:1405)
+==239679==    by 0x10A6CC: main (principal.cpp:532)
+==239679==  Block was alloc'd at
+==239679==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==239679==    by 0x10FF2A: encolarEnTColaJugadoresABB(rep_jugadoresABB*, rep_colaJugadoresABB*&) (colaJugadoresABB.cpp:47)
+==239679==    by 0x10D58D: main_encolar(rep_colaJugadoresABB*&, rep_jugadoresABB*&) (principal.cpp:1389)
+==239679==    by 0x10A666: main (principal.cpp:526)
+==239679== 
+==239679== Invalid read of size 8
+==239679==    at 0x110004: desencolarDeTColaJugadoresABB(rep_colaJugadoresABB*&) (colaJugadoresABB.cpp:73)
+==239679==    by 0x10D66D: main_desencolar(rep_colaJugadoresABB*&) (principal.cpp:1405)
+==239679==    by 0x10A6CC: main (principal.cpp:532)
+==239679==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==239679== 
+==239679== 
+==239679== Process terminating with default action of signal 11 (SIGSEGV)
+==239679==  Access not within mapped region at address 0x8
+==239679==    at 0x110004: desencolarDeTColaJugadoresABB(rep_colaJugadoresABB*&) (colaJugadoresABB.cpp:73)
+==239679==    by 0x10D66D: main_desencolar(rep_colaJugadoresABB*&) (principal.cpp:1405)
+==239679==    by 0x10A6CC: main (principal.cpp:532)
+==239679==  If you believe this happened as a result of a stack
+==239679==  overflow in your program's main thread (unlikely but
+==239679==  possible), you can try to increase the size of the
+==239679==  main thread stack using the --main-stacksize= flag.
+==239679==  The main thread stack size used in this run was 8388608.
+1>2>#  imprimo la cantidad de elementos en la cola, que debe ser 0.
+3>La cantidad de arboles de jugadores en la cola es: 0.
+4>#  creo un árbol de jugadores, inicialmente vacío.
+5>6>#  Encolo el arbol vacio recién creado.
+7>8>#  imprimo la cantidad de elementos en la cola, debe haber 1 elemento.
+9>La cantidad de arboles de jugadores en la cola es: 1.
+10>#  obtengo nuevamente el Arbol y lo desencolo.
+11>Arbol vacio
+12>13>#  imprimo la cantidad de elementos en la cola, debe haber 0 elemento.
+14>La cantidad de arboles de jugadores en la cola es: 0.
+15>#  creo e inserto 2 jugadores en el árbol.
+16>17>18>19>20>#  Encolo el arbol con dos jugadores.
+21>22>#  imprimo la cantidad de elementos en la cola, debe haber 1 elemento.
+23>La cantidad de arboles de jugadores en la cola es: 1.
+24>#  creo un árbol de jugadores, inicialmente vacío.
+25>26>#  creo e inserto 1 jugador en el árbol.
+27>28>29>#  Encolo el arbol con dos jugadores.
+30>31>#  imprimo la cantidad de elementos en la cola, debe haber 2 elementos.
+32>La cantidad de arboles de jugadores en la cola es: 2.
+33>#  creo un árbol de jugadores, inicialmente vacío.
+34>35>#  creo e inserto 1 jugador en el árbol.
+36>37>38>#  Encolo el arbol con dos jugadores.
+39>40>#  imprimo la cantidad de elementos en la cola, debe haber 3 elementos.
+41>La cantidad de arboles de jugadores en la cola es: 3.
+42>#  Obtengo el frente de la cola, es el árbol con Maria y Raul.
+43>Arbol vacio
+44>#  Elimino de la Cola el árbol con Maria y Raul.
+45>==239679== 752 (16 direct, 736 indirect) bytes in 1 blocks are definitely lost in loss record 9 of 9
+==239679==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==239679==    by 0x10FF2A: encolarEnTColaJugadoresABB(rep_jugadoresABB*, rep_colaJugadoresABB*&) (colaJugadoresABB.cpp:47)
+==239679==    by 0x10D58D: main_encolar(rep_colaJugadoresABB*&, rep_jugadoresABB*&) (principal.cpp:1389)
+==239679==    by 0x10A666: main (principal.cpp:526)
+==239679== 
+timeout: la orden monitorizada ha volcado un 'core'
+Segmentation fault
