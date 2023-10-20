@@ -26,7 +26,7 @@
 37>#  crea la interseccion entre los dos conjuntos, la imprime y la libera.
 38>9 
 39>#  crea la diferencia entre conjuntos, la imprime y la libera.
-40>2 3 5 6 7 8 10 
+40>2 5 7 
 41>#  libera el conjunto auxiliar.
 42>43>#  borra un elemento del conjunto.
 44>45>#  imprime el conjunto.

@@ -10,9 +10,9 @@
 < Bien.
 < 3>La amplitud del árbol es: 8190.
 ---
-> ERROR, tiempo excedido; 2.5 > 2 
+> ERROR, tiempo excedido; 2.2 > 2 
 > 3>La amplitud del árbol es: 1.
 9c9
 < Bien.
 ---
-> ERROR, tiempo excedido; 2.3 > 2 
+> ERROR, tiempo excedido; 2.2 > 2 
