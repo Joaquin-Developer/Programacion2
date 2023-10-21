@@ -1,6 +1,5 @@
 #include "../include/colaJugadoresABB.h"
 #include "../include/jugadoresLDE.h"
-#include <assert.h>
 
 struct rep_nodo_cola
 {
@@ -70,7 +69,6 @@ TJugadoresABB frenteDeTColaJugadoresABB(TColaJugadoresABB c)
 
 void desencolarDeTColaJugadoresABB(TColaJugadoresABB &c)
 {
-  assert(cantidadEnTColaJugadoresABB(c) > 0);
   TNodoCola borrar = c->primero;
   c->primero = c->primero->siguiente;
   c->cantidad--;
