@@ -347,17 +347,43 @@ TPilaJugador serializarTJugadoresABB(TJugadoresABB t)
 
 TJugadoresABB deserializarTJugadoresABB(TPilaJugador &p)
 {
-    TJugadoresABB t = crearTJugadoresABB();
+    if (p == NULL || cantidadEnTPilaJugador(p) == 0)
+        return NULL;
+
+    TColaJugadoresABB cola = crearTColaJugadoresABB(); // estructura auxiliar
+
+    TJugadoresABB t = new rep_jugadoresABB;
+    // caso inicial:
+    t->jugador = copiarTJugador(cimaDeTPilaJugador(p));
+    t->izq = t->der = NULL;
+    encolarEnTColaJugadoresABB(t, cola);
+    desapilarDeTPilaJugador(p);
 
     while (cantidadEnTPilaJugador(p) > 0)
     {
-        TJugador jugador = cimaDeTPilaJugador(p);
-        insertarTJugadoresABB(t, copiarTJugador(jugador));
+        TJugadoresABB pivot = frenteDeTColaJugadoresABB(cola);
+        desencolarDeTColaJugadoresABB(cola);
+
+        TJugadoresABB izquierdo = new rep_jugadoresABB;
+        izquierdo->jugador = copiarTJugador(cimaDeTPilaJugador(p));
+        izquierdo->izq = izquierdo->der = NULL;
+        pivot->izq = izquierdo;
+        encolarEnTColaJugadoresABB(izquierdo, cola);
         desapilarDeTPilaJugador(p);
+
+        if (cantidadEnTPilaJugador(p) > 0)
+        {
+            TJugadoresABB derecho = new rep_jugadoresABB;
+            derecho->jugador = copiarTJugador(cimaDeTPilaJugador(p));
+            derecho->izq = derecho->der = NULL;
+            pivot->der = derecho;
+            encolarEnTColaJugadoresABB(derecho, cola);
+            desapilarDeTPilaJugador(p);
+        }
     }
 
+    liberarTColaJugadoresABB(cola);
     liberarTPilaJugador(p);
-
     return t;
 }
 

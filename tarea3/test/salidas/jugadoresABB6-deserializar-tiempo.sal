@@ -1,10 +1,10 @@
-1>La amplitud del árbol es: 1.
+1>La amplitud del árbol es: 4096.
 La cantidad de jugadores en el árbol es: 10000.
 Bien.
-2>La amplitud del árbol es: 1.
+2>La amplitud del árbol es: 8192.
 La cantidad de jugadores en el árbol es: 16383.
-ERROR, tiempo excedido; 2.2 > 2 
-3>La amplitud del árbol es: 1.
+Bien.
+3>La amplitud del árbol es: 8190.
 La cantidad de jugadores en el árbol es: 16381.
-ERROR, tiempo excedido; 2.2 > 2 
+Bien.
 4>Fin.
