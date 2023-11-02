@@ -299,31 +299,27 @@ void eliminarJugadorConNombreTJugadoresLDE(TJugadoresLDE &jugador, const char no
 bool estaJugadorConNombreEnTJugadoresLDE(TJugadoresLDE jugador, const char nombre[100])
 {
     NDJugador aux = jugador->primero;
-    bool encontrado = false;
 
-    while (!encontrado && aux != NULL)
+    while (aux != NULL)
     {
-        // Arreglar la comparacion entre arrays de char!
-        if (nombreTJugador(aux->jugador) == nombre)
-            encontrado = true;
+        if (strcmp(nombreTJugador(aux->jugador), nombre))
+            return true;
         aux = aux->sig;
     }
-    return encontrado;
+    return false;
 }
 
 TJugador obtenerJugadorConNombreTJugadoresLDE(TJugadoresLDE jugador, const char nombre[100])
 {
-    TJugador jugadorEncontrado = NULL;
     NDJugador aux = jugador->primero;
 
-    while (jugador == NULL && aux != NULL)
+    while (aux != NULL)
     {
-        // Arreglar la comparacion entre arrays de char!
-        if (nombreTJugador(aux->jugador) == nombre)
-            jugadorEncontrado = aux->jugador;
+        if (strcmp(nombreTJugador(aux->jugador), nombre))
+            return aux->jugador;
         aux = aux->sig;
     }
-    return jugadorEncontrado;
+    return NULL;
 }
 
 ///////////////////////////////////////////////////////////////////////////
