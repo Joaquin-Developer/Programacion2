@@ -31,9 +31,8 @@ TTablaJugadores crearTTablaJugadores(int max)
 void liberarTTablaJugadores(TTablaJugadores &tabla)
 {
     for (int i = 0; i < tabla->tope; i++)
-    {
         liberarTJugadoresLDE(tabla->tabla[i]);
-    }
+
     delete[] tabla->tabla;
     delete tabla;
     tabla = NULL;
@@ -47,19 +46,20 @@ void insertarJugadorEnTabla(TTablaJugadores &tabla, TJugador jugador, TFecha fec
 
 void eliminarJugadorDeTTablaJugadores(TTablaJugadores &tabla, const char nombre[100])
 {
-    // int indice = funcionDeDispersion(nombre) % tabla->tope;
+    int indice = funcionDeDispersion(nombre) % tabla->tope;
+    eliminarJugadorConNombreTJugadoresLDE(tabla->tabla[indice], nombre);
 }
 
 bool perteneceATTablaJugadores(TTablaJugadores tabla, const char nombre[100])
 {
-    // int indice = funcionDeDispersion(nombre) % tabla->tope;
-    return false;
+    int indice = funcionDeDispersion(nombre) % tabla->tope;
+    return estaJugadorConNombreEnTJugadoresLDE(tabla->tabla[indice], nombre);
 }
 
 TJugador obtenerJugadorDeTTablaJugadores(TTablaJugadores tabla, const char nombre[100])
 {
-    // int indice = funcionDeDispersion(nombre) % tabla->tope;
-    return NULL;
+    int indice = funcionDeDispersion(nombre) % tabla->tope;
+    return obtenerJugadorConNombreTJugadoresLDE(tabla->tabla[indice], nombre);
 }
 
 void imprimirTTablaJugadores(TTablaJugadores tabla)

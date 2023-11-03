@@ -294,6 +294,38 @@ TJugador obtenerInicioDeTJugadoresLDE(TJugadoresLDE jugadores)
 
 void eliminarJugadorConNombreTJugadoresLDE(TJugadoresLDE &jugador, const char nombre[100])
 {
+    if (jugador->tamanio == 0)
+        return;
+
+    if (strcmp(nombreTJugador(jugador->primero->jugador), nombre))
+    {
+        eliminarInicioTJugadoresLDE(jugador);
+        return;
+    }
+
+    NDJugador aux = jugador->primero;
+    NDJugador anterior = NULL;
+
+    while (aux != NULL)
+    {
+        if (strcmp(nombreTJugador(aux->jugador), nombre) == 0)
+        {
+            if (anterior != NULL)
+                anterior->sig = aux->sig;
+            else
+                jugador->primero = aux->sig;
+
+            if (aux == jugador->ultimo)
+                // Si el nodo a eliminar es el último, actualiza el puntero "ultimo"
+                jugador->ultimo = anterior;
+
+            liberarNDJugador(aux);
+            jugador->tamanio--;
+            return;
+        }
+        anterior = aux;
+        aux = aux->sig;
+    }
 }
 
 bool estaJugadorConNombreEnTJugadoresLDE(TJugadoresLDE jugador, const char nombre[100])
