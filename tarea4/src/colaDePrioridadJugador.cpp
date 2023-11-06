@@ -58,6 +58,7 @@ void liberarCP(TColaDePrioridadJugador &cp)
     liberarTJugador(cp->heapJugadores[i]);
     cp->heapJugadores[i] = NULL;
     cp->cantidad--;
+    i++;
   }
 
   delete[] cp->heapJugadores;
