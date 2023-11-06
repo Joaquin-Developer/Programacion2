@@ -1,6 +1,6 @@
 
 # --------------------------------------------------------------------
-#  Makefile de tarea 2.
+#  Makefile de tarea 1.
 
 #  Laboratorio de Programación 2.
 #  InCo-FIng-UDELAR
@@ -30,9 +30,9 @@ all: principal
 # Objetivos que no son archivos.
 .PHONY: all clean_bin clean_test clean testing entrega claves
 
-ARCHIVO_ENTREGA=EntregaTarea2.tar.gz
+ARCHIVO_ENTREGA=EntregaTarea1.tar.gz
 
-ENTREGAR = fecha jugada partida jugador jugadoresLDE jugadoresABB 
+ENTREGAR = fecha evento agenda 
 
 MODULOS = $(ENTREGAR) utils
 
@@ -85,44 +85,21 @@ $(EJECUTABLE):$(ODIR)/$(PRINCIPAL).o $(OS)
 	$(LD) $(CCFLAGS) $^ -o $@
 
 # casos de prueba
-IDS_PUBLICOS = fecha1-combinado \
-		fecha2-copia \
-		jugada1-crear-imprimir-liberar \
-		jugada2-numero-movimiento \
-		jugada3-tiene-movimiento \
-		partida1-crear-agregar-imprimir-liberar \
-		partida2-crear-agregar-esVacia-copiar-imprimir-liberar \
-		partida3-esta-obtener \
-		partida4-jugadasConMovimiento \
-		partida5-remover \
-		partida6-combinado \
-		jugador1-crear-imprimir-liberar \
-		jugador2-id-edad-nombre-pais-partida \
-		jugador3-agregar-remover \
-		jugador4-esta-obtener-copia \
-		jugadoresLDE1-crear-insertar-liberar \
-		jugadoresLDE2-crear-liberar-imprimir-cantidad \
-		jugadoresLDE3-eliminarInicio-eliminarFinal \
-		jugadoresLDE4-esta-obtener \
-		jugadoresLDE5-unir \
-		jugadoresLDE6-unir-tiempo \
-		jugadoresLDE7-combinado \
-		jugadoresABB1-crear-esVacio-insertar-liberar \
-		jugadoresABB2-crear-liberar-insertar-imprimir-cantidad \
-		jugadoresABB3-maxId-remover \
-		jugadoresABB4-esta-obtener \
-		jugadoresABB5-altura-esPerfecto \
-		jugadoresABB6-maxId-mayoresEdad \
-		jugadoresABB7-combinado	
-
-IDS_PRIVADOS =  partida7-combinado2 \
-				jugadoresLDE8-combinado2 \
-				jugadoresLDE9-combinado \
-				jugadoresABB10-combinado2 \
-				jugadoresABB8-esPerfecto-tiempo \
-				jugadoresABB9-mayoresEdad-tiempo
-
-CASOS = $(IDS_PUBLICOS) $(IDS_PRIVADOS)
+CASOS = fecha1-crear-imprimir-liberar \
+	    fecha2-aumentar \
+		fecha3-comparar \
+		fecha4-combinado \
+		evento1-crear-imprimir-liberar \
+		evento2-posponer \
+		evento3-combinado \
+		agenda1-crear-agregar-imprimir-liberar \
+		agenda2-crear-agregar-imprimir-liberar \
+		agenda3-esta \
+		agenda4-obtener-posponer \
+		agenda5-obtener-posponer \
+		agenda6-hayEventosFecha-imprimirEventosFecha \
+		agenda7-remover \
+		agenda8-combinado
 
 # cadena de archivos, con directorio y extensión
 INS=$(CASOS:%=$(INDIR)/%.in)
@@ -140,7 +117,7 @@ $(SALIDADIR)/%.sal:$(INDIR)/%.in
 	fi
 
 # test de tiempo
-$(SALIDADIR)/%-tiempo.sal:$(INDIR)/%-tiempo.in
+$(SALIDADIR)/t-%.sal:$(INDIR)/t-%.in
 	-timeout 10 ./$(EJECUTABLE) < $< > $@ 2>&1
 
 %.diff:Makefile
@@ -159,23 +136,11 @@ $(SALIDADIR)%.diff: $(OUTDIR)%.out $(SALIDADIR)%.sal
 tS=$(CASOS:%=t-%)
 $(tS):$(EJECUTABLE)
 
-ttS=$(CASOS:%=tt-%)
-$(ttS):$(EJECUTABLE)
-
 # corre el ejecutable con el .in (el primer prerequisito $<) y lo guarda en un archivo temporal
 # hace el diff entre el -out (el segundo prerequisito, echo $(word 2,$^)) y el archivo temporal
 # borra el archivo temporal
 t-%:$(INDIR)/%.in $(OUTDIR)/%.out
 	@timeout 4 valgrind -q --leak-check=full ./$(EJECUTABLE) < $< > $@tmp 2>&1;  \
-	diff `echo $(word 2,$^)` $@tmp ; \
-	if [ $$? -eq 0 ];                                         \
-	then                                                      \
-		echo ---- Bien ----;                              \
-	fi;                                                       \
-	rm -f $@tmp
-
-tt-%:$(INDIR)/%.in $(OUTDIR)/%.out
-	@timeout 10 ./$(EJECUTABLE) < $< > $@tmp 2>&1;  \
 	diff `echo $(word 2,$^)` $@tmp ; \
 	if [ $$? -eq 0 ];                                         \
 	then                                                      \
@@ -197,25 +162,15 @@ testing:all $(DIFFS)
 	fi;                                                                     \
 	echo -- RESULTADO DE CADA CASO --;                                      \
 	RES=;                                                                   \
-	for id in $(IDS_PUBLICOS); do                                                    \
-		if [ 0 -eq $$(stat -c %s "$(SALIDADIR)/$${id}.diff") ];         \
+	for caso in $(CASOS); do                                                \
+		if [ 0 -eq $$(stat -c %s "$(SALIDADIR)/$${caso}.diff") ];       \
 		then                                                            \
 			RES=$${RES}1 ;                                          \
 		else                                                            \
 			RES=$${RES}0 ;                                          \
 		fi;                                                             \
-	done;                                                            \
-	RES=$${RES}-;  													\
-	for id in $(IDS_PRIVADOS); do                                                    \
-		if [ 0 -eq $$(stat -c %s "$(SALIDADIR)/$${id}.diff") ];         \
-		then                                                            \
-			RES=$${RES}1 ;                                          \
-		else                                                            \
-			RES=$${RES}0 ;                                          \
-		fi;                                                             \
-	done;                                                                  \
-	echo $${RES}                                                            \
-
+	done;                                                                   \
+	echo $${RES}
 
 # inlcuye la clave de cada archivo en $(ARCHIVO_CLAVES)
 $(ARCHIVO_CLAVES):
@@ -248,7 +203,7 @@ check-syntax:
 	gcc -o nul -S ${CHK_SOURCES}
 
 LIB = tarea.a
-$(LIB):	$(ODIR)/utils.o $(ODIR)/$(PRINCIPAL).o
+$(LIB):	$(ODIR)/utils.o $(ODIR)/info.o $(ODIR)/$(PRINCIPAL).o
 	ar -qc $@ $^	
 
 

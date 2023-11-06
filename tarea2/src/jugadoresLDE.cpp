@@ -35,8 +35,9 @@ void insertarTJugadoresLDE(TJugadoresLDE &jugadores, TJugador &jugador, TFecha &
     insertar->ant = NULL;
     insertar->sig = NULL;
 
-    // Caso 1 - Lista vacía
-    if (jugadores->primero == NULL && jugadores->ultimo == NULL)
+    NDJugador aux = jugadores->primero;
+
+    if (aux == NULL)
     {
         jugadores->primero = insertar;
         jugadores->ultimo = insertar;
@@ -44,63 +45,29 @@ void insertarTJugadoresLDE(TJugadoresLDE &jugadores, TJugador &jugador, TFecha &
         return;
     }
 
-    // Caso 2 - Lista con un elemento
-    if (jugadores->primero == jugadores->ultimo)
-    {
-        if (compararTFechas(insertar->fecha, jugadores->primero->fecha) == -1)
-        {
-            // si fecha insertar es menor que fecha lista, inserto al final
-            jugadores->ultimo->sig = insertar;
-            insertar->ant = jugadores->ultimo;
-            jugadores->ultimo = insertar;
-        }
-        else
-        {
-            /// si fecha insertar es mayor o igual que fecha lista, inserto al comienzo
-            insertar->sig = jugadores->primero;
-            jugadores->primero->ant = insertar;
-            jugadores->primero = insertar;
-        }
+    while (aux->sig != NULL && compararTFechas(fecha, aux->fecha) == -1)
+        aux = aux->sig;
 
-        jugadores->tamanio = 2;
-        return;
+    if (aux->sig == NULL && compararTFechas(fecha, aux->fecha) == -1)
+    {
+        aux->sig = insertar;
+        insertar->ant = aux;
+        jugadores->ultimo = insertar;
     }
-
-    // Caso 3 - Lista con más de un elemento
-    NDJugador aux = jugadores->primero;
-
-    // Comparar la fecha de insertar con la fecha del primer elemento:
-    if (compararTFechas(insertar->fecha, aux->fecha) >= 0)
+    else if (aux->ant == NULL)
     {
-        // Insertar al comienzo de la lista.
         insertar->sig = aux;
         aux->ant = insertar;
         jugadores->primero = insertar;
-        jugadores->tamanio++;
-        return;
     }
-
-    while (aux->sig != NULL)
+    else
     {
-        if (compararTFechas(insertar->fecha, aux->sig->fecha) >= 0)
-            aux = aux->sig; // Avanzar al siguiente nodo.
-        else
-        {
-            // Insertar antes del nodo siguiente.
-            insertar->sig = aux->sig;
-            insertar->ant = aux;
-            aux->sig->ant = insertar;
-            aux->sig = insertar;
-            jugadores->tamanio++;
-            return;
-        }
+        insertar->sig = aux;
+        insertar->ant = aux->ant;
+        aux->ant->sig = insertar;
+        aux->ant = insertar;
     }
-
-    // Si llegamos aquí, insertar al final de la lista.
-    jugadores->ultimo->sig = insertar;
-    insertar->ant = jugadores->ultimo;
-    jugadores->ultimo = insertar;
-    jugadores->tamanio++;
+    jugadores->tamanio = jugadores->tamanio + 1;
 }
 
 void liberarNDJugador(NDJugador &nodo)

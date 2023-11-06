@@ -204,7 +204,7 @@ bool esPerfectoTJugadoresABB(TJugadoresABB jugadoresABB)
     if (alturaIzq != alturaDer)
         return false;
 
-    // Verificar si los subarboles izquierdo y derecho tambien son perfectos:
+    // verifica si los subarboles izquierdo y derecho tambien son perfectos:
     return esPerfectoTJugadoresABB(jugadoresABB->izq) && esPerfectoTJugadoresABB(jugadoresABB->der);
 }
 

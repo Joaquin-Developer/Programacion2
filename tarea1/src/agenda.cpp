@@ -1,242 +1,94 @@
 #include "../include/agenda.h"
 
-struct rep_agenda
-{
-    TEvento lista[MAX_EVENTOS];
-    nat tope;
+struct rep_agenda {
+    /************ Parte 5.1 ************/
+    /*Escriba el código a continuación */
+
+    /****** Fin de parte Parte 5.1 *****/
 };
 
-TAgenda crearTAgenda()
-{
-    TAgenda nuevaAgenda = new rep_agenda;
-    (*nuevaAgenda).tope = 0;
-    // nuevaAgenda->tope = 0;
+TAgenda crearTAgenda() {
+    TAgenda nuevaAgenda = NULL;
+    /************ Parte 5.2 ************/
+    /*Escriba el código a continuación */
+
+    /****** Fin de parte Parte 5.2 *****/
     return nuevaAgenda;
 }
 
-/* funcion auxiliar para obtener tamanio de agenda */
-nat tamanioAgenda(TAgenda agenda)
-{
-    return (*agenda).tope;
+void agregarEnAgenda(TAgenda &agenda, TEvento evento) {
+    /************ Parte 5.2 ************/
+    /*Escriba el código a continuación */
+
+    /****** Fin de parte Parte 5.2 *****/
 }
 
-void agregarEnAgenda(TAgenda &agenda, TEvento evento)
-{
-    // Si esta llena no hacemos nada
-    if (tamanioAgenda(agenda) == MAX_EVENTOS)
-        return;
+void liberarTAgenda(TAgenda &agenda) {
+    /************ Parte 5.2 ************/
+    /*Escriba el código a continuación */
 
-    // Agregar - caso que este vacia:
-    if (tamanioAgenda(agenda) == 0)
-    {
-        // (*agenda).tope++;
-        // (*agenda).lista[0] = evento;
-        agenda->tope++;
-        agenda->lista[0] = evento;
-        return;
-    }
-    // Agregar - resto de los casos:
-
-    // calculo el índice de donde voy a tener que insertarlo:
-    int indiceInsertar = -1;
-
-    // si fecha insertar es mayor a ultima fecha, entonces inserto al final.
-    if (compararTFechas(fechaTEvento(evento), fechaTEvento((*agenda).lista[tamanioAgenda(agenda) - 1])) == 1)
-        indiceInsertar = tamanioAgenda(agenda);
-    else
-    {
-        nat i = 0;
-        while (indiceInsertar == -1 && i < tamanioAgenda(agenda))
-        {
-            // si fecha actual >= fecha insertar, entonces inserto en indice actual.
-            if (compararTFechas(fechaTEvento((*agenda).lista[i]), fechaTEvento(evento)) >= 0)
-                indiceInsertar = i;
-            i++;
-        }
-    }
-
-    (*agenda).tope++;
-    // recorro y voy moviendo hacia la derecha:
-    for (int i = tamanioAgenda(agenda); i > indiceInsertar; i--)
-        (*agenda).lista[i] = (*agenda).lista[i - 1];
-
-    (*agenda).lista[indiceInsertar] = evento;
+    /****** Fin de parte Parte 5.2 *****/
 }
 
-void liberarTAgenda(TAgenda &agenda)
-{
-    for (nat i = 0; i < tamanioAgenda(agenda); i++)
-        liberarTEvento((*agenda).lista[i]);
+void imprimirTAgenda(TAgenda agenda) {
+    /************ Parte 5.2 ************/
+    /*Escriba el código a continuación */
 
-    delete agenda;
-    agenda = NULL;
+    /****** Fin de parte Parte 5.2 *****/
 }
 
-void imprimirTAgenda(TAgenda agenda)
-{
-    for (nat i = 0; i < tamanioAgenda(agenda); i++)
-        imprimirTEvento((*agenda).lista[i]);
-}
-
-bool estaEnAgenda(TAgenda agenda, int id)
-{
+bool estaEnAgenda(TAgenda agenda, int id) {
     bool res = false;
-    nat i = 0;
+    /************ Parte 5.4 ************/
+    /*Escriba el código a continuación */
 
-    while (!res && i < tamanioAgenda(agenda))
-    {
-        if (idTEvento((*agenda).lista[i]) == id)
-            res = true;
-        i++;
-    }
-
+    /****** Fin de parte Parte 5.4 *****/
     return res;
 }
 
-TEvento obtenerDeAgenda(TAgenda agenda, int id)
-{
+TEvento obtenerDeAgenda(TAgenda agenda, int id) {
     TEvento res = NULL;
-    nat i = 0;
+    /************ Parte 5.5 ************/
+    /*Escriba el código a continuación */
 
-    while (res == NULL && i < tamanioAgenda(agenda))
-    {
-        if (idTEvento((*agenda).lista[i]) == id)
-            res = (*agenda).lista[i];
-    }
-
+    /****** Fin de parte Parte 5.5 *****/
     return res;
 }
 
-// Funcion auxiliar para a partir de un id, obtengo el indice donde se ubica en el Array agenda
-// PRE: El evento debe estar en la agenda
-int obtenerIndiceEnArray(TAgenda agenda, int id)
-{
-    int indice = -1;
-    nat i = 0;
+void posponerEnAgenda(TAgenda &agenda, int id, nat n) {
+    /************ Parte 5.5 ************/
+    /*Escriba el código a continuación */
 
-    while (indice == -1 && i < tamanioAgenda(agenda))
-    {
-        if (idTEvento((*agenda).lista[i]) == id)
-            indice = i;
-        i++;
-    }
-    return indice;
+    /****** Fin de parte Parte 5.5 *****/
 }
 
-void posponerEnAgenda(TAgenda &agenda, int id, nat n)
-{
-    int indiceActual = obtenerIndiceEnArray(agenda, id);
-    TEvento evento = agenda->lista[indiceActual];
+void imprimirEventosFecha(TAgenda agenda, TFecha fecha) {
+    /************ Parte 5.7 ************/
+    /*Escriba el código a continuación */
 
-    removerDeAgenda(agenda, id);
-
-    posponerTEvento(evento, n);
-    agregarEnAgenda(agenda, evento);
+    /****** Fin de parte Parte 5.7 *****/
 }
 
-// void posponerEnAgenda(TAgenda &agenda, int id, nat n)
-// {
-//     int indiceActual = obtenerIndiceEnArray(agenda, id);
-//     TEvento evento = agenda->lista[indiceActual];
-
-//     // TEvento nuevoEvento = crearTEvento(id, evento->descripcion, fechaTEvento(evento));
-
-//     // calculo el índice de donde voy a tener que insertarlo:
-//     posponerTEvento(evento, n);
-//     int indiceInsertar = -1;
-
-//     // si fecha evento a mover es mayor a ultima fecha, entonces muevo al final.
-//     if (compararTFechas(fechaTEvento(evento), fechaTEvento(agenda->lista[tamanioAgenda(agenda) - 1])) == 1)
-//         indiceInsertar = tamanioAgenda(agenda) - 1;
-//     else
-//     {
-//         nat i = indiceActual;
-//         while (indiceInsertar == -1 && i < tamanioAgenda(agenda))
-//         {
-//             // si fecha actual >= fecha evento mover, entonces muevo a indice actual.
-//             if (compararTFechas(fechaTEvento(agenda->lista[i]), fechaTEvento(evento)) >= 0)
-//                 indiceInsertar = i - 1;
-//             i++;
-//         }
-//     }
-//     /* Hasta acá funciona bien, se calcula el indice a mover! */
-
-//     // liberarTEvento(agenda->lista[2]);
-//     // agenda->lista[2] = agenda->lista[0];
-//     // liberarTEvento(agenda->lista[0]);
-//     // agenda->lista[0] = aux;
-
-//     // TEvento aux = agenda->lista[indiceActual + 1];
-
-//     // for (int i = indiceActual + 1; i < indiceInsertar; i++)
-//     // {
-//     //     liberarTEvento(agenda->lista[i]);
-//     //     agenda->lista[i] = agenda->lista[i + 1];
-//     //     // agenda->lista[i] = agenda->lista[i + 1];
-//     // }
-//     // liberarTEvento(agenda->lista[indiceInsertar]);
-//     // agenda->lista[indiceInsertar] = agenda->lista[indiceActual];
-
-//     // agenda->lista[indiceActual] = aux;
-//     // liberarTEvento(agenda->lista[indiceActual]);
-//     // agenda->lista[indiceActual] = aux;
-
-//     // agenda->lista[indiceInsertar] = evento;
-
-//     // (*agenda).lista[indiceInsertar] = evento;
-//     // posponerTEvento((*agenda).lista[indiceInsertar], n);
-//     // agenda->lista[indiceInsertar] = aux;
-// }
-
-void imprimirEventosFecha(TAgenda agenda, TFecha fecha)
-{
-    if (!hayEventosFecha(agenda, fecha))
-        return;
-
-    for (nat i = 0; i < tamanioAgenda(agenda); i++)
-    {
-        if (compararTFechas(fechaTEvento((*agenda).lista[i]), fecha) == 0)
-        {
-            imprimirTEvento((*agenda).lista[i]);
-        }
-    }
-}
-
-bool hayEventosFecha(TAgenda agenda, TFecha fecha)
-{
-    if (tamanioAgenda(agenda) == 0)
-        return false;
-
+bool hayEventosFecha(TAgenda agenda, TFecha fecha) {
     bool res = false;
-    nat inf = 0;
-    nat sup = tamanioAgenda(agenda) - 1;
+    /************ Parte 5.7 ************/
+    /*Escriba el código a continuación */
+    /*La función debe ejecutar una versión */
+    /*Iterativa del algoritmo de búsqueda  */
+    /*binaria.                              */
 
-    while (!res || inf <= sup)
-    {
-        nat indiceMedio = inf + (sup - inf) / 2;
-
-        if (compararTFechas(fechaTEvento((*agenda).lista[indiceMedio]), fecha) == 0)
-            res = true;
-
-        // Si fecha que estoy recorriendo < fecha
-        if (compararTFechas(fechaTEvento((*agenda).lista[indiceMedio]), fecha) == -1)
-            inf = indiceMedio + 1;
-        else
-            sup = indiceMedio - 1;
-    }
-
+    /****** Fin de parte Parte 5.7 *****/
     return res;
 }
 
-void removerDeAgenda(TAgenda &agenda, int id)
-{
-    int indiceBorrar = obtenerIndiceEnArray(agenda, id);
+void removerDeAgenda(TAgenda &agenda, int id) {
+    /************ Parte 5.8 ************/
+    /*Escriba el código a continuación */
 
-    for (nat i = indiceBorrar; i < tamanioAgenda(agenda) - 1; i--)
-    {
-        liberarTEvento(agenda->lista[i]);
-        agenda->lista[i] = agenda->lista[i + 1];
-    }
-
-    (*agenda).tope--;
+    /****** Fin de parte Parte 5.8 *****/
 }
+
+
+
+
+

@@ -115,12 +115,7 @@ IDS_PUBLICOS = fecha1-combinado \
 		jugadoresABB6-maxId-mayoresEdad \
 		jugadoresABB7-combinado	
 
-IDS_PRIVADOS =  partida7-combinado2 \
-				jugadoresLDE8-combinado2 \
-				jugadoresLDE9-combinado \
-				jugadoresABB10-combinado2 \
-				jugadoresABB8-esPerfecto-tiempo \
-				jugadoresABB9-mayoresEdad-tiempo
+IDS_PRIVADOS =  
 
 CASOS = $(IDS_PUBLICOS) $(IDS_PRIVADOS)
 
