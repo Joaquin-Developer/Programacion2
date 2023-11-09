@@ -32,7 +32,7 @@ TColaDePrioridadJugador crearCP(nat N)
   colaPrioridad->prioridades = new nat[N + 1];
   colaPrioridad->prioridadInvertida = false;
 
-  for (int i = 0; i <= N; i++)
+  for (nat i = 0; i <= N; i++)
   {
     colaPrioridad->heapJugadores[i] = NULL;
     colaPrioridad->prioridades[i] = 0;
@@ -67,8 +67,26 @@ void liberarCP(TColaDePrioridadJugador &cp)
   cp = NULL;
 }
 
+// funcion auxiliar
+void filtradoAscendienteCP(nat pos, TColaDePrioridadJugador &cp)
+{
+  if (pos > 1 && edadTJugador(cp->heapJugadores[pos / 2]) >= edadTJugador(cp->heapJugadores[pos]))
+  {
+    TJugador aux = cp->heapJugadores[pos];
+    cp->heapJugadores[pos] = cp->heapJugadores[pos / 2];
+    cp->heapJugadores[pos / 2] = aux;
+    filtradoAscendienteCP(pos / 2, cp);
+  }
+}
+
 void insertarEnCP(TJugador jugador, TColaDePrioridadJugador &cp)
 {
+  cp->heapJugadores[cp->cantidad + 1] = jugador; // usar copiarTJugador(jugador) ??
+  cp->prioridades[idTJugador(jugador)] = edadTJugador(jugador);
+  cp->cantidad++;
+
+  if (cp->cantidad > 1)
+    filtradoAscendienteCP(cp->cantidad, cp);
 }
 
 bool estaVaciaCP(TColaDePrioridadJugador cp)
@@ -81,6 +99,11 @@ bool estaVaciaCP(TColaDePrioridadJugador cp)
 TJugador prioritario(TColaDePrioridadJugador cp)
 {
   return cp->heapJugadores[1];
+}
+
+// funcion auxiliar
+void filtradoDescendienteCP(nat pos, TColaDePrioridadJugador &cp)
+{
 }
 
 void eliminarPrioritario(TColaDePrioridadJugador &cp)
