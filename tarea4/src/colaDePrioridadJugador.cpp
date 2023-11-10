@@ -94,6 +94,17 @@ void filtradoAscendienteCP(nat pos, TColaDePrioridadJugador &cp)
   }
 }
 
+void filtradoAscendienteCPInvertida(nat pos, TColaDePrioridadJugador &cp)
+{
+  while (pos > 1 && edadTJugador(cp->heapJugadores[pos / 2]) <= edadTJugador(cp->heapJugadores[pos]))
+  {
+    TJugador aux = cp->heapJugadores[pos];
+    cp->heapJugadores[pos] = cp->heapJugadores[pos / 2];
+    cp->heapJugadores[pos / 2] = aux;
+    pos = pos / 2;
+  }
+}
+
 void insertarEnCP(TJugador jugador, TColaDePrioridadJugador &cp)
 {
   cp->heapJugadores[cp->cantidad + 1] = jugador; // usar copiarTJugador(jugador) ??
@@ -101,7 +112,12 @@ void insertarEnCP(TJugador jugador, TColaDePrioridadJugador &cp)
   cp->cantidad++;
 
   if (cp->cantidad > 1)
-    filtradoAscendienteCP(cp->cantidad, cp);
+  {
+    if (cp->prioridadInvertida)
+      filtradoAscendienteCPInvertida(cp->cantidad, cp);
+    else
+      filtradoAscendienteCP(cp->cantidad, cp);
+  }
 }
 
 bool estaVaciaCP(TColaDePrioridadJugador cp)
@@ -138,6 +154,27 @@ void filtradoDescendienteCP(nat pos, TColaDePrioridadJugador &cp)
   }
 }
 
+void filtradoDescendienteCPInvertida(nat pos, TColaDePrioridadJugador &cp)
+{
+  nat indiceIzq = 2 * pos;
+  nat indiceDer = 2 * pos + 1;
+  nat max = pos;
+
+  if (indiceIzq <= cp->cantidad && edadTJugador(cp->heapJugadores[indiceIzq]) > edadTJugador(cp->heapJugadores[pos]))
+    max = indiceIzq;
+
+  if (indiceDer <= cp->cantidad && edadTJugador(cp->heapJugadores[indiceDer]) > edadTJugador(cp->heapJugadores[indiceIzq]))
+    max = indiceDer;
+
+  if (max != pos)
+  {
+    TJugador aux = cp->heapJugadores[pos];
+    cp->heapJugadores[pos] = cp->heapJugadores[max];
+    cp->heapJugadores[max] = aux;
+    filtradoDescendienteCPInvertida(max, cp);
+  }
+}
+
 void eliminarPrioritario(TColaDePrioridadJugador &cp)
 {
   if (estaVaciaCP(cp))
@@ -160,7 +197,10 @@ void eliminarPrioritario(TColaDePrioridadJugador &cp)
   cp->heapJugadores[indiceUltimo] = NULL;
   cp->cantidad--;
   // luego, aplico filtrado descenciente
-  filtradoDescendienteCP(1, cp);
+  if (cp->prioridadInvertida)
+    filtradoDescendienteCPInvertida(1, cp);
+  else
+    filtradoDescendienteCP(1, cp);
 }
 
 bool estaEnCP(nat id, TColaDePrioridadJugador cp)
