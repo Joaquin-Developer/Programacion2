@@ -44,7 +44,22 @@ TColaDePrioridadJugador crearCP(nat N)
 void invertirPrioridad(TColaDePrioridadJugador &cp)
 {
   cp->prioridadInvertida = !cp->prioridadInvertida;
-  // seguir...
+
+  // si solo hay 1 o ningun elemento, no debo invertir nada
+  if (cp->cantidad <= 1)
+    return;
+
+  nat i = 1;
+  nat j = cp->cantidad;
+
+  while (i < j)
+  {
+    TJugador aux = cp->heapJugadores[i];
+    cp->heapJugadores[i] = cp->heapJugadores[j];
+    cp->heapJugadores[j] = aux;
+    i++;
+    j--;
+  }
 }
 
 void liberarCP(TColaDePrioridadJugador &cp)
@@ -70,12 +85,12 @@ void liberarCP(TColaDePrioridadJugador &cp)
 // funcion auxiliar
 void filtradoAscendienteCP(nat pos, TColaDePrioridadJugador &cp)
 {
-  if (pos > 1 && edadTJugador(cp->heapJugadores[pos / 2]) >= edadTJugador(cp->heapJugadores[pos]))
+  while (pos > 1 && edadTJugador(cp->heapJugadores[pos / 2]) >= edadTJugador(cp->heapJugadores[pos]))
   {
     TJugador aux = cp->heapJugadores[pos];
     cp->heapJugadores[pos] = cp->heapJugadores[pos / 2];
     cp->heapJugadores[pos / 2] = aux;
-    filtradoAscendienteCP(pos / 2, cp);
+    pos = pos / 2;
   }
 }
 
@@ -104,10 +119,48 @@ TJugador prioritario(TColaDePrioridadJugador cp)
 // funcion auxiliar
 void filtradoDescendienteCP(nat pos, TColaDePrioridadJugador &cp)
 {
+  nat indiceIzq = 2 * pos;
+  nat indiceDer = 2 * pos + 1;
+  nat min = pos;
+
+  if (indiceIzq <= cp->cantidad && edadTJugador(cp->heapJugadores[indiceIzq]) < edadTJugador(cp->heapJugadores[pos]))
+    min = indiceIzq;
+
+  if (indiceDer <= cp->cantidad && edadTJugador(cp->heapJugadores[indiceDer]) < edadTJugador(cp->heapJugadores[indiceIzq]))
+    min = indiceDer;
+
+  if (min != pos)
+  {
+    TJugador aux = cp->heapJugadores[pos];
+    cp->heapJugadores[pos] = cp->heapJugadores[min];
+    cp->heapJugadores[min] = aux;
+    filtradoDescendienteCP(min, cp);
+  }
 }
 
 void eliminarPrioritario(TColaDePrioridadJugador &cp)
 {
+  if (estaVaciaCP(cp))
+    return;
+
+  cp->prioridades[idTJugador(cp->heapJugadores[1])] = 0;
+  liberarTJugador(cp->heapJugadores[1]);
+
+  // si era el unico elemento, no hago nada mas.
+  if (cp->cantidad == 1)
+  {
+    // cp->heapJugadores[1] = NULL;   // ya se hace en liberarJugador
+    cp->cantidad--;
+    return;
+  }
+
+  // el del final del arbol pasa a ser la raiz
+  nat indiceUltimo = cp->cantidad;
+  cp->heapJugadores[1] = cp->heapJugadores[indiceUltimo];
+  cp->heapJugadores[indiceUltimo] = NULL;
+  cp->cantidad--;
+  // luego, aplico filtrado descenciente
+  filtradoDescendienteCP(1, cp);
 }
 
 bool estaEnCP(nat id, TColaDePrioridadJugador cp)
