@@ -1,0 +1,20 @@
+89c89
+< 123>124>Jugador 10: Vanessa, Uruguay, 32 años
+---
+> 123>124>Jugador 3: Francisco, Holanda, 29 años
+91c91
+< Movimientos: Abajo Izquierda Abajo Abajo 
+---
+> Movimientos: Abajo Abajo Abajo Izquierda 
+93c93
+< 126>127>Jugador 3: Francisco, Holanda, 29 años
+---
+> 126>127>Jugador 10: Vanessa, Uruguay, 32 años
+95c95
+< Movimientos: Abajo Abajo Abajo Izquierda 
+---
+> Movimientos: Abajo Izquierda Abajo Abajo 
+97c97
+< 129>La prioridad del jugador es 29.
+---
+> 129>La prioridad del jugador es 0.

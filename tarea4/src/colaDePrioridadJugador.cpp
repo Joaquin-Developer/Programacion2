@@ -41,27 +41,6 @@ TColaDePrioridadJugador crearCP(nat N)
   return colaPrioridad;
 }
 
-void invertirPrioridad(TColaDePrioridadJugador &cp)
-{
-  cp->prioridadInvertida = !cp->prioridadInvertida;
-
-  // si solo hay 1 o ningun elemento, no debo invertir nada
-  if (cp->cantidad <= 1)
-    return;
-
-  nat i = 1;
-  nat j = cp->cantidad;
-
-  while (i < j)
-  {
-    TJugador aux = cp->heapJugadores[i];
-    cp->heapJugadores[i] = cp->heapJugadores[j];
-    cp->heapJugadores[j] = aux;
-    i++;
-    j--;
-  }
-}
-
 void liberarCP(TColaDePrioridadJugador &cp)
 {
   if (cp == NULL)
@@ -107,6 +86,9 @@ void filtradoAscendienteCPInvertida(nat pos, TColaDePrioridadJugador &cp)
 
 void insertarEnCP(TJugador jugador, TColaDePrioridadJugador &cp)
 {
+  if (cp->cantidad == cp->tope)
+    return;
+
   cp->heapJugadores[cp->cantidad + 1] = jugador; // usar copiarTJugador(jugador) ??
   cp->prioridades[idTJugador(jugador)] = edadTJugador(jugador);
   cp->cantidad++;
@@ -175,6 +157,31 @@ void filtradoDescendienteCPInvertida(nat pos, TColaDePrioridadJugador &cp)
   }
 }
 
+void invertirPrioridad(TColaDePrioridadJugador &cp)
+{
+  cp->prioridadInvertida = !cp->prioridadInvertida;
+
+  // si solo hay 1 o ningun elemento, no debo invertir nada
+  if (cp->cantidad <= 1)
+    return;
+
+  nat i = 1;
+  nat j = cp->cantidad;
+
+  while (i < j)
+  {
+    TJugador aux = cp->heapJugadores[i];
+    cp->heapJugadores[i] = cp->heapJugadores[j];
+    cp->heapJugadores[j] = aux;
+    i++;
+    j--;
+  }
+  if (cp->prioridadInvertida)
+    filtradoDescendienteCPInvertida(1, cp);
+  else
+    filtradoDescendienteCP(1, cp);
+}
+
 void eliminarPrioritario(TColaDePrioridadJugador &cp)
 {
   if (estaVaciaCP(cp))
@@ -205,6 +212,8 @@ void eliminarPrioritario(TColaDePrioridadJugador &cp)
 
 bool estaEnCP(nat id, TColaDePrioridadJugador cp)
 {
+  if (estaVaciaCP(cp))
+    return false;
   return cp->prioridades[id] != 0;
 }
 

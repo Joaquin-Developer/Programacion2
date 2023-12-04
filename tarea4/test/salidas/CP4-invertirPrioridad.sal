@@ -86,15 +86,15 @@ Movimientos: Abajo Izquierda Abajo Abajo
 Jugada: 1 
 Movimientos: Derecha Arriba Arriba Izquierda 
 122>#  invierto la prioridad en una cola con elementos, debe modificar la cola y el prioritario es el Jugador 10.
-123>124>Jugador 10: Vanessa, Uruguay, 32 años
-Jugada: 1 
-Movimientos: Abajo Izquierda Abajo Abajo 
-125>#  elimino el Jugador prioritario y ahora el nuevo prioritario es 3.
-126>127>Jugador 3: Francisco, Holanda, 29 años
+123>124>Jugador 3: Francisco, Holanda, 29 años
 Jugada: 1 
 Movimientos: Abajo Abajo Abajo Izquierda 
+125>#  elimino el Jugador prioritario y ahora el nuevo prioritario es 3.
+126>127>Jugador 10: Vanessa, Uruguay, 32 años
+Jugada: 1 
+Movimientos: Abajo Izquierda Abajo Abajo 
 128>#  la edad de prioridad de 3 es 29.
-129>La prioridad del jugador es 29.
+129>La prioridad del jugador es 0.
 130>#  voy eliminando y verificando, el orden es 6, 5, y 2 .
 131>132>Jugador 6: Juan, Uruguay, 22 años
 Jugada: 1 

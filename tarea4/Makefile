@@ -100,7 +100,10 @@ IDS_PUBLICOS = tarea3-combinado \
 
 		
 
-IDS_PRIVADOS = 
+IDS_PRIVADOS = CP6-combinado \
+		CP7-combinado-invertir \
+		tabla5-combinado \
+		aplicaciones2-listarEnOrden2
 
 
 CASOS = $(IDS_PUBLICOS) $(IDS_PRIVADOS)
